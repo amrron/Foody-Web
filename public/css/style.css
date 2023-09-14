@@ -1,0 +1,704 @@
+:root {
+    --blue: #17184f;
+    --light-blue: #dbf3fb;
+    --pink: #fdced0
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* START NAV */
+nav.nav {
+    position: fixed;
+    top: 0;
+    background-color: var(--light-blue);
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-container {
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.logo a {
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 55px;
+}
+
+.link {
+    transition: ease-in .4s;
+}
+
+.link ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.link ul a {
+    font-size: 25px;
+    color: var(--blue);
+}
+
+.link .register-login {
+    display: none;
+}
+
+.register-login {
+    display: flex;
+    align-items: center;
+}
+
+.register-btn, .login-btn {
+    padding: 10px 0;
+    width: 100px;
+    text-align: center;
+}
+
+.register-btn {
+
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: var(--light-blue);
+}
+
+.login-btn {
+    color: var(--blue);
+    background-color: var(--light-blue);
+}
+
+.signup {
+    display: flex;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 30px;
+    height: 5px;
+    background-color: var(--blue);
+    transition: ease .4s;
+}
+
+.burger-close span:nth-child(1) {
+    transform-origin: top left ;
+    rotate: 45deg;
+}
+
+.burger-close span:nth-child(2) {
+    transform-origin:  right center;
+    width: 0;
+    opacity: 0;
+}
+
+.burger-close span:nth-child(3) {
+    transform-origin: bottom left;
+    rotate: -45deg;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+
+    .burger {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    #register-login {
+        display: none;
+    }
+
+    .link .register-login {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .link {
+        position: absolute;
+        height: calc(100vh - 100px);
+        width: 50%;
+        min-width: 280px;
+        top: 100px;
+        right: -100%;
+        background-color: var(--blue);
+        color: var(--light-blue);
+        padding: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+        z-index: 10;
+    }
+
+    .burger-visible {
+        right: 0;
+    }
+
+    .register-login {
+        margin-bottom: 20px;
+        /* border-bottom: 2px solid var(--light-blue);
+        padding-bottom: 20px; */
+    }
+
+    .link ul a {
+        color: var(--light-blue);
+    }
+
+    .register-btn {
+        background-color: var(--light-blue);
+        color: var(--blue);
+    }
+
+    .login-btn {
+        background-color: var(--pink);
+        color: var(--blue);
+    }
+
+    .login-btn, .register-btn {
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+
+    .link ul {
+        flex-direction: column;
+    }
+}
+/* END NAV */
+
+/* START FOOTER */
+footer {
+    color: var(--blue);
+    background-color: var(--light-blue);
+}
+
+.top-footer {
+    min-height: 255px;
+}
+
+.top-footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.footer-row {
+    width: 100%;
+}
+
+.footer-send-message input {
+    height: 40px;
+    outline: 0;
+    width: calc(100% - 40px);
+    padding-left: 10px;
+    border-radius: 8px 0 0 8px;
+}
+
+.footer-send-message button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--pink);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-lenguage {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.select-lenguage label {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px 0 0 8px;
+
+}
+
+.select-lenguage select {
+    height: 40px;
+    width: calc(100% - 50px);
+    outline: none;
+    background-color: #fff;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+}
+
+.bottom-footer {
+    background-color: var(--pink);
+    height: 100px;
+}
+/* END FOOTER */
+
+/* START RECOMENDATION */
+.kartu {
+    display: grid;
+    height: 360px;
+    width: 590px;
+    margin-left: 1px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #fff;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    grid-template-rows: 1 2 1 1;
+    grid-template-areas:    'judul gambar'
+                            'deskripsi gambar'
+                            'harga gambar'
+                            'tombol gambar';
+}
+
+.judul-kartu {
+    color: var(--blue);
+    grid-area: judul;
+}
+
+.deskripsi-kartu {
+    color: #606060;
+    grid-area: deskripsi;
+}
+
+.harga-kartu {
+    grid-area: harga;
+}
+
+.gambar-kartu {
+    grid-area: gambar;
+}
+
+.tombol-beli-produk {
+    width: 109px;
+    line-height: 36px;
+    background-color: var(--light-blue);
+    color: var(--blue);
+    display: block;
+    text-decoration: none;
+    border-radius: 18px;
+    grid-area: tombol;
+}
+
+.section-recomendation {
+    background: var(--linear-1, linear-gradient(210deg, #FDCED0 10.95%, #D9F4FF 86.63%));
+}
+
+.recomendation {
+    color: var(--blue);
+}
+
+@media screen and (max-width: 590px) {
+    .kartu {
+        grid-template-areas:    'judul'
+                                'gambar'
+                                'deskripsi'
+                                'harga'
+                                'tombol';
+        width: 340px;
+        height: 560px;
+    }
+}
+/* END RECOMENDATION */
+
+/* START SWIPER */
+swiper-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 10px 0;
+}
+/* END SWIPER */
+
+/* START STYLLING TEMPLATE */
+.fs-18px {
+    font-size: 18px;
+}
+
+.fs-20px {
+    font-size: 20px;
+}
+
+.fs-13px {
+    font-size: 13px;
+}
+
+.fs-64px {
+    font-size: 64px;
+}
+
+.bg-biru {
+    background-color: var(--blue);
+}
+
+.bg-biru-muda {
+    background-color: var(--light-blue);
+}
+
+.bg-pink {
+    background-color: var(--pink);
+}
+
+.bg-putih {
+    background-color: #fff;
+}
+
+.text-biru {
+    color: var(--blue);
+}
+
+.text-biru-muda {
+    color: var(--light-blue);
+}
+
+.text-pink {
+    color: var(--pink);
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.view-all {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+/* END STYLING TEMPLATE */
+
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+    background: #22110C;
+}
+body::-webkit-scrollbar-thumb {
+    background: #91d8ef;
+}
+
+.site-main {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ======================= Start Banner Area ======================= */
+.site-banner {
+    width: 100%;
+    background-color: #D9F4FF;
+}
+
+.site-main .site-banner .site-title h3{
+    padding-top: 35%;
+    font-weight: 500;
+}
+
+.site-main .site-banner .site-title h3::after{
+    content: " ";
+    height: 2px;
+    width: 18vw;
+    background: black;
+    display: inline-block;
+    margin-left: 5%;
+    transform: translateY(-10px);
+}
+
+.site-main .site-banner .site-title h1{
+    font-size: 64px;
+}
+
+.site-main .site-banner .site-title h4{
+    font-size: 22px;
+}
+
+.site-main .site-banner .banner-image > img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+.button-banner{
+    display: inline-block;
+    background-color: #131049;
+    color: #FFF;
+    padding: .75rem 2rem;
+    border-radius: .5rem;
+    transition: .3s;
+  }
+
+  .button-banner:hover{
+    background-color: #15495a;
+  }
+
+/* ======================= Catatanku ======================= */
+
+.site-catatanku {
+    width: 100%;
+    background-color: #FFF;
+}
+
+.site-catatanku .site-title p {
+    margin-top: 20px;
+    max-width: 520px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.site-main .site-catatanku .site-title h1{
+    max-width: 550px;
+    padding-top: 35%;
+    font-size: 50px;
+}
+
+.site-main .site-catatanku .site-title h4{
+    font-size: 1.5rem;
+}
+
+.site-main .site-catatanku .banner-image > img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+
+.button-catatanku{
+    display: inline-block;
+    background-color:  #91d8ef;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button-catatanku:hover{
+    background-color: #FDCED0;
+}
+
+
+ /* ======================= Record Makanan ======================= */
+/* .site-main .record-makanan{
+    padding: 10px 20px;
+} */
+
+.site-main .record-makanan .about-title h2{
+    display: block;
+    font-size: 80px;
+    max-width: 600px;
+}
+
+.para{
+    padding: 10px 0;
+    font-size: 18px;
+    max-width: 560px;
+}
+
+
+.button-record{
+    display: inline-block;
+    background-color:  #91d8ef;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button-record:hover{
+    background-color: #FDCED0;
+}
+
+
+/* ======================= Target Kamu ======================= */
+
+.site-target {
+    width: 100%;
+    background-color: #FFF;
+}
+
+.site-target .site-title p {
+    margin-top: 20px;
+    max-width: 520px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.site-main .site-target .site-title h1{
+    font-weight: bold;
+    max-width: 550px;
+    padding-top: 35%;
+    font-size: 80px;
+}
+
+.site-main .site-target .site-title h4{
+    font-size: 1.5rem;
+}
+
+.site-main .site-target .banner-image > img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+
+.button-catatanku{
+    display: inline-block;
+    background-color:  #91d8ef;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button-catatanku:hover{
+    background-color: #FDCED0;
+}
+
+.button-target{
+    display: inline-block;
+    background-color:  #91d8ef;
+    color: #FFF;
+    padding: 5px 15px;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button-target:hover{
+    background-color: #FDCED0;
+}
+
+
+
+
+
+/* mobile */
+@media (max-width: 767px) {
+    .site-catatanku{
+        margin-top: -100px;
+    }
+
+    .site-catatanku .banner-image > img {
+        margin-top: -90px;
+
+    }
+    .record-makanan{
+        margin-top: -230px;
+    }
+
+    .site-target .banner-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-target .banner-image > img {
+        margin-top: -70px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .about-image{
+        display: none;
+    }
+
+    .about-title{
+        padding-bottom: 100px;
+    }
+
+    .about-title {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .about-title h2 {
+        font-size: 36px;
+        max-width: 100%;
+    }
+
+    .paragraf{
+        text-align: center;
+    }
+
+    .button-record {
+        display: block;
+        margin: 20px auto;
+    }
+
+    .site-target{
+        margin-top: -100px;
+    }
+
+}
+
+
+
+.pink {
+    background-color: #FDCED0;
+    color: #131049;
+}
+
+.navy {
+    background-color: #131049;
+}
+
+.navy:hover {
+    background-color: #FDCED0;
+}
+
+.biru {
+    background-color: #D9F4FF;
+    color: #131049;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 10px;
+}
+
+/* PUNYA INDAH */
