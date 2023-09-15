@@ -49,38 +49,6 @@
                                                         <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Karbohidrat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Lemak</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Serat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Protein</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

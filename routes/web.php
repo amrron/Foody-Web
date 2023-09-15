@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CatatankuController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MakananController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Makanan;
 use App\Models\CatatanMakanan;
@@ -28,20 +30,14 @@ Route::get('/catatanku', [CatatankuController::class, 'index']);
 
 Route::get('/catatanku/history', [CatatankuController::class, 'history']);
 
-Route::get('/login', function () {
-    return view("login", [
-        "title" => "Login"
-    ]);
-});
-
-Route::get('/register', function () {
-    return view("register", [
-        "title" => "Register"
-    ]);
-});
-
 Route::get('/makanan', [MakananController::class, 'index']);
 
 Route::get("/makanan/{makanan:slug}", [MakananController::class, 'detailMakanan']);
 
 Route::get('makanan/search/{nama}', [MakananController::class, 'cariMakanan']);
+
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/register', [RegisterController::class, 'create']);
+
+Route::post('/register', [RegisterController::class, 'store']);
