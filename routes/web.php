@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MakananController;
@@ -48,8 +49,6 @@ Route::get('/register', [RegisterController::class, 'create'])->middleware('gues
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/bmi', function (){
-    return view('bmi', [
-        'title' => "BMI",
-    ]);
-});
+Route::get('/bmi', [BmiController::class, 'index'])->middleware('auth');
+
+Route::post('/bmi', [BmiController::class, 'store']);

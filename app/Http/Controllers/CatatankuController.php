@@ -12,7 +12,7 @@ class CatatankuController extends Controller
     {
         return view('catatanku', [
             "title" => "Catatanku",
-            "catatans" => CatatanMakanan::where('user_id', auth()->user()->id)->where('waktu', '>', date('Y-m-d',strtotime("-1 days")))->get()->sortBy('waktu'),
+            "catatans" => CatatanMakanan::where('user_id', auth()->user()->id)->where('waktu', '>', date('Y-m-d'))->get()->sortBy('waktu'),
             "makanans" => Makanan::all(),
             "pagination" => false
         ]);
