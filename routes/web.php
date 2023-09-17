@@ -26,9 +26,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/catatanku', [CatatankuController::class, 'index']);
+Route::get('/catatanku', [CatatankuController::class, 'index'])->middleware('auth');;
 
-Route::get('/catatanku/history', [CatatankuController::class, 'history']);
+Route::post('/catatanku', [CatatankuController::class, 'store']);;
+
+Route::get('/catatanku/history', [CatatankuController::class, 'history'])->middleware('auth');
 
 Route::get('/makanan', [MakananController::class, 'index']);
 
@@ -36,8 +38,18 @@ Route::get("/makanan/{makanan:slug}", [MakananController::class, 'detailMakanan'
 
 Route::get('makanan/search/{nama}', [MakananController::class, 'cariMakanan']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
-Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');;
 
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/bmi', function (){
+    return view('bmi', [
+        'title' => "BMI",
+    ]);
+});

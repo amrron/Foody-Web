@@ -8,43 +8,64 @@
     <img src="images/Group 15.svg" style="height: 500px;">
 </div>
 
-<div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="container-fluid" style="width: fit-content;">
+<div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 100">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+
+
+    <form action="" method="post" class="container-fluid" style="width: fit-content;">
+        @csrf
         <h3 class="judul text-center">Login</h3>
         <figure class="text-center">
             <figcaption class="blockquote-footer">
                 <p>See your growth and get consulting support.</p>
             </figcaption>
         </figure>
-        <label for="" class="form-label">Username</label>
-        <div class="input-group flex-nowrap">
+        @if(session()->has('loginFailed'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="z-index: 100">
+                {{ session('loginFailed') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group flex-nowrap mb-3">
             <span class="input-group-text" id="addon-wrapping">@</span>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                aria-describedby="addon-wrapping">
+                aria-describedby="addon-wrapping" name="username" id="username" value="{{ old('username') }}" autofocus required>
+            @error('username')
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleFormControlInput1">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+            @error('password')
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
         <div class="form-check d-flex mb-3">
-            <div class="p-2">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Remember me
-                </label>
-            </div>
             <div class="ms-auto p-2">
                 <a href="" class="text_birugelap">forgot password?</a>
             </div>
         </div>
         <div class="d-grid gap-2">
-            <button class="btn" type="button">Login</button>
+            <button class="btn" type="submit">Login</button>
         </div>
         <figure class="text-center">
             <figcaption class="blockquote-footer">
                 <p>don't have an account yet?<a href="" class="text_birugelap">Create one</a>.</p>
             </figcaption>
         </figure>
-    </div>
+    </form>
 </div>
 @endsection

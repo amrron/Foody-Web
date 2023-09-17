@@ -62,7 +62,7 @@ nav a {
     transition: ease-in .4s;
 }
 
-.link ul {
+.link ul.link-menu {
     display: flex;
     list-style: none;
     gap: 20px;
@@ -145,6 +145,10 @@ nav a {
     z-index: 1;
 }
 
+.profile-link {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
 
     .burger {
@@ -152,8 +156,16 @@ nav a {
         margin-left: 10px;
     }
 
-    #register-login {
+    .register-login {
         display: none;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .profile-link {
+        display: block;
     }
 
     .link .register-login {
@@ -187,7 +199,7 @@ nav a {
         padding-bottom: 20px; */
     }
 
-    .link ul a {
+    .link ul.link-menu a {
         color: var(--light-blue);
     }
 

@@ -6,20 +6,22 @@
         <div class="row align-items-center">
             <h1 class="text-start mb-5">Catatanku</h1>
             <p>Select your meal time to add notes</p>
+            @if(!$pagination)
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card py-4 pink mt-3 mb-3 border border-0">
                     <div class="card-body text-center">
                         <h5 class="card-title display-6 fw-bold">Pagi</h5>
-                        <p class="card-text fw-medium">05.00 - 10.00</p>
+                        <p class="card-text fw-medium">00.00 - 09.00</p>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#modal-pagi">
                             Select this time
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal-pagi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">
+                                <form action="" method="post" class="modal-content">
+                                    @csrf
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -27,26 +29,36 @@
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Time</option>
-                                                        <option value="1">06.00</option>
-                                                        <option value="2">07.00</option>
-                                                        <option value="3">08.00</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Jumlah Makan</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="input-group mb-3">
                                                         <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                        <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+                                                        <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                            <option selected>Pilih Makanan</option>
+                                                            @foreach($makanans as $makanan)
+                                                                <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                        <option selected>Time</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="09:00">09:00</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
+                                                        <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
                                                     </div>
                                                 </div>
                                             </div>
@@ -54,279 +66,202 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary navy">Save changes</button>
+                                        <button type="submit" class="btn btn-primary navy">Save changes</button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card py-4 biru mt-3 mb-3 border border-0">
-                    <div class="card-body text-center">
-                        <h5 class="card-title display-6 fw-bold">Siang</h5>
-                        <p class="card-text fw-medium">10.00 - 15.00</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Select this time
-                        </button>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card py-4 pink mt-3 mb-3 border border-0">
+                        <div class="card-body text-center">
+                            <h5 class="card-title display-6 fw-bold">Siang</h5>
+                            <p class="card-text fw-medium">10.00 - 14.00</p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#modal-siang">
+                                Select this time
+                            </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Time</option>
-                                                        <option value="1">06.00</option>
-                                                        <option value="2">07.00</option>
-                                                        <option value="3">08.00</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Jumlah Makan</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                        <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal-siang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <form action="" method="post" class="modal-content">
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Siang</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
+                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                                <option selected>Pilih Makanan</option>
+                                                                @foreach($makanans as $makanan)
+                                                                    <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Karbohidrat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Lemak</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Serat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Protein</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                            <option selected>Time</option>
+                                                            <option value="09:00">09:00</option>
+                                                            <option value="10:00">10:00</option>
+                                                            <option value="11:00">11:00</option>
+                                                            <option value="12:00">12:00</option>
+                                                            <option value="13:00">13:00</option>
+                                                            <option value="14:00">14:00</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary navy">Save changes</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary navy">Save changes</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card py-4 pink mt-3 mb-3 border border-0">
-                    <div class="card-body text-center">
-                        <h5 class="card-title display-6 fw-bold">Sore</h5>
-                        <p class="card-text fw-medium">15.00 - 20.00</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Select this time
-                        </button>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card py-4 pink mt-3 mb-3 border border-0">
+                        <div class="card-body text-center">
+                            <h5 class="card-title display-6 fw-bold">Sore</h5>
+                            <p class="card-text fw-medium">15.00 - 18.00</p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#modal-sore">
+                                Select this time
+                            </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Time</option>
-                                                        <option value="1">06.00</option>
-                                                        <option value="2">07.00</option>
-                                                        <option value="3">08.00</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Jumlah Makan</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                        <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal-sore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <form action="" method="post" class="modal-content">
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Sore</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
+                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                                <option selected>Pilih Makanan</option>
+                                                                @foreach($makanans as $makanan)
+                                                                    <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Karbohidrat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Lemak</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Serat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Protein</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                            <option selected>Time</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="16:00">16:00</option>
+                                                            <option value="17:00">17:00</option>
+                                                            <option value="18:00">18:00</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary navy">Save changes</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary navy">Save changes</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card py-4 biru mt-3 mb-3 border border-0">
-                    <div class="card-body text-center">
-                        <h5 class="card-title display-6 fw-bold">Malam</h5>
-                        <p class="card-text fw-medium">20.00 - 00.00</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Select this time
-                        </button>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card py-4 pink mt-3 mb-3 border border-0">
+                        <div class="card-body text-center">
+                            <h5 class="card-title display-6 fw-bold">Malam</h5>
+                            <p class="card-text fw-medium">19.00 - 23.00</p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#modal-malam">
+                                Select this time
+                            </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Time</option>
-                                                        <option value="1">06.00</option>
-                                                        <option value="2">07.00</option>
-                                                        <option value="3">08.00</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Jumlah Makan</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                        <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+                            <!-- Modal -->
+                            <div class="modal fade" id="modal-malam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <form action="" method="post" class="modal-content">
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="input-group mb-3">
+                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
+                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                                <option selected>Pilih Makanan</option>
+                                                                @foreach($makanans as $makanan)
+                                                                    <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Karbohidrat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Lemak</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Serat</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" aria-label="Small select example">
-                                                        <option selected>Protein</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                    </select>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                            <option selected>Time</option>
+                                                            <option value="19:00">19:00</option>
+                                                            <option value="20:00">20:00</option>
+                                                            <option value="21:00">21:00</option>
+                                                            <option value="22:00">22:00</option>
+                                                            <option value="23:00">23:00</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
+                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary navy">Save changes</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary navy">Save changes</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
+        @endif
 
     </div>
 </section>
@@ -344,7 +279,6 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">No</th>
                             <th scope="col">Time</th>
                             <th scope="col">Nama Makanan</th>
                             <th scope="col">Protein</th>
@@ -357,8 +291,7 @@
                     <tbody>
                         @foreach($catatans as $catatan)
                         <tr>
-                            <th scope="row">{{ $catatan->id }}</th>
-                            <td>Pagi</td>
+                            <td>{{ $pagination ? date('Y-m-d H:i', strtotime($catatan->waktu)) : date('H:i', strtotime($catatan->waktu)) }}</td>
                             <td>{{ $catatan->makanan->nama }} {{ $catatan->jumlah > 1 ? " x " . $catatan->jumlah : "" }}</td>
                             <td>{{ $catatan->makanan->protein * $catatan->jumlah}}</td>
                             <td>{{ $catatan->makanan->karbohidrat * $catatan->jumlah }}</td>
@@ -367,14 +300,22 @@
                             <td>{{ $catatan->makanan->lemak * $catatan->jumlah }}</td>
                         </tr>
                         @endforeach
-                        <tr>
-                            <th colspan="3">Total</th>
-                            <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->protein; }) }}</th>
-                            <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->karbohidrat; }) }}</th>
-                            <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->garam; }) }}</th>
-                            <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->gula; }) }}</th>
-                            <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->lemak; }) }}</th>
-                        </tr>
+                        @if($catatans->isEmpty() and $pagination)
+                            <tr>
+                                <td colspan="7" class="text-center">Tidak ada data</td>
+                            </tr>
+                        @endif
+                        @if(!$pagination)
+                            <tr>
+                                <th colspan="2">Total</th>
+                                <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->protein; }) }}</th>
+                                <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->karbohidrat; }) }}</th>
+                                <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->garam; }) }}</th>
+                                <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->gula; }) }}</th>
+                                <th>{{ $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->lemak; }) }}</th>
+                            </tr>
+                        @endif
+
                     </tbody>
                 </table>
             </div>

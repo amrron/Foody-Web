@@ -19,23 +19,62 @@
         </div>
 
         <div class="link">
-            <ul class="p-0 m-0">
+            <ul class="p-0 m-0 link-menu">
                 <li><a href="/catatanku/">Catatanku</a></li>
-                <li><a href="">BMI</a></li>
+                <li><a href="/bmi">BMI</a></li>
                 <li><a href="/makanan">Makanan</a></li>
             </ul>
-            <div class="register-login">
-                <a class="login-btn" href="/login">Login</a>
+            @guest
+                <div class="register-login">
+                    <a class="login-btn" href="/login">Login</a>
 
-                <a class="register-btn" href="login/regis.html">Register</a>
-            </div>
+                    <a class="register-btn" href="login/register">Register</a>
+                </div>
+            @endguest
+            @auth
+                <div class="profile-link mb-3">
+                    <a class="nav-link dropdown-toggle fs-3 p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ auth()->user()->username }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            @endauth
         </div>
 
         <div class="signup d-flex align-item-center">
-            <div id="register-login" class="register-login">
+            @guest
+            <div class="register-login">
                 <a class="login-btn" href="/login">Login</a>
+
                 <a class="register-btn" href="/register">Register</a>
             </div>
+            @endguest
+            @auth
+            <div class="profile">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ auth()->user()->username }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            @endauth
             <div class="hamburger d-flex align-items-center">
                 <div class="burger">
                     <span></span>
