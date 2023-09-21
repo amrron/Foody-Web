@@ -11,8 +11,8 @@ class BmiController extends Controller
     public function index(){
         return view('bmi', [
             'title' => "BMI",
-//            'bmis' => Bmi::where('user_id', auth()->user()->id)->get(),
-            'bmis' => Bmi::all()
+           'bmis' => Bmi::where('user_id', auth()->user()->id)->get(),
+            // 'bmis' => Bmi::all()
         ]);
     }
 
@@ -28,7 +28,7 @@ class BmiController extends Controller
 
         Bmi::create($validatedData);
 
-        $request->session()->flash('success', 'BMI berhasil dicatat. milai BMI anda adalah ' . $validatedData['nilai_bmi']);
+        $request->session()->flash('success', $validatedData['nilai_bmi']) ;
 
         return redirect('/bmi');
     }

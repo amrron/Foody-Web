@@ -12,7 +12,7 @@
                         <h4 class="title-text text-biru fw-medium">Solusi Untuk menjaga kesehatan Tubuh Anda</h4>
                         <div class="site-buttons">
                             <div class="d-flex flex-row flex-wrap">
-                                <a href="" class="bg-biru p-3 mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
+                                <a href="#catatankuSection" class="bg-biru p-3 mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
                             </div>
                         </div>
                     </div>
@@ -31,15 +31,13 @@
     <!-- START BAGIAN CATATANKU  -->
         <section class="site-catatanku">
             <div class="container">
-                <div class="row">
+                <div class="row" >
                     <div class="col-lg-6 col-md-12 site-title" style="margin-top: 100px;">
-                        <h1 class="title-text text-biru fw-semibold">Select your meal time to record your eating pattern in <strong class="fw-bold">Catatanku</strong></h1>
-                        <p class="title-text text-biru">Lorem ipsum dolor sit amet consectetur. Netus turpis vestibulum pellentesque orci in nisl.
-                             Lorem ipsum dolor sit amet consectetur. Netus turpis vestibulum 
-                             pellentesque orci in nisl</p>
+                        <h1 class="title-text text-biru fw-semibold" id="catatankuSection">Pilih waktu makan Anda untuk mencatat pola makan Anda dengan <strong class="fw-bold">Catatanku</strong></h1>
+                        <p class="title-text text-biru">Anda dapat mencatat semua jenis makanan yang  dikonsumsi sepanjang hari. Anda juga dapat dengan cepat menambahkan makanan yang  dimakan</p>
                         <div class="site-buttons">
                             <div class="d-flex flex-row flex-wrap">
-                                <a href="/catatanku/" class="bg-biru-muda p-3 mt-3 text-biru rounded-2" style="text-decoration: none;">Try It</a>
+                                <a href="/catatanku" class="bg-biru-muda p-3 mt-3 text-biru rounded-2" style="text-decoration: none;">Try It</a>
                             </div>
                         </div>
                     </div>
@@ -60,20 +58,19 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 about-title" style="margin-top: 200px;">
-                        <h2 class="pt-5 text-biru fw-semibold">Record your eating patterns on FOODY.</h2>
+                        <h1 class="pt-5 fs-1 text-biru fw-semibold title-text fw-semibold">Catat dan Pantau BMI Anda dengan Mudah Bersama Foody</h1>
                         <div class="paragraph py-1 ">
                             <p class="para text-biru fs-5">
-                                Lorem ipsum dolor sit amet consectetur. Netus turpis pellentesque orci in nisl. Lorem ipsum dolor sit amet consectetur. 
-                                Netus turpis vestibulum pellentesque orci in nisl.
+                                Dengan fitur pencatatan BMI kami, Anda dapat dengan cepat memantau perubahan dalam perjalanan kesehatan Anda. Tidak perlu repot, cukup masukkan data berat dan tinggi tubuh Anda, dan "Foody" akan menghitung BMI Anda secara otomatis. Pantau perkembangan Anda menuju kehidupan sehat yang lebih baik!
                             </p>
                         </div>
-                        <a href="" class="text-biru p-3 mt-3 bg-biru-muda rounded-2" style="text-decoration: none;">Download Now</a>
+                        <a href="/bmi" class="text-biru p-3 mt-3 bg-biru-muda rounded-2" style="text-decoration: none;">Try It</a>
                     </div>
                 </div>
             </div>
         </section>
     <!-- END BAGIAN RECORD MAKANAN -->
-    <!-- START BAGIAN TARGET -->
+    {{-- <!-- START BAGIAN TARGET -->
         <section class="site-target">
             <div class="container">
                 <div class="row">
@@ -94,102 +91,119 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     </main>
-    <main>
+    <main class="pt-5">
     <!-- END BAGIAN TARGET -->
     <!-- START BAGIAN BMI -->
-        <section>
-            <div class="container-lg d-flex justify-content-center align-items-center mt-3 mb-5">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="kiri col-md-6 col-sm-12 mb-3">
-                            <h1 class="fs-1 fw-bolder text-biru mb-4">BMI</h1>
-                            <h2 class="fs-1 text-biru fs-1 mb-4">Body Massa Index</h2>
-                            <div class="d-flex w-100 gap-4">
-                                <div class="kelamin w-50 ratio ratio-1x1 d-flex align-items-center justify-content-center rounded-2 bg-biru-muda ">
-                                    <a href="" class="text-biru d-flex justify-content-center align-items-center text-center no-decoration fs-3">
-                                        <div class="">
-                                            <i class="fa-solid fa-mars mt-4 "></i>
-                                            <p class="mt-1">Male</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="kelamin w-50 ratio ratio-1x1 d-flex align-items-center justify-content-center bg-pink rounded-2">
-                                    <a href="" class="text-biru d-flex justify-content-center align-items-center text-center no-decoration fs-3">
-                                        <div class="">
-                                            <i class="fa-solid fa-venus mt-4 "></i>
-                                            <p class="mt-1">Female</p>
-                                        </div>
-                                    </a>
+    <section id="bmi" class="py-5">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="row pt-5 text-navy">
+                        <h2 class="fw-bold pt-5 display-6 ">BMI</h2>
+                        <p>Body Massa Index</p>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-navy">
+                            <div class="card py-5 biru hov-navy mt-3 mb-3 border border-0">
+                                <div class="card-body text-center">
+                                    <span class="display-6"><i class="fas fa-light fa-mars fa-lg" style="color: #131049;"></i></span>
+                                    <p class="card-text mt-3 fw-medium">Male</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="kanan col-md-6 col-sm-12 ps-3 pe-3 mb-3">
-                            <div class="w-100 h-100 d-flex flex-column justify-content-around align-items-center" style="border-radius: 10px; background: var(--linear-1, linear-gradient(210deg, #FDCED0 10.95%, #D9F4FF 86.63%));">
-                                <div class="d-flex gap-2 p-2 bg-putih mt-5 rounded-1" style="width: fit-content;">
-                                    <button class="p-2 w-50 bg-biru text-biru-muda rounded-1">Metrik</button>
-                                    <button class="p-2 w-50 text-biru bg-putih rounded-1">Imperial</button>
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-navy">
+                            <div class="card py-5 pink hov-navy mt-3 mb-3 border border-0">
+                                <div class="card-body text-center">
+                                    <span class="display-6"><i class="fas fa-light fa-venus fa-lg" style="color: #131049;"></i></span>
+                                    <p class="card-text mt-3 fw-medium">Female</p>
                                 </div>
-                                <form class="col d-flex flex-column gap-3 align-items-center">
-                                    <div class="d-flex" style="padding-left: 20px; padding-right: 20px; padding-top: 10px;">
-                                        <div style="width: 50%; padding-right: 10px;">
-                                            <h6 class="text-biru">Age Stages</h6>
-                                            <select class="form-select form-select-lg" aria-label="Default select example">
-                                                <option selected>Kids</option>
-                                                <option value="1">Teen</option>
-                                                <option value="1">Adult</option>
-                                            </select>
-                                        </div>
-                                        <div style="width: 50%;">
-                                            <h6 class="text-biru">Age</h6>
-                                            <input type="number" class="form-control-lg w-100" name="" id="">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex"
-                                        style="padding-left: 20px; padding-right: 20px; padding-bottom: 5px; padding-top: 10px;">
-                                        <div style="width: 50%; padding-right: 10px;">
-                                            <h6 class="text-biru">Height(cm)</h6>
-                                            <input type="number" class="form-control-lg w-100" name="" id="">
-                                        </div>
-                                        <div style="width: 50%;">
-                                            <h6 class="text-biru">Weight(kg)</h6>
-                                            <input type="number" class="form-control-lg w-100" name="" id="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 d-flex align-item-end">
+                    <div class="card py-5 linear-1 mt-3 mb-3 border border-0 align-content-center w-100" style="background: var(--linear-1, linear-gradient(210deg, #FDCED0 10.95%, #D9F4FF 86.63%))">
+                        <div class="card-body text-center">
+                            <div class="container">
+                                <div class="text-center">
+                                    {{-- <div class="btn-group py-3" role="group" aria-label="Basic mixed styles example">
+                                        <button type="button" class="btn btn-primary navy border border-0 hov-biru">Left</button>
+                                        <button type="button" class="btn btn-primary biru border border-0 hov-navy">Right</button>
+                                    </div> --}}
+                                    <h1 class="text-biru">Hitung BMI Anda</h1>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="tinggi">
+                                            <label for="floatingSelectGrid">Height (cm)</label>
                                         </div>
                                     </div>
-                                    <button class="form-control-lg w-50 mb-5">
-                                        Calculate BMI
-                                    </button>
-                                </form>
-        
+                                        
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="berat">
+                                            <label for="floatingSelectGrid">Berat (kg)</label>
+                                        </div>
+                                    </div>
+                                        
+                                </div>
+                                <div class="row py-3">
+                                    <div class="text-center">
+                                        <button class="btn btn-primary navy hov-pink border border-0" id="hitung" data-bs-toggle="modal" data-bs-target="#hasil-bmi">Calculate BMI</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="hasil-bmi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Hasil</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
     <!-- END BAGIAN BMI -->
     <!-- START BAGIAN HEALTHY -->
         <section>
             <div class="container-lg mb-5 pt-5 pb-5 d-flex align-items-center flex-column w-auto">
-                <h1 class="fs-1 text-biru text-center fw-semibold mb-5 pb-4">Healthy lifestyle</h1>
+                <h1 class="fs-1 text-biru text-center fw-semibold mb-5 pb-4">Gaya Hidup Sehat</h1>
                 <div class="card-container d-flex justify-content-center align-items-center flex-wrap w-100 m-auto">
                     <div class="card m-4" style="width: 268px; height: 354px; border: 0;">
                         <img src="img/olahraga.png" alt="">
                         <div class="card-body d-flex pb-0 align-items-center justify-content-center">
-                            <h5 class="text-biru m-0">Exercise Regulary</h5>
+                            <h5 class="text-biru m-0">Rutin Berolahraga</h5>
                         </div>
                     </div>
                     <div class="card m-4" style="width: 268px; height: 354px; border: 0;">
                         <img src="img/makansehat.png" alt="">
                         <div class="card-body d-flex pb-0 align-items-center justify-content-center">
-                            <h5 class="text-biru m-0">Consume Healthy Food</h5>
+                            <h5 class="text-biru m-0">Konsumsi Makanan Sehat</h5>
                         </div>
                     </div>
                     <div class="card m-4" style="width: 268px; height: 354px; border: 0;">
                         <img src="img/istirahat.png" alt="">
                         <div class="card-body d-flex pb-0 align-items-center justify-content-center">
-                            <h5 class="text-biru m-0">Enough rest</h5>
+                            <h5 class="text-biru m-0">Istirahat Yang Cukup</h5>
                         </div>
                     </div>
                 </div>
@@ -199,7 +213,7 @@
     <!-- START BAGIAN INGREDIENTS -->
         <section>
             <div class="container-lg mb-5 pt-5 pb-5 text-center">
-                <h1 class="fs-1 text-biru text-center fw-semibold mb-5 pb-4">Food Ingredients</h1>
+                <h1 class="fs-1 text-biru text-center fw-semibold mb-5 pb-4">Kandungan makanan</h1>
                 <swiper-container class="mySwiper" space-between="20" slides-per-view="auto">
                     <swiper-slide class="me-5">
                             <div class="card" style="width: 268px; height: 354px; border: 0;">
@@ -227,23 +241,23 @@
                     </swiper-slide>
                     <swiper-slide class="me-5">
                             <div class="card" style="width: 268px; height: 354px; border: 0;">
-                                <img src="img/protein.png" alt="">
-                                <div class="card-body d-flex pb-0 align-items-end justify-content-center">
-                                    <h5 class="text-biru m-0">Serat</h5>
+                                <img src="img/karbohidrat.png" alt="">
+                                <div class="card-body d-flex pb-0 align-items-center justify-content-center">
+                                    <h5 class="text-biru">Gula</h5>
                                 </div>
                             </div>
                     </swiper-slide>
                     <swiper-slide class="me-5">
-                            <div class="card" style="width: 268px; height: 354px; border: 0;">
-                                <img src="img/karbohidrat.png" alt="">
-                                <div class="card-body d-flex pb-0 align-items-center justify-content-center">
-                                    <h5 class="text-biru">Karbohidrat</h5>
-                                </div>
+                        <div class="card" style="width: 268px; height: 354px; border: 0;">
+                            <img src="img/karbohidrat.png" alt="">
+                            <div class="card-body d-flex pb-0 align-items-center justify-content-center">
+                                <h5 class="text-biru">Garam</h5>
                             </div>
-                    </swiper-slide>
+                        </div>
+                </swiper-slide>
                 </swiper-container>
 
-                <a href="" class="bg-biru text-biru-muda mb-5 mt-5 d-inline-flex" style="padding: 12px 30px; border-radius: 8px; text-decoration: none;">Learn More</a>
+                <a href="/makanan" class="bg-biru text-biru-muda mb-5 mt-5 d-inline-flex" style="padding: 12px 30px; border-radius: 8px; text-decoration: none;">Learn More</a>
             </div>
         </section>
     <!-- END BAGIAN INGREDIENTS -->
@@ -252,7 +266,7 @@
             <div class="container-lg recomendation mb-5 mt-5">
                 <div class="row mb-4">
                     <div class="col-md-12 d-flex justify-content-between align-items-center">
-                        <h1 class="fs-64px fw-semibold fs-1">Recommendation for you</h1>
+                        <h1 class="fs-64px fw-semibold fs-1">Rekomendasi Produk</h1>
                         <a href="" class="fs-4 view-all text-end">View All</a>
                     </div>
                 </div>
@@ -338,7 +352,7 @@
         </section>
     <!-- END BAGIAN REKOMENDASI -->
     <!-- START BAGIAN VOUCHER -->
-        <section class="pt-5 pb-5">
+        {{-- <section class="pt-5 pb-5">
             <div class="container-lg mt-5 mb-5 p-3">
                 <div class="row bg-biru-muda mt-5 ms-2 me-2 mb-5 rounded-4">
                     <div class="col-md-6 text-biru p-5 d-flex flex-column justify-content-center">
@@ -358,15 +372,17 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     <!-- END BAGIAN VOUCHER -->
     <!-- START BAGIAN CONTACT -->
         <section class="bg-biru-muda" style="padding: 80px 12px;">
             <div class="container-lg" style="width: fit-content;">
                 <div class="row d-flex align-items-center justify-content-between">
-                    <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="col-lg-6 col-md-12 mb-4" id="contact-us">
                         <h2 class="fs-1 fw-semibold text-biru">Contact Us</h2>
-                        <p class="fs-4 text-biru mt-4 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat iste voluptates obcaecati? Iusto impedit dolorem quam hic similique id minus dolores itaque voluptatibus. Laboriosam et laudantium dolor, ullam quibusdam quasi inventore hic assumenda architecto, consectetur neque esse ipsum! Natus quae exercitationem ex consequatur officiis tempore ipsam minima vero voluptatum suscipit.</p>
+                        <p class="fs-4 text-biru mt-4 mb-4">Hubungi Kami untuk Mendukung Perjalanan Kesehatan Anda bersama "Foody"
+
+                            Kami siap membantu Anda dalam menjalani gaya hidup sehat dengan aplikasi "Foody." Jika Anda memiliki pertanyaan, saran, atau masukan, jangan ragu untuk menghubungi tim kami. Kami sangat antusias untuk mendengar dari Anda dan berkolaborasi dalam mencapai tujuan kesehatan Anda. Jangan tunda lagi, mari bersama-sama menjalani hidup sehat dengan "Foody"!</p>
                         <div class="logomedsos fs-1 text-biru">
                             <a href=""><i class="fa-brands fa-google" style="color: #131049; padding-right: 10px;"></i></a>
                             <a href=""><i class="fa-brands fa-facebook" style="color: #131049; padding-right: 10px;"></i></a>

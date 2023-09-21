@@ -7,7 +7,7 @@
 <div class="position-absolute bottom-0 start-0">
     <img src="images/Group 15.svg" style="height: 500px;">
 </div>
-<form action="" method="post" class="container" style="width: fit-content; margin-top: 120px; margin-bottom: 20px">
+<form action="" method="post" class="container-lg" style="margin-top: 120px; margin-bottom: 20px; max-width: 480px">
     @csrf
     <h3 class="judul text-center">Register</h3>
     <figure class="text-center">
@@ -56,7 +56,7 @@
         @enderror
     </div>
     <label for="" class="form-label">Username</label>
-    <div class="input-group flex-nowrap">
+    <div class="input-group mb-3">
         <span class="input-group-text" id="addon-wrapping">@</span>
         <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username" aria-label="Username" value="{{ old('username') }}""
             aria-describedby="addon-wrapping">
@@ -85,7 +85,7 @@
         @enderror
     </div>
     <div class="d-grid gap-2">
-        <button class="btn" type="submit">Create Account</button>
+        <button class="btn bg-biru text-biru-muda" type="submit">Create Account</button>
     </div>
 </form>
 

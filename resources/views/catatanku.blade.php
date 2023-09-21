@@ -31,8 +31,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="input-group mb-3">
-                                                        <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                        <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                        <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
                                                             <option selected>Pilih Makanan</option>
                                                             @foreach($makanans as $makanan)
                                                                 <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -41,7 +40,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                    <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
                                                         <option selected>Time</option>
                                                         <option value="00:00">00:00</option>
                                                         <option value="01:00">01:00</option>
@@ -57,8 +56,8 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="input-group input-group-sm mb-3">
-                                                        <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
-                                                        <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                        {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
+                                                        <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,8 +97,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
-                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                            
+                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
                                                                 <option selected>Pilih Makanan</option>
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -108,7 +107,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
                                                             <option selected>Time</option>
                                                             <option value="09:00">09:00</option>
                                                             <option value="10:00">10:00</option>
@@ -120,8 +119,8 @@
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                                         <div class="input-group input-group-sm mb-3">
-                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
-                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                            {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
+                                                            <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -161,8 +160,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
-                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                            
+                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
                                                                 <option selected>Pilih Makanan</option>
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -171,7 +170,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
                                                             <option selected>Time</option>
                                                             <option value="15:00">15:00</option>
                                                             <option value="16:00">16:00</option>
@@ -181,8 +180,8 @@
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                                         <div class="input-group input-group-sm mb-3">
-                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
-                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                            {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
+                                                            <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -222,8 +221,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
-                                                            <span class="input-group-text" id="basic-addon1">Nama Makanan</span>
-                                                            <select class="selectpicker" data-live-search="true" name="makanan_id">
+                                                            
+                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
                                                                 <option selected>Pilih Makanan</option>
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -232,7 +231,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example">
+                                                        <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
                                                             <option selected>Time</option>
                                                             <option value="19:00">19:00</option>
                                                             <option value="20:00">20:00</option>
@@ -243,8 +242,8 @@
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                                         <div class="input-group input-group-sm mb-3">
-                                                            <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span>
-                                                            <input type="text" class="form-control" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm">
+                                                            {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
+                                                            <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -280,7 +279,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Time</th>
-                            <th scope="col">Nama Makanan</th>
+                            <th scope="col">Makanan</th>
                             <th scope="col">Protein</th>
                             <th scope="col">Karbohidrat</th>
                             <th scope="col">Garam</th>

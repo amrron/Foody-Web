@@ -34,7 +34,7 @@
             </div>
         @endif
         <label for="username" class="form-label">Username</label>
-        <div class="input-group flex-nowrap mb-3">
+        <div class="input-group mb-3">
             <span class="input-group-text" id="addon-wrapping">@</span>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username"
                 aria-describedby="addon-wrapping" name="username" id="username" value="{{ old('username') }}" autofocus required>
@@ -53,17 +53,17 @@
             </div>
             @enderror
         </div>
-        <div class="form-check d-flex mb-3">
+        {{-- <div class="form-check d-flex mb-3">
             <div class="ms-auto p-2">
                 <a href="" class="text_birugelap">forgot password?</a>
             </div>
-        </div>
-        <div class="d-grid gap-2">
-            <button class="btn" type="submit">Login</button>
+        </div> --}}
+        <div class="d-grid gap-2 mb-3">
+            <button class="btn bg-biru text-biru-muda" type="submit">Login</button>
         </div>
         <figure class="text-center">
             <figcaption class="blockquote-footer">
-                <p>don't have an account yet?<a href="" class="text_birugelap">Create one</a>.</p>
+                <p>don't have an account yet? <a href="/register" class="text_birugelap">Create one</a>.</p>
             </figcaption>
         </figure>
     </form>
