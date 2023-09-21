@@ -74,7 +74,7 @@
                 </div>
             </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card py-4 pink mt-3 mb-3 border border-0">
+                    <div class="card py-4 biru mt-3 mb-3 border border-0">
                         <div class="card-body text-center">
                             <h5 class="card-title display-6 fw-bold">Siang</h5>
                             <p class="card-text fw-medium">10.00 - 14.00</p>
@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card py-4 pink mt-3 mb-3 border border-0">
+                    <div class="card py-4 biru mt-3 mb-3 border border-0">
                         <div class="card-body text-center">
                             <h5 class="card-title display-6 fw-bold">Malam</h5>
                             <p class="card-text fw-medium">19.00 - 23.00</p>
