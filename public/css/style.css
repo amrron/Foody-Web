@@ -714,3 +714,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* PUNYA INDAH */
+
+.flash-logout {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+}

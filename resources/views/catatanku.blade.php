@@ -31,8 +31,8 @@
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="input-group mb-3">
-                                                        <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
-                                                            <option selected>Pilih Makanan</option>
+                                                        <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
+                                                            <option>Pilih Makanan</option>
                                                             @foreach($makanans as $makanan)
                                                                 <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                                             @endforeach
@@ -98,8 +98,9 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
                                                             
-                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
-                                                                <option selected>Pilih Makanan</option>
+                                                            <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
+                                                                <option>Pilih Makanan</option>
+                                                                
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                                                 @endforeach
@@ -161,8 +162,9 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
                                                             
-                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
-                                                                <option selected>Pilih Makanan</option>
+                                                            <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
+                                                                <option>Pilih Makanan</option>
+                                                                
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                                                 @endforeach
@@ -222,8 +224,9 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12">
                                                         <div class="input-group mb-3">
                                                             
-                                                            <select class="form-select form-select-sm" data-live-search="true" name="makanan_id" required>
-                                                                <option selected>Pilih Makanan</option>
+                                                            <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
+                                                                <option>Pilih Makanan</option>
+                                                                
                                                                 @foreach($makanans as $makanan)
                                                                     <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                                                 @endforeach
@@ -264,6 +267,22 @@
 
     </div>
 </section>
+
+@error('makanan_id')
+<div id="validationServer04Feedback" class="invalid-feedback">
+    {{ $message }}
+</div>
+@enderror
+@error('waktu')
+<div id="validationServer04Feedback" class="invalid-feedback">
+    {{ $message }}
+</div>
+@enderror
+@error('jumlah')
+<div id="validationServer04Feedback" class="invalid-feedback">
+    {{ $message }}
+</div>
+@enderror
 
 <section class="py-2">
     <div class="container m-auto">

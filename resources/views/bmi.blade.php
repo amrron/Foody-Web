@@ -32,6 +32,8 @@
                 <h4>History</h4>
             </div>
             <div class="row overflow-auto">
+                <canvas id="bmiChart"></canvas>
+
                 <table class="table table-borderless">
                     <thead>
                     <tr>
@@ -57,5 +59,26 @@
             </div>
         </div>
     </section>
-
+    <script>
+        // Buat fungsi untuk mengambil data dari Laravel melalui AJAX
+        async function fetchData() {
+            const response = await fetch('/bmi/dataforchart');
+            const data = await response.json();
+            return data;
+        }
+    
+        // Fungsi untuk membuat grafik
+        async function createChart() {
+            const data = await fetchData();
+    
+            var ctx = document.getElementById('bmiChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line', // Ganti sesuai jenis grafik yang Anda inginkan
+                data: data,
+            });
+        }
+    
+        // Panggil fungsi untuk membuat grafik saat halaman dimuat
+        createChart();
+    </script>
 @endsection

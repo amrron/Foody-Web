@@ -52,3 +52,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/bmi', [BmiController::class, 'index'])->middleware('auth');
 
 Route::post('/bmi', [BmiController::class, 'store']);
+
+Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);

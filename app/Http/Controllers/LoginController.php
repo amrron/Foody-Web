@@ -23,6 +23,9 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
+            $request->session()->flash('success_login', 'Login berhasil');
+
+
             return redirect()->intended('/');
         }
 
@@ -36,6 +39,8 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        $request->session()->flash('success_logout', 'Logout berhasil');
 
         return redirect('/');
     }

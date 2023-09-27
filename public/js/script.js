@@ -29,4 +29,30 @@ $(document).ready(function() {
         modalBody.html("Nilai BMI anda adalah: <strong>" + (berat.val() / Math.pow((tinggi.val()/100), 2)).toFixed(2) + "</strong>") 
     });
 
+
+    $("#modal-pagi .pilih-makanan").select2({
+        placeholder: "Pilih makanan",
+        width: "100%",
+        dropdownParent: $('#modal-pagi') 
+    });
+
+    $("#modal-siang .pilih-makanan").select2({
+        placeholder: "Pilih makanan",
+        width: "100%",
+        dropdownParent: $('#modal-siang') 
+    });
+
+    $("#modal-sore .pilih-makanan").select2({
+        placeholder: "Pilih makanan",
+        width: "100%",
+        dropdownParent: $('#modal-sore') 
+    });
+
+    $("#modal-malam .pilih-makanan").select2({
+        placeholder: "Pilih makanan",
+        width: "100%",
+        dropdownParent: $('#modal-malam') 
+    });
+
+
 })

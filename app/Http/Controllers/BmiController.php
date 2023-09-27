@@ -32,4 +32,42 @@ class BmiController extends Controller
 
         return redirect('/bmi');
     }
+
+    public function getDataForChart() {
+        $data = [
+            'labels' => Bmi::where('user_id', auth()->user()->id)->pluck('waktu'),
+            'datasets' => [
+                [
+                    'label' => 'Max BMI Normal',
+                    'type' => 'line',
+                    'data' => array_fill(0, count(Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi')), 24.9),
+                    'backgroundColor' => 'rgba(235, 52, 52)',
+                    'borderColor' => 'rgb(255,0,0)',
+                    'borderWidth' => 1,
+                    'pointRadius' => 0,
+                ],
+                [
+                    'label' => 'Min BMI Normal',
+                    'type' => 'line',
+                    'data' => array_fill(0, count(Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi')), 18.5),
+                    'backgroundColor' => 'rgba(55, 148, 230)',
+                    'borderColor' => 'rgb(55, 148, 230)',
+                    'borderWidth' => 1,
+                    'pointRadius' => 0,
+                    'fill' => false,
+                ],
+                [
+                    'label' => 'Nilai BMI',
+                    'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
+                    'borderColor' => 'rgba(75, 192, 192, 1)',
+                    'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
+                    'type' => 'line',
+                    'fill' => false
+                ],
+                
+            ],
+        ];
+
+        return response()->json($data);
+    }
 }
