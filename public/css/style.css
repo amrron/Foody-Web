@@ -495,6 +495,34 @@ body::-webkit-scrollbar-thumb {
 
 /* ======================= Catatanku ======================= */
 
+.container-catatan-makanan:nth-child(odd) .card-catatan-makanan {
+    border-left: 10px solid var(--pink)
+}
+
+.container-catatan-makanan:nth-child(even) .card-catatan-makanan {
+    border-left: 10px solid var(--light-blue)
+}
+
+.progres-karbohidrat {
+    background-color: var(--blue);
+}
+
+.progres-protein {
+    background-color: var(--light-blue);
+}
+
+.progres-garam {
+    background-color: var(--pink);
+}
+
+.progres-gula {
+    background-color: #111;
+}
+
+.progres-lemak {
+    background-color: #6C6A85;
+}
+
 .site-catatanku {
     width: 100%;
     background-color: #FFF;

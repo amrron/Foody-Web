@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CatatanMakanan extends Model
 {
@@ -19,5 +20,14 @@ class CatatanMakanan extends Model
 
     public function makanan(){
         return $this->belongsTo(Makanan::class);
+    }
+
+    public function getTanggalWaktuAttribute()
+    {
+        return Carbon::parse($this->waktu)->format('Y/m/d');
+    }
+
+    public function getHariAttribute() {
+        return Carbon::parse($this->waktu)->locale('id')->dayName;
     }
 }

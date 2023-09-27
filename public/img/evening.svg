@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="evening.svg"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.5"
+     inkscape:cx="24.095238"
+     inkscape:cy="24.190476"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="280"
+     inkscape:window-y="1107"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <rect
+     width="48"
+     height="48"
+     fill="url(#pattern0)"
+     id="rect2"
+     style="fill:url(#pattern2)"
+     x="-0.034964424"
+     y="0.16813152" />
+  <defs
+     id="defs1">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern1"
+       id="pattern2"
+       patternTransform="translate(-0.03496443,0.16813151)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern0"
+       id="pattern1"
+       patternTransform="translate(-5.6802978,0.18996462)" />
+    <pattern
+       id="pattern0"
+       patternContentUnits="objectBoundingBox"
+       width="1"
+       height="1">
+      <use
+         xlink:href="#image0_360_11790"
+         transform="scale(0.00666667)"
+         id="use1" />
+    </pattern>
+    <image
+       id="image0_360_11790"
+       width="150"
+       height="150"
+       xlink:href="data:image/png;base64,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" />
+  </defs>
+</svg>
