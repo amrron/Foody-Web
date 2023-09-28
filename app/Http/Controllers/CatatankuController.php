@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bmi;
 use App\Models\Makanan;
 use Illuminate\Http\Request;
 use App\Models\CatatanMakanan;
@@ -11,32 +10,50 @@ class CatatankuController extends Controller
 {
     public function index()
     {
-        // $jenis_kelamin = auth()->user()->jenis_kelamin;
-        $berat_badan = Bmi::latest()->where('user_id', auth()->user()->id)->select('berat_badan', 'tinggi_badan')->get()[0]->berat_badan;
+        // dd(auth()->user()->batasKarbo);
+
+        $berat_badan = auth()->user()->beratBadan;
         $batas_karbo = 325;
         $batas_protein = $berat_badan * 1.2;
         $batas_garam = 5;
         $batas_gula = 50;
         $batas_lemak = 67;
+        
+        $jumlah_karbo = auth()->user()->dailyKarbo;
+        $jumlah_protein = auth()->user()->dailyProtein;
+        $jumlah_garam = auth()->user()->dailyGaram;
+        $jumlah_gula = auth()->user()->dailyGula;
+        $jumlah_lemak = auth()->user()->dailyLemak;
 
-        $catatans = CatatanMakanan::where('user_id', auth()->user()->id)->where('waktu', '>=', date('Y-m-d'))->get()->sortBy('waktu');
-        $jumlah_karbo = $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->karbohidrat; });
-        $jumlah_protein = $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->protein; });
-        $jumlah_garam = $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->garam; });
-        $jumlah_gula = $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->gula; });
-        $jumlah_lemak = $catatans->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->lemak; });
+        $warning = [
+            // "karbo" => $jumlah_karbo > $batas_karbo,
+            // "protein" => $jumlah_protein > $batas_protein,
+            // "garam" => $jumlah_garam > $batas_garam,
+            // "gula" => $jumlah_gula > $batas_gula,
+            // "lemak" => $jumlah_lemak > $batas_lemak
+        ];
 
-        $warning = collect([
-            "karbo" => $jumlah_karbo > $batas_karbo,
-            "protein" => $jumlah_protein > $batas_protein,
-            "garam" => $jumlah_garam > $batas_garam,
-            "gula" => $jumlah_gula > $batas_gula,
-            "lemak" => $jumlah_lemak > $batas_lemak
-        ]);
+        if ($jumlah_karbo > $batas_karbo) {
+            array_push($warning, 'karbohidrat');
+        }
+        if ($jumlah_protein > $batas_protein) {
+            array_push($warning, 'protein');
+        }
+        if ($jumlah_garam > $batas_garam) {
+            array_push($warning, 'garam');
+        }
+        if ($jumlah_gula > $batas_gula) {
+            array_push($warning, 'gula');
+        }
+        if ($jumlah_lemak > $batas_lemak) {
+            array_push($warning, 'lemak');
+        }
+
+        // dd(auth()->user()->catatanMakanan->where('waktu', '>=', date('Y-m-d'))->sum(function ($catatan){ return $catatan->jumlah * $catatan->makanan->karbohidrat; }));
 
         return view('catatanku', [
             "title" => "Catatanku",
-            "catatans" => $catatans,
+            "catatans" => CatatanMakanan::where('user_id', auth()->user()->id)->where('waktu', '>=', date('Y-m-d'))->get()->sortBy('waktu'),
             "makanans" => Makanan::all(),
             "pagination" => false,
             "batas_karbo" => $batas_karbo,
@@ -44,11 +61,6 @@ class CatatankuController extends Controller
             "batas_gula" => $batas_gula,
             "batas_garam" => $batas_garam,
             "batas_lemak" => $batas_lemak,
-            "jumlah_karbo" => $jumlah_karbo,
-            "jumlah_protein" => $jumlah_protein,
-            "jumlah_garam" => $jumlah_garam,
-            "jumlah_gula" => $jumlah_gula,
-            "jumlah_lemak" => $jumlah_lemak,
             "warning" => $warning
         ]);
     }

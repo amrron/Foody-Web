@@ -18,41 +18,14 @@
         <div class="row align-items-center">
             <h1 class="text-start mb-5">Catatanku</h1>
             <p>Select your meal time to add notes</p>
-            @if($warning['karbo'])
+            @foreach($warning as $warn)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
-                <strong>Konsumsi karbohidrat telah melebihi batas harian!</strong> Pilih makanan yang rendah karbohidrat!
+                <strong>Konsumsi {{ $warn }} telah melebihi batas harian!</strong> Pilih makanan yang rendah {{ $warn }}!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            @endif
-            @if($warning['protein'])
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
-                <strong>Konsumsi protein telah melebihi batas harian!</strong> Pilih makanan yang rendah protein!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @if($warning['garam'])
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
-                <strong>Konsumsi garam telah melebihi batas harian!</strong> Pilih makanan yang rendah garam!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @if($warning['gula'])
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
-                <strong>Konsumsi gula telah melebihi batas harian!</strong> Pilih makanan yang rendah gula!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-            @if($warning['lemak'])
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
-                <strong>Konsumsi lemak telah melebihi batas harian!</strong> Pilih makanan yang rendah lemak!
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
+            @endforeach
+            
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card py-4 pink mt-3 mb-3 border border-0">
                     <div class="card-body text-center">
@@ -454,52 +427,52 @@
                     <div class="progres-catatan mb-1">
                         <div class="d-flex justify-content-between">
                             <p class="mb-1">Karbohidrat</p>
-                            <p class="mb-1">{{ round(($jumlah_karbo / $batas_karbo) * 100) }}%</p>
+                            <p class="mb-1">{{ round((auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100) }}%</p>
                         </div>
                         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-karbohidrat" style="width: {{ ($jumlah_karbo / $batas_karbo) * 100 }}%"></div>
+                            <div class="progress-bar progres-karbohidrat" style="width: {{ (auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100 }}%"></div>
                         </div>
-                        <p class="m-0 text-biru">{{ $jumlah_karbo }}/{{ $batas_karbo }} g</p>
+                        <p class="m-0 text-biru">{{ auth()->user()->dailyKarbo }}/{{ auth()->user()->batasKarbo }} g</p>
                     </div>
                     <div class="progres-catatan mb-1">
                         <div class="d-flex justify-content-between">
                             <p class="mb-1">Protein</p>
-                            <p class="mb-1">{{ round(($jumlah_protein / $batas_protein) * 100) }}%</p>
+                            <p class="mb-1">{{ round((auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100) }}%</p>
                         </div>
                         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-protein" style="width: {{ ($jumlah_protein / $batas_protein) * 100 }}%"></div>
+                            <div class="progress-bar progres-protein" style="width: {{ (auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100 }}%"></div>
                         </div>
-                        <p class="m-0 text-biru">{{ $jumlah_protein }}/{{ $batas_protein }} g</p>
+                        <p class="m-0 text-biru">{{ auth()->user()->dailyProtein }}/{{ auth()->user()->batasProtein }} g</p>
                     </div>
                     <div class="progres-catatan mb-1">
                         <div class="d-flex justify-content-between">
                             <p class="mb-1">Garam</p>
-                            <p class="mb-1">{{ round(($jumlah_garam / 5) * 100) }}%</p>
+                            <p class="mb-1">{{ round((auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100) }}%</p>
                         </div>
                         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-garam" style="width: {{ ($jumlah_garam / 5) * 100 }}%"></div>
+                            <div class="progress-bar progres-garam" style="width: {{ (auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100 }}%"></div>
                         </div>
-                        <p class="m-0 text-biru">{{ $jumlah_garam }}/{{ $batas_garam }} g</p>
+                        <p class="m-0 text-biru">{{ auth()->user()->dailyGaram }}/{{ auth()->user()->batasGaram }} g</p>
                     </div>
                     <div class="progres-catatan mb-1">
                         <div class="d-flex justify-content-between">
                             <p class="mb-1">Gula</p>
-                            <p class="mb-1">{{ round(($jumlah_gula / 50) * 100) }}%</p>
+                            <p class="mb-1">{{ round((auth()->user()->dailyGula / auth()->user()->batasGula) * 100) }}%</p>
                         </div>
                         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-gula" style="width: {{ ($jumlah_gula / 50) * 100 }}%"></div>
+                            <div class="progress-bar progres-gula" style="width: {{ (auth()->user()->dailyGula / auth()->user()->batasGula) * 100 }}%"></div>
                         </div>
-                        <p class="m-0 text-biru">{{ $jumlah_gula }}/{{ $batas_gula }} g</p>
+                        <p class="m-0 text-biru">{{ auth()->user()->dailyGula }}/{{ auth()->user()->batasGula }} g</p>
                     </div>
                     <div class="progres-catatan mb-1">
                         <div class="d-flex justify-content-between">
                             <p class="mb-1">Lemak</p>
-                            <p class="mb-1">{{ round(($jumlah_lemak / 67) * 100) }}%</p>
+                            <p class="mb-1">{{ round((auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100) }}%</p>
                         </div>
                         <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-lemak" style="width: {{ ($jumlah_lemak / 67) * 100 }}%"></div>
+                            <div class="progress-bar progres-lemak" style="width: {{ (auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100 }}%"></div>
                         </div>
-                        <p class="m-0 text-biru">{{ $jumlah_lemak }}/{{ $batas_lemak }} g</p>
+                        <p class="m-0 text-biru">{{ auth()->user()->dailyLemak }}/{{ auth()->user()->batasLemak }} g</p>
                     </div>
                 </div>
             </div>
@@ -572,11 +545,11 @@
   datasets: [
     {
       label: 'Dataset 1',
-      data: [{{ $jumlah_karbo }}, 
-            {{ $jumlah_protein }}, 
-            {{ $jumlah_garam }},
-            {{ $jumlah_gula }}, 
-            {{ $jumlah_lemak }}],
+      data: [{{ auth()->user()->dailyKarbo }}, 
+            {{ auth()->user()->dailyProtein }}, 
+            {{ auth()->user()->dailyGaram }},
+            {{ auth()->user()->dailyGula }}, 
+            {{ auth()->user()->dailyLemak }}],
       backgroundColor: ['#17184f', '#dbf3fb', '#fdced0', '#111', '#6C6A85'],
     }
   ]
