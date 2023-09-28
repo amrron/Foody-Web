@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bmi;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,15 +20,27 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'jenis_kelamin' => "required",
             'tanggal_lahir' => 'required|date',
+            'aktivitas' => 'required|numeric',
             'username' => 'required|unique:users',
             'password' => 'min:6',
             'confirm-password' => 'min:6|required_with:password|same:password'
         ]);
 
-         User::create($validatedData);
+        $validatedBmi = $request->validate([
+            'berat_badan' => 'required|numeric',
+            'tinggi_badan' => 'required|numeric'
+        ]);
 
-         $request->session()->flash('success', 'Akun anda berhasil dibuat, silahkan login');
+        $user =  User::create($validatedData);
 
-         return redirect('login');
+        $validatedBmi['user_id'] = $user->id;
+        $validatedBmi['waktu'] = date('Y-m-d');
+        $validatedBmi['nilai_bmi'] = $validatedBmi['berat_badan'] / pow(($validatedBmi['tinggi_badan'] / 100), 2);
+
+        Bmi::create($validatedBmi);
+
+        $request->session()->flash('success', 'Akun anda berhasil dibuat, silahkan login');
+
+        return redirect('login');
     }
 }

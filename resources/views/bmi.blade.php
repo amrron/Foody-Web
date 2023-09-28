@@ -4,11 +4,13 @@
     <section class="mt-5 py-5 min-vh-100">
         <div class="container-lg">
             <div class="calculator pt-5">
-                <form action="" method="post" class="row m-auto" style="max-width: 600px;">
+                <div class="col-12 text-center mb-4">
+                    <h1 class="fw-bolder">BMI</h1>
+                </div>
+                <canvas id="bmiChart"></canvas>
+                <form action="" method="post" class="row m-auto mt-5" style="max-width: 600px;">
                     @csrf
-                    <div class="col-12 text-center mb-4">
-                        <h1 class="fw-bolder">Kalkulator BMI</h1>
-                    </div>
+                    
                     <div class="col-6 d-flex flex-column">
                         <label for="bb">Berat Badan(Kg)</label>
                         <input type="number" class="form-control mt-2" name="berat_badan" id="bb" required>
@@ -32,7 +34,6 @@
                 <h4>History</h4>
             </div>
             <div class="row overflow-auto">
-                <canvas id="bmiChart"></canvas>
 
                 <table class="table table-borderless">
                     <thead>

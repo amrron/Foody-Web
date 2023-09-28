@@ -19,7 +19,7 @@ class BmiFactory extends Factory
         $berat = fake()->numberBetween(40, 90);
         $tinggi = fake()->numberBetween(150, 190);
         return [
-            'user_id' => fake()->numberBetween(1, 10),
+            'user_id' => 1,
             'waktu' => fake()->date('Y-m-d'),
             'berat_badan' => $berat,
             'tinggi_badan' => $tinggi,

@@ -55,6 +55,41 @@
         </div>
         @enderror
     </div>
+    <div class="mb-3">
+        <label class="form-label">Level aktivitas</label>
+        <select class="form-select" aria-label="Default select example" name="aktivitas" value="{{ old('aktivitas') }}">
+            <option selected>Pilih </option>
+            <option value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
+            <option value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
+            <option value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
+            <option value="1.725">Sangat aktif (berolahraga atau 6-7x seminggu)</option>
+        </select>
+        @error('aktivitas')
+        <div id="validationServer04Feedback" class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Tinggi badan</label>
+            <input type="number" name="tinggi_badan" class="form-control" placeholder="cm" value="{{ old('tinggi_badan') }}">
+            @error('tinggi_badan')
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="col">
+            <label class="form-label">Berat badan</label>
+            <input type="number" name="berat_badan" class="form-control" placeholder="kg" value="{{ old('berat_badan') }}">
+            @error('berat_badan')
+            <div id="validationServer04Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+      </div>
     <label for="" class="form-label">Username</label>
     <div class="input-group mb-3">
         <span class="input-group-text" id="addon-wrapping">@</span>

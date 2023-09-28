@@ -17,7 +17,7 @@ class CatatanMakananFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1,10),
+            'user_id' => 1,
             'makanan_id' => fake()->numberBetween(1, 10),
             'waktu' => fake()->dateTime(),
             'jumlah' => fake()->numberBetween(1, 3)
