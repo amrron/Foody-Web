@@ -33,6 +33,8 @@ Route::post('/catatanku', [CatatankuController::class, 'store']);;
 
 Route::get('/catatanku/history', [CatatankuController::class, 'history'])->middleware('auth');
 
+Route::delete('/catatanku/delete/{id}', [CatatankuController::class, 'destroy']);
+
 Route::get('/makanan', [MakananController::class, 'index']);
 
 Route::get("/makanan/{makanan:slug}", [MakananController::class, 'detailMakanan']);

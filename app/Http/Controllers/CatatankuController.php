@@ -93,4 +93,8 @@ class CatatankuController extends Controller
 
         return redirect('/catatanku');
     }
+
+    public function destroy($id){
+        CatatanMakanan::where('id', $id)->delete();
+    }
 }

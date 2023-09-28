@@ -382,9 +382,10 @@
             @foreach($catatans as $catatan)
             <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
+                    <div class="card-body overflow-hidden">
+                        <h5 class="card-title text-nowrap">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
                         <p class="opacity-50">{{ date('H:i', strtotime($catatan->waktu)) }}</p>
+                        <a href="/catatanku/delete/{{ $catatan->id }}" class="delete-catatan text-biru" style="position: absolute; right: 8px; top: 0px; font-size: 20px"><i class="fa-solid fa-xmark"></i></a>
                         <table>
                             <tr>
                                 <td>Karbohidrat</td>
@@ -489,8 +490,8 @@
             @foreach($catatanPerTanggal as $catatan)
             <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
+                    <div class="card-body overflow-hidden">
+                        <h5 class="card-title text-nowrap">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
                         <p class="opacity-50">{{ date('H:i', strtotime($catatan->waktu)) }}</p>
                         <table>
                             <tr>
@@ -572,6 +573,50 @@
 };
 
   new Chart(ctx, config);
+</script>
+<script>
+    $(document).ready(function(){
+        $('.delete-catatan').click(function(e) {
+            e.preventDefault();
+
+            var deleteUrl = $(this).attr('href');
+            var itemToDelete = $(this).closest('.container-catatan-makanan');
+
+            Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda tidak bisa mengembalikan data setelah dihapus",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Batal',
+            confirmButtonText: 'Hapus'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                // Swal.fire(
+                // 'Deleted!',
+                // 'Your file has been deleted.',
+                // 'success'
+                // )
+                $.ajax({
+                    type: 'DELETE',
+                    url: deleteUrl,
+                    data: {
+                        _token : '{{ csrf_token() }}'
+                    },
+                    success: function(data){
+                        Swal.fire('Catatan berhasil dihapus', data.message, 'success');
+
+                        itemToDelete.remove();
+                    },
+                    error: function (error) {
+                        Swal.fire('Error!', 'Something went wrong!', 'error');
+                        console.error(error);
+                    }
+                });
+            }
+            })
+        })
+    });
 </script>
 @endif
 @endsection

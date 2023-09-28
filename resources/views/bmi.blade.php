@@ -7,7 +7,9 @@
                 <div class="col-12 text-center mb-4">
                     <h1 class="fw-bolder">BMI</h1>
                 </div>
-                <canvas id="bmiChart"></canvas>
+                <div class="bmi-graph bg-biru-muda p-4 rounded-4">
+                    <canvas id="bmiChart"></canvas>
+                </div>
                 <form action="" method="post" class="row m-auto mt-5" style="max-width: 600px;">
                     @csrf
                     
@@ -19,8 +21,11 @@
                         <label for="tb">Tinggi Badan(cm)</label>
                         <input type="number" class="form-control mt-2" name="tinggi_badan" id="tb" required>
                     </div>
-                    <div class="col-12 mt-3">
-                        <button type="submit" class="btn btn-primary w-100">Hitung</button>
+                    <div class="col-6 mt-3">
+                        <button type="reset" class="btn bg-biru-muda w-100">Reset</button>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <button type="submit" class="btn bg-biru-muda w-100">Hitung</button>
                     </div>
                     @if(session()->has('success'))
                         <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="z-index: 100">

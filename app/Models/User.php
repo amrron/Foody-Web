@@ -124,12 +124,12 @@ class User extends Authenticatable
 
     public function getBatasKarboAttribute() {
         // Jika 55% kebutuahan kalori berasal dari karbodirat, 1 gram karbohidart 4 kalori
-        return $this->kebutuhanKalori * 0.55 / 4;
+        return round($this->kebutuhanKalori * 0.55 / 4);
     }
 
     public function getBatasProteinAttribute() {
         // Jika 15% kebutuahan kalori berasal dari protein, 1 gram protein 4 kalori
-        return $this->kebutuhanKalori * 0.15 / 4;
+        return round($this->kebutuhanKalori * 0.15 / 4);
     }
 
     public function getBatasGaramAttribute() {
@@ -142,7 +142,7 @@ class User extends Authenticatable
 
     public function getBatasLemakAttribute() {
         // Jika 30% kebutuahan kalori berasal dari protein, 1 gram protein 4 kalori
-        return $this->kebutuhanKalori * 0.30 / 9;
+        return round($this->kebutuhanKalori * 0.30 / 9);
     }
     
 }
