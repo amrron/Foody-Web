@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Bmi extends Model
 {
@@ -21,38 +22,48 @@ class Bmi extends Model
         if($bmi < 18.5){
             return [
                 'status' => "Berat badan kurang",
-                'color' => '#c7a706'
+                'color' => '#BCD9FF',
+                'strongColor' => '#1270EE'
             ];
         }
         elseif($bmi >= 18.5 &&  $bmi <= 24.9){
             return [
                 'status' => "Berat badan normal",
-                'color' => '#33FF57'
+                'color' => '#CCFFB4',
+                'strongColor' => '#33A14D'
             ];
         }
         elseif($bmi >= 25 &&  $bmi <= 29.9){
             return [
                 'status' => "Kelebihan berat badan",
-                'color' => '#ff0318'
+                'color' => '#FFE0BD',
+                'strongColor' => '#FA8804'
             ];
         }
         elseif($bmi >= 30 &&  $bmi <= 34.9){
             return [
                 'status' => "Obesitas tingkat I",
-                'color' => '#cc0213'
+                'color' => '#F9D8D8',
+                'strongColor' => '#CD224C'
             ];
         }
         elseif($bmi >= 35 &&  $bmi <= 39.9){
             return [
                 'status' => "Obesitas tingkat II",
-                'color' => '#91010d'
+                'color' => '#F9D8D8',
+                'strongColor' => '#CD224C'
             ];
         }
         else {
             return [
                 'status' => "Obesitas tingkat III",
-                'color' => '#5c0209'
+                'color' => '#F9D8D8',
+                'strongColor' => '#CD224C'
             ];
         }
+    }
+
+    public function getHariAttribute() {
+        return Carbon::parse($this->waktu)->locale('id')->dayName;
     }
 }

@@ -503,6 +503,10 @@ body::-webkit-scrollbar-thumb {
     border-left: 10px solid var(--light-blue)
 }
 
+.card-catatan-bmi {
+    border-left: 10px;
+}
+
 .progres-karbohidrat {
     background-color: var(--blue);
 }

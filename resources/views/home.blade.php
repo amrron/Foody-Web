@@ -419,15 +419,14 @@
         </section>
     <!-- END BAGIAN CONTACT -->
     </main>
-    @if(session()->has('success_logout'))
+    {{-- @if(session()->has('success_logout'))
         <script>
             Swal.fire({
             position: 'top-end',
-            icon: 'success',
             title: 'Logout Berhasil!!!',
             showConfirmButton: false,
             timer: 1500
             })
         </script>
-        @endif
+        @endif --}}
 @endsection

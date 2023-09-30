@@ -1,12 +1,6 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="position-absolute top-0 end-0">
-    <img src="images/Group 16.svg" style="height: 500px;">
-</div>
-<div class="position-absolute bottom-0 start-0">
-    <img src="images/Group 15.svg" style="height: 500px;">
-</div>
 <form action="" method="post" class="container-lg" style="margin-top: 120px; margin-bottom: 20px; max-width: 480px">
     @csrf
     <h3 class="judul text-center">Register</h3>
@@ -92,7 +86,6 @@
       </div>
     <label for="" class="form-label">Username</label>
     <div class="input-group mb-3">
-        <span class="input-group-text" id="addon-wrapping">@</span>
         <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username" aria-label="Username" value="{{ old('username') }}""
             aria-describedby="addon-wrapping">
         @error('username')

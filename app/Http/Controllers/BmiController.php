@@ -11,8 +11,17 @@ class BmiController extends Controller
     public function index(){
         return view('bmi', [
             'title' => "BMI",
-           'bmis' => Bmi::where('user_id', auth()->user()->id)->get(),
+           'bmis' => Bmi::where('user_id', auth()->user()->id)->where('waktu', '>=', date('Y-m-d'))->get()->sortBy('waktu'),
+           'history' => false
             // 'bmis' => Bmi::all()
+        ]);
+    }
+
+    public function history() {
+        return view('bmi', [
+            'title' => 'BMI - History',
+            'bmis' => Bmi::where('user_id', auth()->user()->id)->where('waktu', '<', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu'),
+            'history' => true
         ]);
     }
 
@@ -115,4 +124,9 @@ class BmiController extends Controller
 
         return response()->json($data);
     }
+
+    public function destroy($id){
+        Bmi::where('id', $id)->delete();
+    }
+
 }

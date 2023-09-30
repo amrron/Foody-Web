@@ -1,12 +1,6 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="position-absolute top-0 end-0">
-    <img src="images/Group 16.svg" style="height: 500px;">
-</div>
-<div class="position-absolute bottom-0 start-0">
-    <img src="images/Group 15.svg" style="height: 500px;">
-</div>
 
 <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
 
@@ -35,7 +29,6 @@
         @endif
         <label for="username" class="form-label">Username</label>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="addon-wrapping">@</span>
             <input type="text" class="form-control" placeholder="Username" aria-label="Username"
                 aria-describedby="addon-wrapping" name="username" id="username" value="{{ old('username') }}" autofocus required>
             @error('username')
