@@ -11,9 +11,9 @@
                 <div class="bmi-graph bg-biru-muda p-4 rounded-4">
                     <canvas id="bmiChart"></canvas>
                 </div>
-                <form action="" method="post" class="row m-auto mt-5" style="max-width: 600px;">
+                <h4 class="text-center mt-5">Hitung Berat badanmu di sini</h4>
+                <form action="" method="post" class="row m-auto mt-3" style="max-width: 600px;">
                     @csrf
-                    
                     <div class="col-6 d-flex flex-column">
                         <label for="bb">Berat Badan(Kg)</label>
                         <input type="number" class="form-control mt-2" name="berat_badan" id="bb" required>

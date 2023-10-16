@@ -4,10 +4,9 @@ use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MakananController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Makanan;
-use App\Models\CatatanMakanan;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +59,5 @@ Route::post('/bmi', [BmiController::class, 'store']);
 Route::delete('/bmi/delete/{id}', [BmiController::class, 'destroy']);
 
 Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
+
+Route::get('/profile', [ProfileController::class, 'index']);
