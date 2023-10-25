@@ -48,12 +48,12 @@ class BmiController extends Controller
             'datasets' => [
                 [
                     'label' => 'Nilai BMI',
-                    'borderColor' => 'rgba(219, 243, 251)',
-                    'backgroundColor' => 'rgba(23, 24, 79)',
+                    'borderColor' => '#17184f',
+                    'backgroundColor' => 'rgba(255, 255, 255)',
                     'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
                     'type' => 'line',
                     'tension' => 0.5,
-                    'fill' => true
+                    'fill' => false
                 ],
                 [
                     'label' => 'Berat Badan Kurang',
