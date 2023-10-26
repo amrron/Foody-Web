@@ -19,4 +19,11 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::group(["middleware" => ['auth:sanctum']], function() {
+    Route::get("/users/profile", [UserController::class, 'profile']);
+    Route::post("/users/logout", [UserController::class, 'logout']);
+    Route::put("/users/update", [UserController::class, 'update']);
+});
+
 Route::post("/users", [UserController::class, 'store']);
+Route::post("/users/login", [UserController::class, 'login']);

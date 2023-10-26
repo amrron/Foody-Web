@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\RegisterResource;
+use App\Http\Resources\UserResource;
 use App\Models\Bmi;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -29,5 +32,70 @@ class UserController extends Controller
             "status" => "success",
             "message" => "User berhasil ditambahkan"
         ], 201);
+    }
+
+    public function login(Request $request) {
+        
+        if(auth()->attempt($request->only("username", "password"))){
+            $user = auth()->user();
+            $token = $user->createToken("api_token")->plainTextToken;
+
+            return response()->json([
+                "status" => "success",
+                "message" => "Login berhasil",
+                "token" => $token
+            ], 201);
+        }
+
+        return response()->json([
+            "status" => "error",
+            "message" => "Username atau password salah"
+        ], 401);
+
+    }
+
+    public function profile() {
+        $user = auth()->user();
+
+        return (new UserResource($user))->response()->setStatusCode(201);
+    }
+
+    public function logout(){
+        auth()->user()->tokens()->delete();
+
+        return response()->json([
+            "message" => "Logout berhasil"
+        ], 201);
+    }
+
+    public function update(UserUpdateRequest $request){
+
+        $data = $request->validated();
+        $user = auth()->user();
+
+        if(isset($data['name'])){
+            $user->name = $data['name'];
+        }
+        if(isset($data['email'])){
+            $user->email = $data['email'];
+        }
+        if(isset($data['jenis_kelamin'])){
+            $user->jenis_kelamin = $data['jenis_kelamin'];
+        }
+        if(isset($data['tanggal_lahir'])){
+            $user->tanggal_lahir = $data['tanggal_lahir'];
+        }
+        if(isset($data['aktivitas'])){
+            $user->aktivitas = $data['aktivitas'];
+        }
+        if(isset($data['username'])){
+            $user->username = $data['username'];
+        }
+        if(isset($data['password'])){
+            $user->password = $data['password'];
+        }
+
+        $user->save();
+        return (new UserResource($user))->response()->setStatusCode(201);
     }
 }

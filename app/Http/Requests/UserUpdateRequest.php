@@ -2,18 +2,18 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class RegisterRequest extends FormRequest
+class UserUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->user() != null;
     }
 
     /**
@@ -24,15 +24,13 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => 'required|max:100|string',
-            "email" => 'required|max:100|email|unique:users',
-            "jenis_kelamin" => 'required|string',
-            "tanggal_lahir" => 'required|date',
-            "aktivitas" => 'required|numeric',
-            "username" => 'required|string|unique:users',
-            "password" => 'required|string|min:6',
-            "tinggi_badan" => 'required|numeric',
-            "berat_badan" => 'required|numeric'
+            "name" => ['nullable', 'max:100', 'string'],
+            "email" => ['nullable', 'max:100', 'email', 'unique:users'],
+            "jenis_kelamin" => ['nullable', 'string'],
+            "tanggal_lahir" => ['nullable', 'date'],
+            "aktivitas" => ['nullable', 'numeric'],
+            "username" => ['nullable', 'string', 'unique:users'],
+            "password" => ['nullable', 'string', 'min:6'],
         ];
     }
 
