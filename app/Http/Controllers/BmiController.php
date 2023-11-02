@@ -52,7 +52,7 @@ class BmiController extends Controller
                     'backgroundColor' => 'rgba(255, 255, 255)',
                     'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
                     'type' => 'line',
-                    'tension' => 0.5,
+                    'tension' => 0,
                     'fill' => false
                 ],
                 [

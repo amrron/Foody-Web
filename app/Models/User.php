@@ -58,6 +58,10 @@ class User extends Authenticatable
         return $this->hasMany(Bmi::class);
     }
 
+    public function getRataRataBmiAttribute(){
+        return $this->bmi->avg('nilai_bmi');
+    }
+
     public function getBeratBadanAttribute(){
         return $this->bmi->last()->berat_badan;
     }
