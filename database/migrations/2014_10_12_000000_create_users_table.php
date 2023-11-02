@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('jenis_kelamin');
             $table->date("tanggal_lahir");
             $table->float('aktivitas');
-            $table->timestamp('time_created');
             $table->timestamps();
         });
     }
