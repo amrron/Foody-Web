@@ -354,6 +354,10 @@ footer a {
         width: 340px;
         height: 560px;
     }
+
+    #cari-makanan {
+        width: 100%!important;
+    }
 }
 /* END RECOMENDATION */
 

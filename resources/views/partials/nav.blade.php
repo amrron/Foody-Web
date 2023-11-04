@@ -28,7 +28,7 @@
                 <div class="register-login">
                     <a class="login-btn" href="/login">Login</a>
 
-                    <a class="register-btn" href="login/register">Register</a>
+                    <a class="register-btn" href="/register">Register</a>
                 </div>
             @endguest
             @auth
@@ -37,12 +37,14 @@
                         {{ auth()->user()->username }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+                        <li>
+                            <a class="dropdown-item fs-5" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/logout" method="post">
                                 @csrf
-                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                <button type="submit" class="dropdown-item fs-5"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                             </form>
                         </li>
                     </ul>

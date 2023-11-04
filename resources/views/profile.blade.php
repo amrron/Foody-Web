@@ -2,11 +2,11 @@
 
 @section('container')
     <main class="py-4" style="margin-top: 100px">
-        <div class="container-lg min-vh-100 mt-5">
+        <div class="container-lg min-vh-100 mt-3 p-3">
             <div class="row">
                 <div class="col-lg-12 p-3">
                     <div class="p-3 row border rounded-3">
-                        <div class="photo col-3 d-flex flex-column align-items-center">
+                        <div class="photo col-sm-3 d-flex flex-column align-items-center">
                             <div class="photo-profile w-100 mb-3">
                                 <img src="/img/profileimg.webp" class="w-100 rounded-end-circle rounded-start-circle"
                                     alt="">
@@ -18,13 +18,13 @@
                                         d="M6.63217 9.35637C5.89991 10.0105 4.81087 9.85306 4.11659 9.15878C3.42244 8.46464 3.2651 7.37585 3.91991 6.64448C4.17648 6.35791 4.46266 6.07263 4.77838 5.78878C5.81553 4.8545 7.64619 3.2752 10.2696 1.05087C10.5354 0.825418 10.8762 0.708184 11.2245 0.722456C11.5727 0.736728 11.9028 0.881461 12.1493 1.12791C12.3957 1.37435 12.5405 1.70448 12.5547 2.05272C12.569 2.40095 12.4518 2.74181 12.2263 3.0076C9.99891 5.63565 8.42037 7.46631 7.48919 8.49882C7.20495 8.81406 6.91928 9.09991 6.63217 9.35637ZM0.810014 9.8713C1.4253 9.43065 2.26907 9.49989 2.80431 10.0349L3.239 10.4695C3.77585 11.0061 3.84529 11.8525 3.4031 12.4695C3.21459 12.7326 2.9485 12.93 2.64213 13.0343L2.55325 13.0645C1.10967 13.5557 -0.271993 12.1815 0.211269 10.7353L0.243541 10.6387C0.346819 10.3296 0.545072 10.061 0.810014 9.8713Z"
                                         fill="#D9F4FF" />
                                 </svg> 
-                                Edit Photo
+                                Edit Profile
                             </a>
                         </div>
-                        <div class="data col-9 d-flex flex-column justify-content-center">
-                            <h5 class="text-biru">{{ auth()->user()->name }}</h5>
-                            <p class="">{{ auth()->user()->jenis_kelamin }}, {{ auth()->user()->usia }} Tahun</p>
-                            <table class="">
+                        <div class="data col-sm-9 d-flex flex-column justify-content-center mt-3">
+                            <h5 class="text-biru fs-3">{{ auth()->user()->name }}</h5>
+                            <p class="m-0">{{ auth()->user()->jenis_kelamin }}, {{ auth()->user()->usia }} Tahun</p>
+                            <table class="mt-3">
                                 <tr>
                                     <td class="fw-light">Email</td>
                                     <td class="text-biru">{{ auth()->user()->email }}</td>

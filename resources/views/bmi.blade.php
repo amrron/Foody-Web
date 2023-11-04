@@ -58,28 +58,7 @@
             </div>
             <div class="row overflow-auto">
 
-                {{-- <table class="table table-borderless">
-                    <thead>
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>Berat Badan</th>
-                        <th>Tinggi Badan</th>
-                        <th>Nilai BMI</th>
-                        <th>Keterangn</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($bmis as $bmi)
-                        <tr>
-                            <td>{{ $bmi->waktu }}</td>
-                            <td>{{ $bmi->berat_badan}}</td>
-                            <td>{{ $bmi->tinggi_badan }}</td>
-                            <td>{{ $bmi->nilai_bmi }}</td>
-                            <td style="color: {{ $bmi->kategori['color'] }}">{{ $bmi->kategori['status'] }}</td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table> --}}
+               
                 @if(!$history)
                     @if(count($bmis) > 0)
                     <div class="col-12 p-2 px-3 border rounded-3 my-3">
@@ -95,7 +74,7 @@
                             <div class="card-body overflow-hidden">
                                 <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>
                                 <p class="opacity-50"></p>
-                                <a href="/bmi/delete/{{ $bmi->id }}" class="delete-bmi text-biru" style="position: absolute; right: 8px; top: 0px; font-size: 20px"><i class="fa-solid fa-xmark"></i></a>
+                                <a href="/bmi/delete/{{ $bmi->id }}" class="delete-bmi text-biru" style="position: absolute; right: 20px; bottom: 10px; font-size: 20px"><i class="fa-solid fa-trash"></i></a>
                                 <span class="py-2 px-3 rounded-5" style="background-color: {{ $bmi->kategori['color'] }}; color: {{ $bmi->kategori['strongColor'] }}">● {{ $bmi->kategori['status'] }}</span>
                             </div>
                         </div>

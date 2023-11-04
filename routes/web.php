@@ -61,3 +61,9 @@ Route::delete('/bmi/delete/{id}', [BmiController::class, 'destroy']);
 Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::get('/makanan2', function(){
+    return view('makanan2', [
+        'title' => "Makanan"
+    ]);
+});
