@@ -392,26 +392,27 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12">
-                        <form class="formC">
+                        <form class="formC" method="POST" action="/feedback">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col mb-2">
-                                    <input type="text" class="form-control form-control-lg" placeholder="First name" aria-label="First name">
+                                    <input type="text" class="form-control form-control-lg" name="nama_depan" placeholder="First name" aria-label="First name">
                                 </div>
                                 <div class="col mb-2">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Last name" aria-label="Last name">
+                                    <input type="text" class="form-control form-control-lg" name="nama_belakang" placeholder="Last name" aria-label="Last name">
                                 </div>
                                 <div class="mb-2">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Email">
+                                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email">
                                 </div>
                                 <div class="mb-2">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Phone Number">
+                                    <input type="phone" class="form-control form-control-lg" name="no_hp" placeholder="Phone Number">
                                 </div>
                                 <div class="mb-2">
-                                    <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" style="min-height: 180px;" placeholder="Message"
+                                    <textarea class="form-control form-control-lg" name="pesan" id="exampleFormControlTextarea1" style="min-height: 180px;" placeholder="Message"
                                         style="height: 100px;"></textarea>
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <button class="form-control-lg bg-biru text-biru-muda fs-5 fw-semibold" type="button">SUBMIT</button>
+                                    <button class="form-control-lg bg-biru text-biru-muda fs-5 fw-semibold" type="submit">SUBMIT</button>
                                 </div>
                             </div>
                         </form>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CatatankuController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProdukController;
@@ -65,3 +66,5 @@ Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
 Route::get('/profile', [ProfileController::class, 'index']);
 
 Route::get('/produk', [ProdukController::class, 'index']);
+
+Route::post('/feedback', [FeedbackController::class, 'store']);

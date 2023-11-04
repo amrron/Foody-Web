@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Makanan;
 use App\Models\User;
 use App\Models\CatatanMakanan;
+use App\Models\Feedback;
 use App\Models\Produk;
 
 class DatabaseSeeder extends Seeder
@@ -35,5 +36,7 @@ class DatabaseSeeder extends Seeder
         Bmi::factory(10)->create();
 
         Produk::factory(10)->create();
+
+        Feedback::factory(10)->create();
     }
 }
