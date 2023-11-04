@@ -4,6 +4,7 @@ use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MakananController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "produk" => \App\Models\Produk::latest()->take(5)->get()
     ]);
 });
 
@@ -62,8 +64,4 @@ Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
 
-Route::get('/makanan2', function(){
-    return view('makanan2', [
-        'title' => "Makanan"
-    ]);
-});
+Route::get('/produk', [ProdukController::class, 'index']);

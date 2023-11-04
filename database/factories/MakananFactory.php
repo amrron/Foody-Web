@@ -17,7 +17,7 @@ class MakananFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => fake()->sentence(mt_rand(1,3)),
+            'nama' => substr(fake()->sentence(mt_rand(1,3)), 0, -1),
             'deskripsi' => fake()->paragraph(),
             'slug' => fake()->slug(),
             'gambar' => fake()->imageUrl(360, 360, 'food', true),

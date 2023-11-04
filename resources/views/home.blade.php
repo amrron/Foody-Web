@@ -267,29 +267,31 @@
                 <div class="row mb-4">
                     <div class="col-md-12 d-flex justify-content-between align-items-center">
                         <h1 class="fs-64px fw-semibold fs-1">Rekomendasi Produk</h1>
-                        <a href="" class="fs-4 view-all text-end">View All</a>
+                        <a href="/produk" class="fs-4 view-all text-end">View All</a>
                     </div>
                 </div>
                 <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
+                    @foreach($produk as $prod)
                     <swiper-slide>
                         <div class="kartu">
-                            <h2 class="judul-kartu fs-20px text-center ">Salad Buah</h2>
+                            <h2 class="judul-kartu fs-20px text-center ">{{ $prod->nama }}</h2>
                             <p class="deskripsi-kartu fs-13px">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis facilis quae, aliquid, pariatur velit repellat corrupti autem fugit, harum non consectetur obcaecati sapiente! Sapiente.
+                                {{ $prod->deskripsi }}
                             </p>
                             <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="img/salad.png" alt="">
+                                <img src="{{ $prod->gambar }}" alt="" style="width: 240px">
                             </div>
                             <div class="harga fs-13px">
                                 <span>Price: </span>
                                 <br>
-                                <span>Rp20.000,00</span>
+                                <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
                             </div>
                             <div class="tombol-kartu">
-                                <a href="" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
+                                <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
                             </div>
                         </div>
                     </swiper-slide>
+                    @endforeach
                     <swiper-slide>
                         <div class="kartu">
                             <h2 class="judul-kartu fs-20px text-center">Salad Buah</h2>
@@ -419,14 +421,4 @@
         </section>
     <!-- END BAGIAN CONTACT -->
     </main>
-    {{-- @if(session()->has('success_logout'))
-        <script>
-            Swal.fire({
-            position: 'top-end',
-            title: 'Logout Berhasil!!!',
-            showConfirmButton: false,
-            timer: 1500
-            })
-        </script>
-        @endif --}}
 @endsection
