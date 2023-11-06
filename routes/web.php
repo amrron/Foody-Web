@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BmiController;
 use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\FeedbackController;
@@ -69,8 +70,10 @@ Route::get('/produk', [ProdukController::class, 'index']);
 
 Route::post('/feedback', [FeedbackController::class, 'store']);
 
-Route::get('/adminpanel', function () {
-    return view('admin/dashboard', [
-        'title' => "Dashboard"
-    ]);
-});
+Route::get('/adminpanel', [AdminController::class, 'index']);
+
+Route::get('/adminpanel/userdata', [AdminController::class, 'userdata']);
+
+Route::get('/adminpanel/fooddata', [AdminController::class, 'fooddata']);
+
+Route::get('/adminpanel/feedback', [AdminController::class, 'feedback']);

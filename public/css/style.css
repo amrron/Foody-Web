@@ -382,6 +382,10 @@ swiper-slide {
     font-size: 18px;
 }
 
+.fs-12px {
+    font-size: 12px;
+}
+
 .fs-20px {
     font-size: 20px;
 }
@@ -434,13 +438,13 @@ swiper-slide {
 /* END STYLING TEMPLATE */
 
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 0.25rem;
 }
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #22110C;
 }
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: #91d8ef;
 }
 

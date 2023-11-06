@@ -18,19 +18,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <main class="min-vh-100 w-100">
-        <aside class="bg-biru-muda h-100 min-vh-100" style="width: 300px">
+    <main class="vh-100 w-100 d-flex">
+        <aside class="bg-biru-muda vh-100" style="width: 300px">
             <div class="py-5">
                 <h1 class="text-center">
-                    <a href="">
+                    <a href="/adminpanel">
                         <svg width="194" height="83" viewBox="0 0 194 83" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -64,10 +64,10 @@
             <nav class="d-flex flex-column align-items-center">
                 <ul class="list-unstyled w-100 px-3">
                     <li class="mb-3">
-                        <h5 class="text-biru fs-5 fw-normal">MONITORING</h5>
+                        <p class="text-biru fw-normal">MONITORING</p>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="/adminpanel">
                             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30"
                                 fill="none">
                                 <g clip-path="url(#clip0_1095_2041)">
@@ -89,10 +89,10 @@
                         </a>
                     </li>
                     <li class="mb-3">
-                        <h5 class="text-biru fs-5 fw-normal">MASTER DATA</h5>
+                        <p class="text-biru fw-normal">MASTER DATA</p>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="/adminpanel/userdata">
                             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30"
                                 fill="none">
                                 <path
@@ -103,7 +103,7 @@
                         </a>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="/adminpanel/fooddata">
                             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30"
                                 fill="none">
                                 <g clip-path="url(#clip0_1095_2036)">
@@ -122,7 +122,7 @@
                         </a>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="/adminpanel/feedback">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
                                 <g clip-path="url(#clip0_1095_2079)">
                                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0.44873 0.247476V20.6228H16.0049V19.1674H1.83848V1.70286H20.6001V3.24556H21.9899V0.247476H0.44873ZM21.9899 7.52439C21.9899 7.91038 21.8435 8.28056 21.5828 8.5535C21.3222 8.82644 20.9687 8.97977 20.6001 8.97977C20.2315 8.97977 19.8781 8.82644 19.6174 8.5535C19.3568 8.28056 19.2104 7.91038 19.2104 7.52439C19.2104 7.1384 19.3568 6.76821 19.6174 6.49528C19.8781 6.22234 20.2315 6.06901 20.6001 6.06901C20.9687 6.06901 21.3222 6.22234 21.5828 6.49528C21.8435 6.76821 21.9899 7.1384 21.9899 7.52439ZM23.3796 7.52439C23.3796 8.29637 23.0868 9.03673 22.5655 9.58261C22.0443 10.1285 21.3373 10.4352 20.6001 10.4352C19.863 10.4352 19.156 10.1285 18.6347 9.58261C18.1135 9.03673 17.8206 8.29637 17.8206 7.52439C17.8206 6.75241 18.1135 6.01204 18.6347 5.46617C19.156 4.92029 19.863 4.61362 20.6001 4.61362C21.3373 4.61362 22.0443 4.92029 22.5655 5.46617C23.0868 6.01204 23.3796 6.75241 23.3796 7.52439Z" fill="#131049"/>
@@ -138,10 +138,10 @@
                         </a>
                     </li>
                     <li class="mb-3">
-                        <h5 class="text-biru fs-5 fw-normal">SYSTEM</h5>
+                        <p class="text-biru fw-normal">SYSTEM</p>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="29" viewBox="0 0 27 29" fill="none">
                                 <g clip-path="url(#clip0_1095_2066)">
                                   <path d="M23.96 15.4036V14.6566V13.8997L25.811 12.2484C26.1522 11.9418 26.3761 11.522 26.4431 11.0634C26.5101 10.6047 26.416 10.1366 26.1773 9.74189L23.9022 5.81012C23.7331 5.51157 23.4901 5.26359 23.1973 5.09106C22.9046 4.91854 22.5725 4.82753 22.2344 4.82718C22.0249 4.82554 21.8165 4.85874 21.6174 4.92548L19.2749 5.73149C18.8704 5.45745 18.4485 5.21117 18.012 4.99428L17.5203 2.51727C17.4322 2.06473 17.1907 1.65822 16.8382 1.3689C16.4858 1.07958 16.0447 0.925893 15.5923 0.934733H11.0806C10.6282 0.925893 10.1871 1.07958 9.83466 1.3689C9.48218 1.65822 9.24072 2.06473 9.15257 2.51727L8.66091 4.99428C8.22125 5.21112 7.79615 5.45739 7.3884 5.73149L5.09401 4.88616C4.89282 4.83271 4.68447 4.81279 4.47703 4.82718C4.13893 4.82753 3.80685 4.91854 3.51413 5.09106C3.2214 5.26359 2.97832 5.51157 2.80927 5.81012L0.534161 9.74189C0.309144 10.136 0.225529 10.5977 0.297636 11.0478C0.369743 11.4979 0.593085 11.9084 0.929412 12.2091L2.75142 13.9096V15.4135L0.929412 17.0648C0.583585 17.3675 0.354134 17.7854 0.281777 18.2443C0.20942 18.7031 0.298838 19.1733 0.534161 19.5713L2.80927 23.5031C2.97832 23.8016 3.2214 24.0496 3.51413 24.2221C3.80685 24.3947 4.13893 24.4857 4.47703 24.486C4.68657 24.4876 4.89496 24.4544 5.09401 24.3877L7.4366 23.5817C7.84105 23.8557 8.26294 24.102 8.69948 24.3189L9.19113 26.7959C9.27929 27.2485 9.52074 27.655 9.87322 27.9443C10.2257 28.2336 10.6668 28.3873 11.1192 28.3785H15.6694C16.1218 28.3873 16.5629 28.2336 16.9154 27.9443C17.2678 27.655 17.5093 27.2485 17.5975 26.7959L18.0891 24.3189C18.5288 24.1021 18.9539 23.8558 19.3616 23.5817L21.6946 24.3877C21.8936 24.4544 22.102 24.4876 22.3115 24.486C22.6497 24.4857 22.9817 24.3947 23.2745 24.2221C23.5672 24.0496 23.8103 23.8016 23.9793 23.5031L26.1773 19.5713C26.4023 19.1772 26.4859 18.7155 26.4138 18.2654C26.3417 17.8153 26.1184 17.4048 25.782 17.1041L23.96 15.4036ZM22.2344 22.5201L18.9278 21.3799C18.1538 22.0484 17.2691 22.571 16.3153 22.9231L15.6308 26.4519H11.0806L10.3962 22.9625C9.4499 22.6003 8.57002 22.0786 7.79329 21.4192L4.47703 22.5201L2.20193 18.5884L4.82408 16.2293C4.64583 15.2118 4.64583 14.1702 4.82408 13.1527L2.20193 10.7248L4.47703 6.79306L7.78365 7.93328C8.5577 7.26477 9.44236 6.7422 10.3962 6.39006L11.0806 2.8613H15.6308L16.3153 6.35074C17.2616 6.71288 18.1414 7.23454 18.9182 7.89396L22.2344 6.79306L24.5095 10.7248L21.8874 13.0839C22.0656 14.1014 22.0656 15.143 21.8874 16.1605L24.5095 18.5884L22.2344 22.5201Z" fill="#131049"/>
@@ -157,7 +157,7 @@
                         </a>
                     </li>
                     <li class="mb-3">
-                        <a class="text-biru fs-4 fw-medium" href="">
+                        <a class="text-biru  fw-medium" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="30" viewBox="0 0 29 30" fill="none">
                                 <g clip-path="url(#clip0_1095_2028)">
                                   <path d="M8.00037 0.0606384C6.8946 0.0606384 5.83412 0.520649 5.05222 1.33947C4.27032 2.1583 3.83105 3.26886 3.83105 4.42685V21.8917C3.83105 23.0497 4.27032 24.1603 5.05222 24.9791C5.83412 25.7979 6.8946 26.2579 8.00037 26.2579H14.9492C15.3178 26.2579 15.6713 26.1046 15.932 25.8316C16.1926 25.5587 16.339 25.1885 16.339 24.8025C16.339 24.4165 16.1926 24.0463 15.932 23.7734C15.6713 23.5004 15.3178 23.3471 14.9492 23.3471H8.00037C7.63178 23.3471 7.27829 23.1938 7.01766 22.9208C6.75702 22.6479 6.6106 22.2777 6.6106 21.8917V4.42685C6.6106 4.04085 6.75702 3.67067 7.01766 3.39773C7.27829 3.12478 7.63178 2.97145 8.00037 2.97145H14.9492C15.3178 2.97145 15.6713 2.81811 15.932 2.54517C16.1926 2.27223 16.339 1.90204 16.339 1.51604C16.339 1.13005 16.1926 0.759858 15.932 0.486916C15.6713 0.213975 15.3178 0.0606384 14.9492 0.0606384H8.00037Z" fill="#CD224C"/>
@@ -168,8 +168,8 @@
                                     <rect width="28.5893" height="29.9394" fill="white" transform="translate(0.257324 0.0606384)"/>
                                   </clipPath>
                                 </defs>
-                              </svg>
-                              <span class="ms-3">Log Out</span>
+                            </svg>
+                            <span class="ms-3" style="color: #CD224C">Log Out</span>
                         </a>
                     </li>
                 </ul>
