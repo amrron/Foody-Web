@@ -20,6 +20,27 @@ class Makanan extends Model
             });
         });
 
+        $query->when($filters['kategori'] ?? false, function($query, $kategori) {
+            if($kategori == "rendah-lemak"){
+                return $query->where("lemak", "<", 3);
+            }
+            if($kategori == "tinggi-lemak"){
+                return $query->where("lemak", ">", 17.5);
+            }
+            if($kategori == "rendah-protein"){
+                return $query->where("protein", "<", 2.85);
+            }
+            if($kategori == "tinggi-protein"){
+                return $query->where("protein", ">", 11.4);
+            }
+            if($kategori == "rendah-karbohidrat"){
+                return $query->where("karbohidrat", "<", 11.5);
+            }
+            if($kategori == "tinggi-karbohidrat"){
+                return $query->where("karbohidrat", ">", 57.5);
+            }
+        });
+
         $query->when($filters['protein'] ?? false, function ($query, $protein) {
            return $query->where('protein', $protein);
         });

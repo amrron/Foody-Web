@@ -25,40 +25,40 @@
         <div class="row">
             <swiper-container class="mySwiper" navigation="false" space-between="20" slides-per-view="auto">
                 <swiper-slide>
-                    <div class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Rendah Lemak</a>
+                    <a href="/makanan?kategori=rendah-lemak" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Rendah Lemak</p>
                         <img src="/img/low-fat.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Tinggi Lemak</a>
+                    <a href="/makanan?kategori=tinggi-lemak" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Tinggi Lemak</p>
                         <img src="/img/low-fat.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Rendah Protein</a>
+                    <a href="/makanan?kategori=rendah-protein" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Rendah Protein</p>
                         <img src="/img/high-protein.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Tinggi Protein</a>
+                    <a href="/makanan?kategori=tinggi-protein" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Tinggi Protein</p>
                         <img src="/img/high-protein.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Rendah Karbohidrat</a>
+                    <a href="/makanan?kategori=rendah-karbohidrat" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Rendah Karbohidrat</p>
                         <img src="/img/low-carbo.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
                 <swiper-slide>
-                    <div class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
-                        <a href="" class="w-50 fw-medium text-biru">Tinggi Karbohidrat</a>
+                    <a href="/makanan?kategori=tinggi-karbohidrat" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
+                        <p class="w-50 fw-medium text-biru">Tinggi Karbohidrat</p>
                         <img src="/img/low-carbo.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
-                    </div>
+                    </a>
                 </swiper-slide>
             </swiper-container>
         </div>

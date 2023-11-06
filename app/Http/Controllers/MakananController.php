@@ -11,7 +11,7 @@ class MakananController extends Controller
 
         return view("food", [
             "title" => "Makanan",
-            "makanan" => Makanan::latest()->filter(request(['search', 'protein', 'karbohidrat', 'garam', 'gula', 'lemak']))->get()
+            "makanan" => Makanan::latest()->filter(request(['search', 'protein', 'karbohidrat', 'garam', 'gula', 'lemak', 'kategori']))->get()
         ]);
     }
 

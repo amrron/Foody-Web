@@ -68,3 +68,9 @@ Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index']);
 
 Route::post('/feedback', [FeedbackController::class, 'store']);
+
+Route::get('/adminpanel', function () {
+    return view('admin/dashboard', [
+        'title' => "Dashboard"
+    ]);
+});

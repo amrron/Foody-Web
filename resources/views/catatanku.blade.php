@@ -282,7 +282,7 @@
 @if(!$pagination)
 <!-- Modal Pagi -->
 <div class="modal fade" id="modal-pagi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
@@ -336,7 +336,7 @@
 
 <!-- Modal Siang -->
 <div class="modal fade" id="modal-sore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
@@ -386,7 +386,7 @@
 
 <!-- Modal Sore -->
 <div class="modal fade" id="modal-siang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
@@ -438,7 +438,7 @@
 
 <!-- Modal Malam -->
 <div class="modal fade" id="modal-malam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
