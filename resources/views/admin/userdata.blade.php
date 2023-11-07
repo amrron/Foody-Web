@@ -9,11 +9,13 @@
         <div class="row m-3 mt-5">
             <div class="col-6 d-flex justify-content-between align-items-center">
                 <h3 class="fw-bold p-0 m-0">DATA USER</h3>
-                <a href="" class="btn bg-biru-muda p-2">Filter</a>
+                @if (request('search'))
+                <a href="/adminpanel/userdata" class="btn bg-biru-muda p-2"><i class="fa-solid fa-rotate-right text-biru"></i></a>
+                @endif
             </div>
             <div class="col-6">
                 <form action="" class="w-100 h-100 bg-biru-muda d-flex align-items-center justify-content-between ps-3 pe-2 rounded-2">
-                    <input type="text" class="bg-biru-muda w-100" style="outline: none" placeholder="Cari user...">
+                    <input type="text" class="bg-biru-muda w-100" name="search" value="{{ request('search') }}" style="outline: none" placeholder="Cari user...">
                     <button type="submit" class="bg-biru-muda p-2"><i class="fa-solid fa-magnifying-glass text-biru"></i></button>
                 </form>
             </div>
@@ -31,46 +33,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $i = 1
+                    @endphp
+                    @foreach ($users as $user)
                     <tr>
-                        <td class="text-center">1</td>
+                        <td class="text-center">{{ $i }}</td>
                         <td><img src="/img/profileimg.webp" alt="" style="width: 28px" class="rounded-circle"></td>
-                        <td>ali</td>
-                        <td>Ali Imron</td>
-                        <td>imrona463@gmail.com</td>
-                        <td>Selasa, 23 Okt 2023</td>
+                        <td>{{ $user->username }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->created_at }}</td>
                     </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td><img src="/img/profileimg.webp" alt="" style="width: 28px" class="rounded-circle"></td>
-                        <td>ali</td>
-                        <td>Ali Imron</td>
-                        <td>imrona463@gmail.com</td>
-                        <td>Selasa, 23 Okt 2023</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">3</td>
-                        <td><img src="/img/profileimg.webp" alt="" style="width: 28px" class="rounded-circle"></td>
-                        <td>ali</td>
-                        <td>Ali Imron</td>
-                        <td>imrona463@gmail.com</td>
-                        <td>Selasa, 23 Okt 2023</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">4</td>
-                        <td><img src="/img/profileimg.webp" alt="" style="width: 28px" class="rounded-circle"></td>
-                        <td>ali</td>
-                        <td>Ali Imron</td>
-                        <td>imrona463@gmail.com</td>
-                        <td>Selasa, 23 Okt 2023</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">5</td>
-                        <td><img src="/img/profileimg.webp" alt="" style="width: 28px" class="rounded-circle"></td>
-                        <td>ali</td>
-                        <td>Ali Imron</td>
-                        <td>imrona463@gmail.com</td>
-                        <td>Selasa, 23 Okt 2023</td>
-                    </tr>
+                    @php
+                        $i++
+                    @endphp
+                    @endforeach
                 </tbody>
             </table>
         </div>

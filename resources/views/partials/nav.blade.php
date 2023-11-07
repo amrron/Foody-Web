@@ -40,6 +40,9 @@
                         <li>
                             <a class="dropdown-item fs-5" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
                         </li>
+                        @can('admin')
+                        <li><a class="dropdown-item fs-5" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
+                        @endcan
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/logout" method="post">
@@ -67,11 +70,10 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
                     @can('admin')
-                    <li><a class="dropdown-item" href="/adminpanel"><i class="fa-solid fa-user"></i> Admin</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
                     @endcan
+                    <li><hr class="dropdown-divider"></li>
                     <li>
                         <form action="/logout" method="post">
                             @csrf

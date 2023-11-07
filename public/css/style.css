@@ -1,7 +1,8 @@
 :root {
     --blue: #17184f;
     --light-blue: #dbf3fb;
-    --pink: #fdced0
+    --pink: #fdced0;
+    --merah: #CD224C
 }
 
 body {
@@ -402,6 +403,10 @@ swiper-slide {
     background-color: var(--blue);
 }
 
+.bg-merah {
+    background-color: var(--merah);
+}
+
 .bg-biru-muda {
     background-color: var(--light-blue);
 }
@@ -416,6 +421,10 @@ swiper-slide {
 
 .text-biru {
     color: var(--blue);
+}
+
+.text-merah {
+    color: var(--merah);
 }
 
 .text-biru-muda {
@@ -728,6 +737,9 @@ swiper-slide {
 
 }
 
+.menu-active {
+    background-color: var(--pink);
+}
 
 
 .pink {

@@ -58,5 +58,11 @@ Route::middleware('admin')->group(function(){
     Route::get('/adminpanel', [AdminController::class, 'index']);
     Route::get('/adminpanel/userdata', [AdminController::class, 'userdata']);
     Route::get('/adminpanel/fooddata', [AdminController::class, 'fooddata']);
+    Route::get('/adminpanel/fooddata/add', [AdminController::class, 'addMakanan']);
+    Route::post('/adminpanel/fooddata/add', [AdminController::class, 'storeMakanan']);
+    Route::get('/adminpanel/fooddata/edit/{makanan}', [AdminController::class, 'editMakanan']);
+    Route::post('/adminpanel/fooddata/edit/{makanan}', [AdminController::class, 'simpanEditMakanan']);
+    Route::delete('/adminpanel/fooddata/delete/{makanan}', [AdminController::class, 'deleteMakanan']);
     Route::get('/adminpanel/feedback', [AdminController::class, 'feedback']);
+    Route::get('/adminpanel/feedback/{feedback}', [AdminController::class, 'feedbackDetail']);
 });

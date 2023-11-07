@@ -149,5 +149,15 @@ class User extends Authenticatable
         // Jika 30% kebutuahan kalori berasal dari protein, 1 gram protein 4 kalori
         return round($this->kebutuhanKalori * 0.30 / 9);
     }
+
+    public function scopeFilter($query, array $filters){
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('username', 'LIKE', '%' . $search . '%');
+            });
+        });
+
+    }
     
 }

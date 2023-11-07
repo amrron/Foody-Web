@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->text('deskripsi');
             $table->string('slug')->unique();
-            $table->string('gambar');
+            $table->text('gambar');
             $table->float('protein');
             $table->float('karbohidrat');
             $table->float('garam');
