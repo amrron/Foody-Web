@@ -29,51 +29,34 @@ Route::get('/', function () {
     ]);
 });
 
-
-Route::get('/catatanku', [CatatankuController::class, 'index'])->middleware('auth');;
-
-Route::post('/catatanku', [CatatankuController::class, 'store']);;
-
-Route::get('/catatanku/history', [CatatankuController::class, 'history'])->middleware('auth');
-
-Route::delete('/catatanku/delete/{id}', [CatatankuController::class, 'destroy']);
+Route::middleware('auth')->group(function(){
+    Route::get('/catatanku', [CatatankuController::class, 'index']);
+    Route::get('/catatanku/history', [CatatankuController::class, 'history']);
+    Route::post('/catatanku', [CatatankuController::class, 'store']);;
+    Route::delete('/catatanku/delete/{catatanMakanan}', [CatatankuController::class, 'destroy']);
+    Route::get('/bmi', [BmiController::class, 'index']);
+    Route::get('/bmi/history', [BmiController::class, 'history']);
+    Route::post('/bmi', [BmiController::class, 'store']);
+    Route::delete('/bmi/delete/{id}', [BmiController::class, 'destroy']);
+    Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
 
 Route::get('/makanan', [MakananController::class, 'index']);
-
 Route::get("/makanan/{makanan:slug}", [MakananController::class, 'detailMakanan']);
-
-Route::get('makanan/search/{nama}', [MakananController::class, 'cariMakanan']);
-
+Route::get('/makanan/search/{nama}', [MakananController::class, 'cariMakanan']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-
 Route::post('/login', [LoginController::class, 'authenticate']);
-
-Route::post('/logout', [LoginController::class, 'logout']);
-
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');;
-
 Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/bmi', [BmiController::class, 'index'])->middleware('auth');
-
-Route::get('/bmi/history', [BmiController::class, 'history'])->middleware('auth');
-
-Route::post('/bmi', [BmiController::class, 'store']);
-
-Route::delete('/bmi/delete/{id}', [BmiController::class, 'destroy']);
-
-Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
-
-Route::get('/profile', [ProfileController::class, 'index']);
-
 Route::get('/produk', [ProdukController::class, 'index']);
-
 Route::post('/feedback', [FeedbackController::class, 'store']);
 
-Route::get('/adminpanel', [AdminController::class, 'index']);
 
-Route::get('/adminpanel/userdata', [AdminController::class, 'userdata']);
-
-Route::get('/adminpanel/fooddata', [AdminController::class, 'fooddata']);
-
-Route::get('/adminpanel/feedback', [AdminController::class, 'feedback']);
+Route::middleware('admin')->group(function(){
+    Route::get('/adminpanel', [AdminController::class, 'index']);
+    Route::get('/adminpanel/userdata', [AdminController::class, 'userdata']);
+    Route::get('/adminpanel/fooddata', [AdminController::class, 'fooddata']);
+    Route::get('/adminpanel/feedback', [AdminController::class, 'feedback']);
+});

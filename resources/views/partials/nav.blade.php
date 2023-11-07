@@ -68,6 +68,10 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
+                    @can('admin')
+                    <li><a class="dropdown-item" href="/adminpanel"><i class="fa-solid fa-user"></i> Admin</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    @endcan
                     <li>
                         <form action="/logout" method="post">
                             @csrf

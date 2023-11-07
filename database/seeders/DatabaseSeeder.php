@@ -26,7 +26,52 @@ class DatabaseSeeder extends Seeder
             'password' => 123123,
             'jenis_kelamin' => 'Laki-laki',
             'tanggal_lahir' => '2004-08-12',
-            'aktivitas' => 1.2 
+            'aktivitas' => 1.2,
+            'role'  => "admin"
+        ]);
+
+        User::create([
+            'name' => "Budy Santoso",
+            'email' => "budy24@gmail.com",
+            'username' => 'budy',
+            'password' => 123123,
+            'jenis_kelamin' => 'Laki-laki',
+            'tanggal_lahir' => '2004-08-12',
+            'aktivitas' => 1.2,
+            'role'  => "admin"
+        ]);
+
+        User::create([
+            'name' => "Idra Maki",
+            'email' => "indramaki@gmail.com",
+            'username' => 'indra',
+            'password' => 123123,
+            'jenis_kelamin' => 'Laki-laki',
+            'tanggal_lahir' => '2004-08-12',
+            'aktivitas' => 1.2,
+            'role'  => "admin"
+        ]);
+
+        User::create([
+            'name' => "Aulia Anggraeni",
+            'email' => "aulianggraeni@gmail.com",
+            'username' => 'aulia',
+            'password' => 123123,
+            'jenis_kelamin' => 'Perempuan',
+            'tanggal_lahir' => '2004-08-12',
+            'aktivitas' => 1.2,
+            'role'  => "admin"
+        ]);
+
+        User::create([
+            'name' => "Nur Indah",
+            'email' => "nurindah@gmail.com",
+            'username' => 'indah',
+            'password' => 123123,
+            'jenis_kelamin' => 'Perempuan',
+            'tanggal_lahir' => '2004-08-12',
+            'aktivitas' => 1.2,
+            'role'  => "admin"
         ]);
 
         Makanan::factory(10)->create();

@@ -17,11 +17,11 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('slug')->unique();
             $table->string('gambar');
-            $table->integer('protein');
-            $table->integer('karbohidrat');
-            $table->integer('garam');
-            $table->integer('gula');
-            $table->integer('lemak');
+            $table->float('protein');
+            $table->float('karbohidrat');
+            $table->float('garam');
+            $table->float('gula');
+            $table->float('lemak');
             $table->timestamp('added_at')->nullable();
             $table->timestamps();
         });

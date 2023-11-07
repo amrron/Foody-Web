@@ -25,7 +25,7 @@
         <div id="validationServer04Feedback" class="invalid-feedback">
             {{ $message }}
         </div>
-        #@enderror
+        @enderror
     </div>
     <div class="mb-3">
         <label class="form-label">Jenis kelamin</label>
