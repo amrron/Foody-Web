@@ -121,6 +121,16 @@
                             <span class="ms-3">Food Data</span>
                         </a>
                     </li>
+                    <li class="p-3 py-2 {{ Request::is('*productdata*') ? 'menu-active' : '' }}">
+                        <a class="text-biru  fw-medium" href="/adminpanel/productdata">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48" fill="none">
+                                <path d="M6 15H42L40 42H8L6 15Z" stroke="#131049" stroke-width="4" stroke-linejoin="round"/>
+                                <path d="M16 19V6H32V19" stroke="#131049" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 34H32" stroke="#131049" stroke-width="4" stroke-linecap="round"/>
+                              </svg>
+                            <span class="ms-3">Product Data</span>
+                        </a>
+                    </li>
                     <li class="p-3 py-2 {{ Request::is('*feedback') ? 'menu-active' : '' }}">
                         <a class="text-biru  fw-medium" href="/adminpanel/feedback">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
@@ -142,7 +152,9 @@
                     </li>
                     <li class="p-3 py-2">
                         <a class="text-biru fw-medium" href="/">
-                            <i class="fa-solid fa-house fa-xl"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                <path d="M1.2735 26.4384V26.9384H1.7735H8.32126H8.82126V26.4384V16.5014H16.0077V26.4384V26.9384H16.5077H23.0555H23.5555V26.4384V10.4769V10.2282L23.3571 10.0781L12.7161 2.03L12.4145 1.80188L12.1129 2.03L1.47188 10.0781L1.2735 10.2282V10.4769V26.4384ZM24.329 9.83909V27.7119H15.2342V17.7749V17.2749H14.7342H10.0948H9.59476V17.7749V27.7119H0.5V9.8391L12.4145 0.838547L24.329 9.83909Z" fill="black" stroke="#131049"/>
+                            </svg>
                             <span class="ms-3">Home</span>
                         </a>
                     </li>

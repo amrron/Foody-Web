@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CatatanMakanan;
 use App\Models\Feedback;
 use App\Models\Makanan;
+use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -80,7 +81,7 @@ class AdminController extends Controller
 
     public function editMakanan(Makanan $makanan) {
         return view("admin.addmakanan", [
-            'title' => "Tambah Makanan",
+            'title' => "Edit Makanan",
             'makanan' => $makanan,
         ]);
     }
@@ -107,5 +108,44 @@ class AdminController extends Controller
         $request->session()->flash('success_edit', 'Berhasil edit makanan');
 
         return redirect('adminpanel/fooddata');
+    }
+
+    public function produk() {
+        return view('admin.productdata', [
+            'title' => 'Product Data',
+            'products' => Produk::latest()->filter(request(['search']))->get()
+        ]);
+    }
+
+    public function deleteProduk(Produk $produk){
+        $produk->delete();
+    }
+
+    public function dataProduk(Produk $produk){
+        return response()->json($produk, 201);
+    }
+
+    public function editProduk(Request $request, Produk $produk){
+        $validatedProduk = $request->validate([
+            'nama' => 'required|string',
+            'harga' => 'required|numeric',
+            'deskripsi' => 'required|string',
+            'gambar' => 'required|string',
+            'link' => 'required|string',
+        ]);
+
+        Produk::where('id', $produk->id)->update($validatedProduk);
+    }
+
+    public function addProduk(Request $request){
+        $produk = $request->validate([
+            'nama' => 'required|string',
+            'harga' => 'required|numeric',
+            'deskripsi' => 'required|string',
+            'gambar' => 'required|string',
+            'link' => 'required|string',
+        ]);
+
+        Produk::create($produk);
     }
 }

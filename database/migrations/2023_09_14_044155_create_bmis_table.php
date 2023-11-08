@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bmis', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id')->unique();
             $table->foreignUuid('user_id');
             $table->date('waktu');
             $table->integer('berat_badan');

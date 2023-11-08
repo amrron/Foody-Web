@@ -72,7 +72,7 @@
             e.preventDefault();
 
             var deleteUrl = $(this).attr('href');
-            var itemToDelete = $(this).closest('.container-catatan-makanan');
+            var itemToDelete = $(this).closest('tr');
 
             Swal.fire({
             title: 'Apakah Anda yakin?',

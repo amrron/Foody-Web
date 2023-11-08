@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('catatan_makanans', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id')->unique();
             $table->foreignUuid('user_id');
             $table->foreignUuid('makanan_id')->constrained();
             $table->timestamp('waktu');
