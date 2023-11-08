@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CatatankuController;
+use App\Http\Controllers\CatatanMakananController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +25,11 @@ Route::group(["middleware" => ['auth:sanctum']], function() {
     Route::get("/users/profile", [UserController::class, 'profile']);
     Route::post("/users/logout", [UserController::class, 'logout']);
     Route::put("/users/update", [UserController::class, 'update']);
+
+    Route::post("/catatanku", [CatatanMakananController::class, 'store']);
+    Route::get("/catatanku/daily", [CatatanMakananController::class, 'daily']);
+    Route::get("/catatanku/history", [CatatanMakananController::class, 'history']);
+    Route::delete("/catatanku/delete/{catatanMakanan}", [CatatanMakananController::class, 'delete']);
 });
 
 Route::post("/users", [UserController::class, 'store']);
