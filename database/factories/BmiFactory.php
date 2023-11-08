@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +20,7 @@ class BmiFactory extends Factory
         $berat = fake()->numberBetween(40, 90);
         $tinggi = fake()->numberBetween(150, 190);
         return [
-            'user_id' => 1,
+            'user_id' => User::where('username', 'ali')->first()->id,
             'waktu' => fake()->date('Y-m-d'),
             'berat_badan' => $berat,
             'tinggi_badan' => $tinggi,

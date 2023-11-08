@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bmis', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
+            $table->uuid('id')->primary();
+            $table->foreignUuid('user_id');
             $table->date('waktu');
             $table->integer('berat_badan');
             $table->integer('tinggi_badan');

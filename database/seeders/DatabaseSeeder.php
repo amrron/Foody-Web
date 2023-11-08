@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'role'  => "admin"
         ]);
 
-        User::create([
+        $budy = User::create([
             'name' => "Budy Santoso",
             'email' => "budy24@gmail.com",
             'username' => 'budy',
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'role'  => "admin"
         ]);
 
-        User::create([
+        $indra = User::create([
             'name' => "Idra Maki",
             'email' => "indramaki@gmail.com",
             'username' => 'indra',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'role'  => "admin"
         ]);
 
-        User::create([
+        $aulia = User::create([
             'name' => "Aulia Anggraeni",
             'email' => "aulianggraeni@gmail.com",
             'username' => 'aulia',
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
             'role'  => "admin"
         ]);
 
-        User::create([
+        $indah = User::create([
             'name' => "Nur Indah",
             'email' => "nurindah@gmail.com",
             'username' => 'indah',
@@ -76,9 +76,42 @@ class DatabaseSeeder extends Seeder
 
         Makanan::factory(10)->create();
 
-        CatatanMakanan::factory(30)->create();
+        // CatatanMakanan::factory(30)->create();
 
         Bmi::factory(10)->create();
+        $berat = fake()->numberBetween(40, 90);
+        $tinggi = fake()->numberBetween(150, 190);
+        Bmi::create([
+            'user_id' => $budy->id,
+            'waktu' => fake()->date('Y-m-d'),
+            'berat_badan' => $berat,
+            'tinggi_badan' => $tinggi,
+            'nilai_bmi' => $berat / pow(($tinggi / 100), 2)
+        ]);
+
+        Bmi::create([
+            'user_id' => $indra->id,
+            'waktu' => fake()->date('Y-m-d'),
+            'berat_badan' => $berat,
+            'tinggi_badan' => $tinggi,
+            'nilai_bmi' => $berat / pow(($tinggi / 100), 2)
+        ]);
+
+        Bmi::create([
+            'user_id' => $indah->id,
+            'waktu' => fake()->date('Y-m-d'),
+            'berat_badan' => $berat,
+            'tinggi_badan' => $tinggi,
+            'nilai_bmi' => $berat / pow(($tinggi / 100), 2)
+        ]);
+
+        Bmi::create([
+            'user_id' => $aulia->id,
+            'waktu' => fake()->date('Y-m-d'),
+            'berat_badan' => $berat,
+            'tinggi_badan' => $tinggi,
+            'nilai_bmi' => $berat / pow(($tinggi / 100), 2)
+        ]);
 
         Produk::factory(10)->create();
 
