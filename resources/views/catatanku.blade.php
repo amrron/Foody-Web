@@ -294,8 +294,8 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
-                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
-                                    <option>Pilih Makanan</option>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_pagi" required>
+                                    <option value="" selected>Pilih Makanan</option>
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
@@ -303,8 +303,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
-                                <option selected>Time</option>
+                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_pagi" aria-label="Small select example" required>
+                                <option value="">Time</option>
                                 <option value="00:00">00:00</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>
@@ -349,8 +349,8 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
-                                    <option>Pilih Makanan</option>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_sore" required>
+                                    <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -359,8 +359,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
-                                <option selected>Time</option>
+                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_sore" aria-label="Small select example" required>
+                                <option value="">Time</option>
                                 <option value="15:00">15:00</option>
                                 <option value="16:00">16:00</option>
                                 <option value="17:00">17:00</option>
@@ -399,8 +399,8 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
-                                    <option>Pilih Makanan</option>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_siang" required>
+                                    <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -409,8 +409,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
-                                <option selected>Time</option>
+                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_siang" aria-label="Small select example" required>
+                                <option value="" selected>Time</option>
                                 <option value="09:00">09:00</option>
                                 <option value="10:00">10:00</option>
                                 <option value="11:00">11:00</option>
@@ -451,8 +451,8 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" required>
-                                    <option>Pilih Makanan</option>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_malam" required>
+                                    <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
@@ -461,8 +461,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" aria-label="Small select example" required>
-                                <option selected>Time</option>
+                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_malam" aria-label="Small select example" required>
+                                <option valuselected>Time</option>
                                 <option value="19:00">19:00</option>
                                 <option value="20:00">20:00</option>
                                 <option value="21:00">21:00</option>
