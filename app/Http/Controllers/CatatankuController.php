@@ -80,7 +80,7 @@ class CatatankuController extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
-            'makanan_id' => 'required|numeric',
+            'makanan_id' => 'required|string',
             'jumlah' => 'required|numeric',
             'waktu' => 'required'
         ]);

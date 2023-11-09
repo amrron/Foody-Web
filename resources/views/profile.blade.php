@@ -11,7 +11,7 @@
                                 <img src="/img/profileimg.webp" class="w-100 rounded-end-circle rounded-start-circle"
                                     alt="">
                             </div>
-                            <a href="" class="btn bg-biru text-white">
+                            <a href="" class="btn bg-biru text-white" data-bs-toggle="modal" data-bs-target="#edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14"
                                     fill="none">
                                     <path
@@ -62,8 +62,8 @@
                     <div class="border rounded-3 p-3 d-flex">
                         <img src="/img/blueup.svg" class="me-3" alt="">
                         <div class="">
-                            <p class="m-0">Last Height</p>
-                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->tinggi_badan }} cm</p>
+                            <p class="m-0">Activity Level</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->aktivitas }}</p>
                         </div>
                     </div>
                 </div>
@@ -71,8 +71,8 @@
                     <div class="border rounded-3 p-3 d-flex">
                         <img src="/img/pinkup.svg" class="me-3" alt="">
                         <div class="">
-                            <p class="m-0">Last Weight</p>
-                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->berat_badan }} kg</p>
+                            <p class="m-0">Karbohidrat</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->totalKarbo }} g</p>
                         </div>
                     </div>
                 </div>
@@ -80,8 +80,71 @@
                     <div class="border rounded-3 p-3 d-flex">
                         <img src="/img/blueup.svg" class="me-3" alt="">
                         <div class="">
-                            <p class="m-0">Activity Level</p>
-                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->aktivitas }}</p>
+                            <p class="m-0">Protein</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->totalProtein }} g</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/pinkup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Garam</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->totalGaram }} g</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/blueup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Gula</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ number_format(auth()->user()->totalGula, 2) }} g</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/pinkup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Lemak</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->totalLemak }} g</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/blueup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Batas Karbo</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->batasKarbo }} g/hari</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/pinkup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Batas Protein</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->batasProtein }} g/hari</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/blueup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Batas Lemak</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->batasLemak }} g/hari</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 p-2">
+                    <div class="border rounded-3 p-3 d-flex">
+                        <img src="/img/pinkup.svg" class="me-3" alt="">
+                        <div class="">
+                            <p class="m-0">Kebutuhan Kalori</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->kebutuhanKalori }} g/hari</p>
                         </div>
                     </div>
                 </div>
@@ -177,7 +240,99 @@
         </div>
     </main>
 
+    <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{-- <form action="" method="post" id="edit-produk"> --}}
+                    <input type="hidden" name="" id="id-produk">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="name" value="{{ auth()->user()->name }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                        <select name="" id="jeni_kelamin" class="form-control" value="{{ auth()->user()->jenis_kelamin }}">
+                            <option value="Laki-laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tanggal_lahir" value="{{ auth()->user()->tanggal_lahir }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aktivitas" class="form-label">Level Aktivitas</label>
+                        <select name="" id="aktivitas" class="form-control" value="{{ auth()->user()->aktivitas }}">
+                            <option value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
+                            <option value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
+                            <option value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
+                            <option value="1.725">Sangat aktif (berolahraga atau 6-7x seminggu)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" value="{{ auth()->user()->username }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" value="{{ auth()->user()->email }}">
+                    </div>
+                    {{-- </form> --}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="reset">Close</button>
+                    <button type="button" form="edit-produk" class="btn btn-primary" id="simpan">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#simpan').click(function(){
+                var data = {
+                        _token : '{{ csrf_token() }}',
+                        name: $('#name').val(),
+                        jenis_kelamin: $('#jenis_kelamin').val(),
+                        tanggal_lahir: $('#tanggal_lahir').val(),
+                        email: $('#email').val(),
+                        aktivitas: $('#aktivitas').val(),
+                        username: $('#username').val(),
+                    };
+                if(data['username'] == '{{ auth()->user()->username }}'){
+                    delete data['username'];
+                }
+                if(data['email'] == '{{ auth()->user()->email }}'){
+                    delete data['email'];
+                }
+                $.ajax({
+                    url: '/profile/edit',
+                    type: 'PUT',
+                    data: data,
+                    success: function(){
+                        $('.modal').hide();
+                        Swal.fire("Data profile berhasil diubah", "", 'success').then(() => {
+                            location.reload();
+                        });
+                    },
+                    error: function (error) {
+                        var message = (error.responseJSON.message.username[0] ?? "") + " " + (error.responseJSON.message.email[0] ?? "") ;
+
+                        Swal.fire('Error!', message, 'error');
+                        console.log(error.responseJSON.message);
+                    }
+                })
+            })
+            
+        })
+    </script>
 
     <script>
         const ctx = document.getElementById('myChart');
@@ -203,7 +358,7 @@
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'bottom',
                     },
                     title: {
                         display: true,

@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function(){
     Route::delete('/bmi/delete/{id}', [BmiController::class, 'destroy']);
     Route::get('/bmi/dataforchart', [BmiController::class, 'getDataForChart']);
     Route::get('/profile', [ProfileController::class, 'index']);
+    Route::put('/profile/edit', [ProfileController::class, 'edit']);
     Route::post('/logout', [LoginController::class, 'logout']);
 });
 
