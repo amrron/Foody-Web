@@ -71,23 +71,29 @@ class CatatanMakananController extends Controller
                 'message' => "Unauthorized"
             ], 401);
         }
-
-        $catatanku = CatatanMakanan::where('user_id', auth()->user()->id)->get()->sortByDesc('waktu');
         
         $catatans = [];
-        foreach($catatanku as $catatan){
-            array_push($catatans, [
-                'id' => $catatan->id,
-                'nama_makanan' => $catatan->makanan->nama,
-                'jumlah' => $catatan->jumlah,
-                'waktu' => $catatan->waktu,
-                'karbohidrat' => $catatan->jumlah * $catatan->makanan->karbohidrat,
-                'protein' => $catatan->jumlah * $catatan->makanan->protein,
-                'garam' => $catatan->jumlah * $catatan->makanan->garam,
-                'gula' => $catatan->jumlah * $catatan->makanan->gula,
-                'lemak' => $catatan->jumlah * $catatan->makanan->lemak,
-            ]);
-        };
+
+        $catatanMakanan = CatatanMakanan::where('user_id', auth()->user()->id)->get()->sortByDesc('waktu');
+        $catatanPerTanggal = $catatanMakanan->groupBy('tanggalWaktu');
+
+        foreach($catatanPerTanggal as $tanggal => $catatan){
+            $note = [];
+            foreach($catatan as $catat){
+                array_push($note, [
+                    'id' => $catat->id,
+                    'nama_makanan' => $catat->makanan->nama,
+                    'jumlah' => $catat->jumlah,
+                    'waktu' => $catat->waktu,
+                    'karbohidrat' => $catat->jumlah * $catat->makanan->karbohidrat,
+                    'protein' => $catat->jumlah * $catat->makanan->protein,
+                    'garam' => $catat->jumlah * $catat->makanan->garam,
+                    'gula' => $catat->jumlah * $catat->makanan->gula,
+                    'lemak' => $catat->jumlah * $catat->makanan->lemak,
+                ]);
+            }
+            array_push($catatans, [$tanggal => $note]);
+        }
         
         return response()->json([
             'status' => "success",
