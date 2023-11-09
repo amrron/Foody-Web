@@ -9,7 +9,7 @@
                     <h1 class="fw-bolder">BMI</h1>
                 </div>
                 <div class="bmi-graph bg-biru-muda p-4 rounded-4">
-                    <canvas id="bmiChart"></canvas>
+                    <canvas id="bmiChart" style="min-height: 300px"></canvas>
                 </div>
                 <h4 class="text-center mt-5">Hitung Berat badanmu di sini</h4>
                 <form action="" method="post" class="row m-auto mt-3" style="max-width: 600px;">
@@ -121,6 +121,15 @@
             var myChart = new Chart(ctx, {
                 type: 'line', // Ganti sesuai jenis grafik yang Anda inginkan
                 data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins:{
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                }
             });
         }
     
