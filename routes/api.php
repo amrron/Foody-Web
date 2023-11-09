@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BmiApiController;
 use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\CatatanMakananController;
 use App\Http\Controllers\UserController;
@@ -30,6 +31,11 @@ Route::group(["middleware" => ['auth:sanctum']], function() {
     Route::get("/catatanku/daily", [CatatanMakananController::class, 'daily']);
     Route::get("/catatanku/history", [CatatanMakananController::class, 'history']);
     Route::delete("/catatanku/delete/{catatanMakanan}", [CatatanMakananController::class, 'delete']);
+
+    Route::post(("/bmi"), [BmiApiController::class, 'store']);
+    Route::get(("/bmi/recent"), [BmiApiController::class, 'recent']);
+    Route::get(("/bmi/history"), [BmiApiController::class, 'history']);
+    Route::delete(("/bmi/delete/{bmi}"), [BmiApiController::class, 'delete']);
 });
 
 Route::post("/users", [UserController::class, 'store']);
