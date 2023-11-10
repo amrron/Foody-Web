@@ -57,7 +57,24 @@ class UserController extends Controller
     public function profile() {
         $user = auth()->user();
 
-        return (new UserResource($user))->response()->setStatusCode(201);
+        // return (new UserResource($user))->response()->setStatusCode(201);
+        return response()->json([
+            "status" => "error",
+            "data" => new UserResource($user),
+            "summary" => [
+                'rata_rata_bmi' => $user->rataRataBmi,
+                'aktivitas' => $user->aktivitas,
+                'total_karbohidrat' => $user->totalKarbo,
+                'total_protein' => $user->totalProtein,
+                'total_garam' => $user->totalGaram,
+                'total_gula' => $user->totalGula,
+                'total_garam' => $user->totalGaram,
+                'batas_karbo' => $user->batasKarbo,
+                'batas_protein' => $user->batasProtein,
+                'batas_lemak' => $user->batasLemak,
+                'kebutuhan_kalori' => $user->kebutuhanKalori
+            ]
+        ], 201);
     }
 
     public function logout(){
