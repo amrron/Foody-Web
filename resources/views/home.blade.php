@@ -292,63 +292,6 @@
                         </div>
                     </swiper-slide>
                     @endforeach
-                    <swiper-slide>
-                        <div class="kartu">
-                            <h2 class="judul-kartu fs-20px text-center">Salad Buah</h2>
-                            <p class="deskripsi-kartu fs-13px">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis facilis quae, aliquid, pariatur velit repellat corrupti autem fugit, harum non consectetur obcaecati sapiente! Sapiente.
-                            </p>
-                            <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="img/salad.png" alt="">
-                            </div>
-                            <div class="harga fs-13px">
-                                <span>Price: </span>
-                                <br>
-                                <span>Rp20.000,00</span>
-                            </div>
-                            <div class="tombol-kartu">
-                                <a href="" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="kartu">
-                            <h2 class="judul-kartu fs-20px text-center">Salad Buah</h2>
-                            <p class="deskripsi-kartu fs-13px">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis facilis quae, aliquid, pariatur velit repellat corrupti autem fugit, harum non consectetur obcaecati sapiente! Sapiente.
-                            </p>
-                            <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="img/salad.png" alt="">
-                            </div>
-                            <div class="harga fs-13px">
-                                <span>Price: </span>
-                                <br>
-                                <span>Rp20.000,00</span>
-                            </div>
-                            <div class="tombol-kartu">
-                                <a href="" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="kartu">
-                            <h2 class="judul-kartu fs-20px text-center">Salad Buah</h2>
-                            <p class="deskripsi-kartu fs-13px">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis facilis quae, aliquid, pariatur velit repellat corrupti autem fugit, harum non consectetur obcaecati sapiente! Sapiente.
-                            </p>
-                            <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="img/salad.png" alt="">
-                            </div>
-                            <div class="harga fs-13px">
-                                <span>Price: </span>
-                                <br>
-                                <span>Rp20.000,00</span>
-                            </div>
-                            <div class="tombol-kartu">
-                                <a href="" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
-                            </div>
-                        </div>
-                    </swiper-slide>
                 </swiper-container>
             </div>
         </section>

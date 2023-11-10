@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <main class="min-vh-100" style="margin-top: 150px">
+    <main class="min-vh-100 mb-5" style="margin-top: 150px">
         <div class="container-lg p-4 bg-biru-muda rounded-3">
             @if(!empty($makanan))
             <h1 class="fs-1 fw-normal mb-4">{{ $makanan->nama }}</h1>
@@ -14,6 +14,30 @@
                 </div>
             </div>
             <p>{{ $makanan->deskripsi }}</p>
+            <table class="table table-bordered w-100">
+                <tbody>
+                    <tr>
+                        <th>Karbohidrat</th>
+                        <td>{{ $makanan->karbohidrat }} g</td>
+                    </tr>
+                    <tr>
+                        <th>Protein</th>
+                        <td>{{ $makanan->protein }} g</td>
+                    </tr>
+                    <tr>
+                      <th>Garam</th>
+                      <td>{{ $makanan->garam }} g</td>
+                    </tr>
+                    <tr>
+                      <th>Gula</th>
+                      <td>{{ $makanan->gula }} g</td>
+                    </tr>
+                    <tr>
+                      <th>Lemak</th>
+                      <td>{{ $makanan->lemak }} g</td>
+                    </tr>
+                </tbody>
+            </table>
             @else
                 <p class="text-center fs-4">Data salah</p>
             @endif

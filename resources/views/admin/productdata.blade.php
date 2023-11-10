@@ -101,8 +101,8 @@
                         {{-- </form> --}}
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="reset">Close</button>
-                        <button type="button" form="edit-produk" class="btn btn-primary" id="simpan">Simpan</button>
+                        <button type="button" class="btn bg-biru-muda text-biru" data-bs-dismiss="modal" id="reset">Batal</button>
+                        <button type="button" form="edit-produk" class="btn bg-biru text-biru-muda" id="simpan">Simpan</button>
                     </div>
                 </div>
             </div>

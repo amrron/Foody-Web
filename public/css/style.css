@@ -345,6 +345,12 @@ footer a {
     color: var(--blue);
 }
 
+@media screen and (min-width: 591px) {
+    swiper-slide {
+        width: auto;
+    }
+}
+
 @media screen and (max-width: 590px) {
     .kartu {
         grid-template-areas:    'judul'
@@ -354,6 +360,10 @@ footer a {
                                 'tombol';
         width: 340px;
         height: 560px;
+    }
+
+    swiper-slide {
+        width: 100%;
     }
 
     #cari-makanan {
@@ -373,7 +383,7 @@ swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
+    /* width: fit-content; */
     margin: 10px 0;
 }
 /* END SWIPER */
