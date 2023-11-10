@@ -144,14 +144,14 @@
                         <img src="/img/pinkup.svg" class="me-3" alt="">
                         <div class="">
                             <p class="m-0">Kebutuhan Kalori</p>
-                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->kebutuhanKalori }} g/hari</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->kebutuhanKalori }} kkal/hari</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12 p-3">
                     <div class="p-3 row border rounded-3">
                         <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                            <h6>Total Konsumsi Kandungan Makanan</h6>
+                            <h5 class="text-center">Total Konsumsi Kandungan Makanan</h5>
                             <div>
                                 <canvas id="myChart"></canvas>
                             </div>

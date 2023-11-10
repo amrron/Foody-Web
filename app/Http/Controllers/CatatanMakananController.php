@@ -81,9 +81,9 @@ class CatatanMakananController extends Controller
         ], 201);
     }
 
-    public function delete(CatatanMakanan $catatan) {
-        
-        if(!auth()->check() || auth()->user()->id !== $catatan->user_id){
+    public function delete($id) {
+        $catatan = CatatanMakanan::where('id', $id);
+        if(!auth()->check()){
             return response()->json([
                 'status' => "error",
                 'message' => "Unauthorized"

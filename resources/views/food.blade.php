@@ -24,37 +24,37 @@
         <h2 class="my-3 fw-normal">Kategori</h2>
         <div class="row">
             <swiper-container class="mySwiper" navigation="false" space-between="20" slides-per-view="auto">
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=rendah-lemak" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Rendah Lemak</p>
                         <img src="/img/low-fat.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
                     </a>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=tinggi-lemak" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Tinggi Lemak</p>
                         <img src="/img/low-fat.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
                     </a>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=rendah-protein" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Rendah Protein</p>
                         <img src="/img/high-protein.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
                     </a>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=tinggi-protein" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Tinggi Protein</p>
                         <img src="/img/high-protein.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
                     </a>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=rendah-karbohidrat" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Rendah Karbohidrat</p>
                         <img src="/img/low-carbo.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
                     </a>
                 </swiper-slide>
-                <swiper-slide>
+                <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=tinggi-karbohidrat" class="bg-pink rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Tinggi Karbohidrat</p>
                         <img src="/img/low-carbo.png" alt="" class="w-50" style="position: absolute; right: 0; bottom:0;">
@@ -69,8 +69,8 @@
         <div class="row">
             @if($makanan->count())
             @foreach($makanan as $food)
-            <div class="col-lg-4 col-sm-6 mb-3">
-                <div class="makanan bordered rounded-2 bg-biru-muda p-3">
+            <div class="col-lg-4 col-sm-6 mb-3 makanan-card-outside">
+                <div class="makanan bordered rounded-2 p-3 makanan-card-inside">
                     <img src="{{ $food->gambar }}" class="w-100 rounded-2" alt="">
                     <div class="">
                         <h5>{{ $food->nama }}</h5>

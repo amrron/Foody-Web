@@ -3,30 +3,32 @@
 @section('container')  
     <main class="site-main" style="margin-top: 100px;">
     <!-- START BAGIAN BANNER -->
-        <section class="site-banner">
+        <section class="bg-biru-muda">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 site-title">
-                        <h3 class="title-text text-biru fw-bold">FOODY</h3>
+                    <div class="col-lg-6 col-md-12">
+                        <h3 class="title-text text-biru fw-bold mt-5">FOODY</h3>
                         <h1 class="title-text text-biru fw-bold">Kesehatan Tubuh Membaik</h1>
                         <h4 class="title-text text-biru fw-medium">Solusi Untuk menjaga kesehatan Tubuh Anda</h4>
-                        <div class="site-buttons">
+                        <div class="">
                             <div class="d-flex flex-row flex-wrap">
-                                <a href="#catatankuSection" class="bg-biru p-3 mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
+                                <a href="#catatankuSection" class="bg-biru p-2 mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 banner-image">
+                    <div class="col-lg-6 col-md-12 py-3 bg-biru-muda">
                         <img src="/img/banner1.png" class="img-fluid">
                     </div>
                 </div>
             </div>
         </section>
-        <svg viewBox="0 0 1535 401" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_3_335)">
-            <path d="M-69.0002 0H1535.44V72.6208C1535.44 72.6208 1555.3 276.13 1453.32 264.652C1356.87 253.796 1400.67 95.5554 1308.76 101.59C1234.92 106.438 1297.32 357.62 1192.5 323.185C1105.23 294.517 1128.18 173.508 1037.16 181.939C951.961 189.831 989.748 364.019 909.466 395.226C777.113 446.674 860.917 137.087 719.603 147.504C657.424 152.087 639.863 279.66 583.567 279.66C466.107 279.66 552.304 31.0096 442.837 52.9435C348.345 71.8771 452.207 431.645 304.971 372.699C215.92 337.048 256.95 198.883 178.465 181.939C99.9791 164.995 200.152 372.699 55.5728 372.699C53.1308 372.699 15.3773 370.588 12.9999 370.5C-338.774 357.439 -69.0002 0 -69.0002 0Z" fill="#D9F4FF"/>
-            </g>
+        <section>
+            <svg viewBox="0 0 1535 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3_335)">
+                <path d="M-69.0002 0H1535.44V72.6208C1535.44 72.6208 1555.3 276.13 1453.32 264.652C1356.87 253.796 1400.67 95.5554 1308.76 101.59C1234.92 106.438 1297.32 357.62 1192.5 323.185C1105.23 294.517 1128.18 173.508 1037.16 181.939C951.961 189.831 989.748 364.019 909.466 395.226C777.113 446.674 860.917 137.087 719.603 147.504C657.424 152.087 639.863 279.66 583.567 279.66C466.107 279.66 552.304 31.0096 442.837 52.9435C348.345 71.8771 452.207 431.645 304.971 372.699C215.92 337.048 256.95 198.883 178.465 181.939C99.9791 164.995 200.152 372.699 55.5728 372.699C53.1308 372.699 15.3773 370.588 12.9999 370.5C-338.774 357.439 -69.0002 0 -69.0002 0Z" fill="#D9F4FF"/>
+                </g>
             </svg>
+        </section>
     <!-- END BAGIAN BANNER -->
     <!-- START BAGIAN CATATANKU  -->
         <section class="site-catatanku">
@@ -50,17 +52,17 @@
     <!-- END BAGIAN CATATANKU -->
     <!-- START BAGIAN RECORD MAKANAN -->
         <section class="record-makanan">
-            <div class="container-fluid p-0">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="about-image">
                             <img src="/img/record_page.png" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 about-title" style="margin-top: 200px;">
+                    <div class="col-lg-6 col-md-12 p-2 text-center" style="margin-top: 200px;">
                         <h1 class="pt-5 fs-1 text-biru fw-semibold title-text fw-semibold">Catat dan Pantau BMI Anda dengan Mudah Bersama Foody</h1>
-                        <div class="paragraph py-1 ">
-                            <p class="para text-biru fs-5">
+                        <div class="py-1 ">
+                            <p class="text-biru fs-5">
                                 Dengan fitur pencatatan BMI kami, Anda dapat dengan cepat memantau perubahan dalam perjalanan kesehatan Anda. Tidak perlu repot, cukup masukkan data berat dan tinggi tubuh Anda, dan "Foody" akan menghitung BMI Anda secara otomatis. Pantau perkembangan Anda menuju kehidupan sehat yang lebih baik!
                             </p>
                         </div>

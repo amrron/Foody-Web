@@ -3,10 +3,9 @@
 @section('container')
 <section class="py-5" style="margin-top: 100px;">
     @if(!$pagination)
-    <div class="container m-auto py-5">
+    <div class="container m-auto pb-1">
         <div class="row align-items-center">
-            <h1 class="text-start mb-5">Catatanku</h1>
-            <p>Select your meal time to add notes</p>
+            <h1 class="text-center fw-bolder">Catatanku</h1>
             @foreach($warning as $warn)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
@@ -106,9 +105,9 @@
 @enderror
 
 <section class="py-2 mb-5">
-    <div class="container m-auto">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 pb-5">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3">
                 <a href="/catatanku" class="btn btn-primary border border-0 navy text-biru-muda">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 2.84208L2.10526 3.94734L4.31579 1.73682M1 7.99997L2.10526 9.10524L4.31579 6.89471M1 13.1579L2.10526 14.2631L4.31579 12.0526M6.89474 7.99997H15H6.89474ZM6.89474 13.1579H15H6.89474ZM6.89474 2.84208H15H6.89474Z" fill="#D9F4FF"/>
@@ -128,7 +127,7 @@
             
             @if(!$pagination)
             @foreach($catatans as $catatan)
-            <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
+            <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
                     <div class="card-body overflow-hidden">
                         <h5 class="card-title">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
@@ -165,78 +164,80 @@
                 </div>
             </div>
             @endforeach
-            <div class="row col-12 mt-5">
-                <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                    <h6>Total Konsumsi Kandungan Makanan</h6>
-                    <div>
-                        <canvas id="myChart"></canvas>
-                    </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="text-center">Total Konsumsi Kandungan Makanan</h5>
+                <div>
+                    <canvas id="myChart"></canvas>
                 </div>
-                <div class="col-lg-6">
-                    <div class="progres-catatan mb-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">Karbohidrat</p>
-                            <p class="mb-1">{{ round((auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100) }}%</p>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-karbohidrat" style="width: {{ (auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100 }}%"></div>
-                        </div>
-                        <p class="m-0 text-biru">{{ auth()->user()->dailyKarbo }}/{{ auth()->user()->batasKarbo }} g</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="progres-catatan mb-1">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1">Karbohidrat</p>
+                        <p class="mb-1">{{ round((auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100) }}%</p>
                     </div>
-                    <div class="progres-catatan mb-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">Protein</p>
-                            <p class="mb-1">{{ round((auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100) }}%</p>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-protein" style="width: {{ (auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100 }}%"></div>
-                        </div>
-                        <p class="m-0 text-biru">{{ auth()->user()->dailyProtein }}/{{ auth()->user()->batasProtein }} g</p>
+                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progres-karbohidrat" style="width: {{ (auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100 }}%"></div>
                     </div>
-                    <div class="progres-catatan mb-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">Garam</p>
-                            <p class="mb-1">{{ round((auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100) }}%</p>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-garam" style="width: {{ (auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100 }}%"></div>
-                        </div>
-                        <p class="m-0 text-biru">{{ auth()->user()->dailyGaram }}/{{ auth()->user()->batasGaram }} g</p>
+                    <p class="m-0 text-biru">{{ auth()->user()->dailyKarbo }}/{{ auth()->user()->batasKarbo }} g</p>
+                </div>
+                <div class="progres-catatan mb-1">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1">Protein</p>
+                        <p class="mb-1">{{ round((auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100) }}%</p>
                     </div>
-                    <div class="progres-catatan mb-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">Gula</p>
-                            <p class="mb-1">{{ round((auth()->user()->dailyGula / auth()->user()->batasGula) * 100) }}%</p>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-gula" style="width: {{ (auth()->user()->dailyGula / auth()->user()->batasGula) * 100 }}%"></div>
-                        </div>
-                        <p class="m-0 text-biru">{{ auth()->user()->dailyGula }}/{{ auth()->user()->batasGula }} g</p>
+                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progres-protein" style="width: {{ (auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100 }}%"></div>
                     </div>
-                    <div class="progres-catatan mb-1">
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-1">Lemak</p>
-                            <p class="mb-1">{{ round((auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100) }}%</p>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progres-lemak" style="width: {{ (auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100 }}%"></div>
-                        </div>
-                        <p class="m-0 text-biru">{{ auth()->user()->dailyLemak }}/{{ auth()->user()->batasLemak }} g</p>
+                    <p class="m-0 text-biru">{{ auth()->user()->dailyProtein }}/{{ auth()->user()->batasProtein }} g</p>
+                </div>
+                <div class="progres-catatan mb-1">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1">Garam</p>
+                        <p class="mb-1">{{ round((auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100) }}%</p>
                     </div>
+                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progres-garam" style="width: {{ (auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100 }}%"></div>
+                    </div>
+                    <p class="m-0 text-biru">{{ auth()->user()->dailyGaram }}/{{ auth()->user()->batasGaram }} g</p>
+                </div>
+                <div class="progres-catatan mb-1">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1">Gula</p>
+                        <p class="mb-1">{{ round((auth()->user()->dailyGula / auth()->user()->batasGula) * 100) }}%</p>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progres-gula" style="width: {{ (auth()->user()->dailyGula / auth()->user()->batasGula) * 100 }}%"></div>
+                    </div>
+                    <p class="m-0 text-biru">{{ auth()->user()->dailyGula }}/{{ auth()->user()->batasGula }} g</p>
+                </div>
+                <div class="progres-catatan mb-1">
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1">Lemak</p>
+                        <p class="mb-1">{{ round((auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100) }}%</p>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progres-lemak" style="width: {{ (auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100 }}%"></div>
+                    </div>
+                    <p class="m-0 text-biru">{{ auth()->user()->dailyLemak }}/{{ auth()->user()->batasLemak }} g</p>
                 </div>
             </div>
             @endif
 
             @if($pagination)
             @foreach($catatans as $tanggal => $catatanPerTanggal)
-            <div class="col-12 p-2 px-3 border rounded-3 my-3">
-                <div class="d-flex justify-content-between align-items-center text-biru">
-                    <p class="m-0 fw-bolder">{{ $catatanPerTanggal[0]->hari }}</p>
-                    <p class="m-0 fw-bolder">{{ $tanggal }}</p>
+            <div class="col-12 px-2 py-3">
+                <div class="border rounded-3 p-2">
+                    <div class="d-flex justify-content-between align-items-center text-biru">
+                        <p class="m-0 fw-bolder">{{ $catatanPerTanggal[0]->hari }}</p>
+                        <p class="m-0 fw-bolder">{{ $tanggal }}</p>
+                    </div>
                 </div>
             </div>
             @foreach($catatanPerTanggal as $catatan)
-            <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
+            <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
                     <div class="card-body overflow-hidden">
                         <h5 class="card-title text-nowrap">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('catatan_makanans', function (Blueprint $table) {
             $table->uuid('id')->unique();
-            $table->foreignUuid('user_id');
+            $table->foreignUuid('user_id')->constrained();
             $table->foreignUuid('makanan_id')->constrained();
             $table->timestamp('waktu');
             $table->integer('jumlah');

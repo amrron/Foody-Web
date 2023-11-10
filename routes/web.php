@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/catatanku', [CatatankuController::class, 'index']);
     Route::get('/catatanku/history', [CatatankuController::class, 'history']);
     Route::post('/catatanku', [CatatankuController::class, 'store']);;
-    Route::delete('/catatanku/delete/{catatanMakanan}', [CatatankuController::class, 'destroy']);
+    Route::delete('/catatanku/delete/{id}', [CatatankuController::class, 'destroy']);
     Route::get('/bmi', [BmiController::class, 'index']);
     Route::get('/bmi/history', [BmiController::class, 'history']);
     Route::post('/bmi', [BmiController::class, 'store']);

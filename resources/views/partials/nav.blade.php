@@ -33,10 +33,10 @@
             @endguest
             @auth
                 <div class="profile-link mb-3">
-                    <a class="nav-link dropdown-toggle fs-3 p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fs-3 p-0 text-biru-muda" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->username }}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="width: 250px">
                         <li>
                             <a class="dropdown-item fs-5" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
                         </li>

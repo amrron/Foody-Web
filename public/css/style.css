@@ -345,6 +345,14 @@ footer a {
     color: var(--blue);
 }
 
+.makanan-card-outside:nth-child(odd) .makanan-card-inside {
+    background-color: var(--light-blue);
+}
+
+.makanan-card-outside:nth-child(even) .makanan-card-inside {
+    background-color: var(--pink);
+}
+
 @media screen and (min-width: 591px) {
     swiper-slide {
         width: auto;
@@ -479,11 +487,6 @@ swiper-slide {
     background-color: #D9F4FF;
 }
 
-.site-main .site-banner .site-title h3{
-    padding-top: 35%;
-    font-weight: 500;
-}
-
 .site-main .site-banner .site-title h3::after{
     content: " ";
     height: 2px;
@@ -503,7 +506,7 @@ swiper-slide {
 }
 
 .site-main .site-banner .banner-image > img{
-    padding: 7rem 0;
+    padding: 0 0;
     width: 90rem;
 }
 
@@ -607,13 +610,6 @@ swiper-slide {
     max-width: 600px;
 }
 
-.para{
-    padding: 10px 0;
-    font-size: 18px;
-    max-width: 560px;
-}
-
-
 .button-record{
     display: inline-block;
     background-color:  #91d8ef;
@@ -716,10 +712,6 @@ swiper-slide {
 
     .about-image{
         display: none;
-    }
-
-    .about-title{
-        padding-bottom: 100px;
     }
 
     .about-title {

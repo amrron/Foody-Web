@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bmis', function (Blueprint $table) {
             $table->uuid('id')->unique();
-            $table->foreignUuid('user_id');
+            $table->foreignUuid('user_id')->constrained();
             $table->date('waktu');
             $table->integer('berat_badan');
             $table->integer('tinggi_badan');
