@@ -32,6 +32,7 @@ Route::group(["middleware" => ['auth:sanctum']], function() {
     Route::post("/catatanku", [CatatanMakananController::class, 'store']);
     Route::get("/catatanku/daily", [CatatanMakananController::class, 'daily']);
     Route::get("/catatanku/history", [CatatanMakananController::class, 'history']);
+    Route::get("/catatanku/tanggal/{tanggal}", [CatatanMakananController::class, 'tanggal']);
     Route::delete("/catatanku/delete/{id}", [CatatanMakananController::class, 'delete']);
 
     Route::post(("/bmi"), [BmiApiController::class, 'store']);

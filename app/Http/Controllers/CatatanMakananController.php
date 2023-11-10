@@ -97,4 +97,19 @@ class CatatanMakananController extends Controller
             'message' => "Berhasil menghapus catatan"
         ], 201);
     }
+
+    public function tanggal($tanggal) {
+        $catatans = CatatanMakanan::whereDate('waktu', $tanggal)->get();
+        // $catatans = CatatanMakanan::all();
+
+        $catatan = [];
+        foreach($catatans as $catat){
+            array_push($catatan, new CatatankuResource($catat));
+        }
+
+        return response()->json([
+            'status' => "success",
+            'data' => $catatan
+        ], 201);
+    }
 }

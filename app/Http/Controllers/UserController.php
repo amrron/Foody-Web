@@ -59,7 +59,7 @@ class UserController extends Controller
 
         // return (new UserResource($user))->response()->setStatusCode(201);
         return response()->json([
-            "status" => "error",
+            "status" => "success",
             "data" => new UserResource($user),
             "summary" => [
                 'rata_rata_bmi' => $user->rataRataBmi,
