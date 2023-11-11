@@ -161,5 +161,16 @@ class User extends Authenticatable
         });
 
     }
+
+    public function getKeteranganAktivitasAttribute(){
+        $keterangan = [
+            1.2 => "Tidak aktif (tidak berolahraga sama sekali)",
+            1.375 => "Cukup aktif (berolahraga 1-3x seminggu)",
+            1.55 => "Aktif (berolahraga 3-5x seminggu)",
+            1.725 => "Sangat aktif (berolahraga atau 6-7x seminggu)"
+        ];
+
+        return $keterangan[$this->aktivitas];
+    }
     
 }

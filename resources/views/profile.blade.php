@@ -256,7 +256,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                        <select name="" id="jeni_kelamin" class="form-control">
+                        <select name="" id="jenis_kelamin" class="form-control">
                             <option>{{ auth()->user()->jenis_kelamin }}</option>
                             <option value="Laki-laki">Laki-Laki</option>
                             <option value="Perempuan">Perempuan</option>
@@ -268,7 +268,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="aktivitas" class="form-label">Level Aktivitas</label>
-                        <select name="" id="aktivitas" class="form-control" value="{{ auth()->user()->aktivitas }}">
+                        <select name="" id="aktivitas" class="form-control">
+                            <option value="{{ auth()->user()->aktivitas }}" selected>{{ auth()->user()->keteranganAktivitas }}</option>
                             <option value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
                             <option value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
                             <option value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
