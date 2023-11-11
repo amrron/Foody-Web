@@ -3,7 +3,7 @@
 @section('container')  
     <main class="site-main" style="margin-top: 100px;">
     <!-- START BAGIAN BANNER -->
-        <section class="bg-biru-muda">
+        <section class="bg-biru-muda py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
@@ -31,11 +31,11 @@
         </section>
     <!-- END BAGIAN BANNER -->
     <!-- START BAGIAN CATATANKU  -->
-        <section class="site-catatanku">
+        <section class="site" id="catatankuSection">
             <div class="container">
                 <div class="row" >
                     <div class="col-lg-6 col-md-12 site-title" style="margin-top: 100px;">
-                        <h1 class="title-text text-biru fw-semibold" id="catatankuSection">Pilih waktu makan Anda untuk mencatat pola makan Anda dengan <strong class="fw-bold">Catatanku</strong></h1>
+                        <h1 class="title-text text-biru fw-semibold" id="">Pilih waktu makan Anda untuk mencatat pola makan Anda dengan <strong class="fw-bold">Catatanku</strong></h1>
                         <p class="title-text text-biru">Anda dapat mencatat semua jenis makanan yang  dikonsumsi sepanjang hari. Anda juga dapat dengan cepat menambahkan makanan yang  dimakan</p>
                         <div class="site-buttons">
                             <div class="d-flex flex-row flex-wrap">
@@ -52,14 +52,14 @@
     <!-- END BAGIAN CATATANKU -->
     <!-- START BAGIAN RECORD MAKANAN -->
         <section class="record-makanan">
-            <div class="container">
+            <div class="">
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="about-image">
                             <img src="/img/record_page.png" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 p-2 text-center" style="margin-top: 200px;">
+                    <div class="col-lg-6 col-md-12 p-3 text-center" style="margin-top: 200px;">
                         <h1 class="pt-5 fs-1 text-biru fw-semibold title-text fw-semibold">Catat dan Pantau BMI Anda dengan Mudah Bersama Foody</h1>
                         <div class="py-1 ">
                             <p class="text-biru fs-5">

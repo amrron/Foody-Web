@@ -68,7 +68,7 @@ class UserController extends Controller
                 'total_protein' => $user->totalProtein,
                 'total_garam' => $user->totalGaram,
                 'total_gula' => $user->totalGula,
-                'total_garam' => $user->totalGaram,
+                'total_lemak' => $user->totaLemak,
                 'batas_karbo' => $user->batasKarbo,
                 'batas_protein' => $user->batasProtein,
                 'batas_lemak' => $user->batasLemak,

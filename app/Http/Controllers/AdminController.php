@@ -62,7 +62,7 @@ class AdminController extends Controller
         $makanan = $request->validate([
             'nama' => 'required|string|max:50',
             'deskripsi' => 'required|string',
-            'gambar' => 'required|string',
+            'gambar' => 'image|file|max:2048',
             'protein' => 'required|numeric',
             'karbohidrat' => 'required|numeric',
             'garam' => 'required|numeric',
@@ -71,6 +71,10 @@ class AdminController extends Controller
         ]);
 
         $makanan['slug'] = Str::slug($makanan['nama']);
+        
+        if($request->file('gambar')){
+            $makanan['gambar'] = $request->file('gambar')->store('upload');
+        }
 
         Makanan::create($makanan);
 
