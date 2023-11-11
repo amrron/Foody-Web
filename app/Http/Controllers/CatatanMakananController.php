@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CatatanMakananRequest;
-use App\Http\Resources\CatatankuResource;
-use App\Models\CatatanMakanan;
 use Illuminate\Http\Request;
+use App\Models\CatatanMakanan;
+use Illuminate\Http\JsonResponse;
+use App\Http\Resources\CatatankuResource;
+use App\Http\Requests\CatatanMakananRequest;
 
 class CatatanMakananController extends Controller
 {
-    public function store(CatatanMakananRequest $request) {
-
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
+    public function store(CatatanMakananRequest $request) : JsonResponse {
 
         $validatedCatatan = $request->validated();
 
@@ -31,14 +25,7 @@ class CatatanMakananController extends Controller
         ], 201);
     }
 
-    public function daily(){
-
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
+    public function daily() : JsonResponse {
 
         $catatanku = CatatanMakanan::where('user_id', auth()->user()->id)->where('waktu', '>=', date('Y-m-d'))->get()->sortBy('waktu');
         
@@ -53,14 +40,7 @@ class CatatanMakananController extends Controller
         ], 201);
     }
 
-    public function history() {
-
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
+    public function history() : JsonResponse {
         
         $catatans = [];
 
@@ -81,14 +61,9 @@ class CatatanMakananController extends Controller
         ], 201);
     }
 
-    public function delete($id) {
+    public function delete($id) : JsonResponse {
+
         $catatan = CatatanMakanan::where('id', $id);
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
 
         $catatan->delete();
 
@@ -98,7 +73,7 @@ class CatatanMakananController extends Controller
         ], 201);
     }
 
-    public function tanggal($tanggal) {
+    public function tanggal($tanggal) : JsonResponse {
         $catatans = CatatanMakanan::whereDate('waktu', $tanggal)->get();
         // $catatans = CatatanMakanan::all();
 

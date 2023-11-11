@@ -99,7 +99,7 @@
                         <img src="/img/blueup.svg" class="me-3" alt="">
                         <div class="">
                             <p class="m-0">Gula</p>
-                            <p class="fs-5 fw-bold text-biru m-0">{{ number_format(auth()->user()->totalGula, 2) }} g</p>
+                            <p class="fs-5 fw-bold text-biru m-0">{{ auth()->user()->totalGula }} g</p>
                         </div>
                     </div>
                 </div>
@@ -285,8 +285,8 @@
                     {{-- </form> --}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="reset">Close</button>
-                    <button type="button" form="edit-produk" class="btn btn-primary" id="simpan">Simpan</button>
+                    <button type="button" class="btn bg-biru-muda" data-bs-dismiss="modal" id="reset">Batal</button>
+                    <button type="button" form="edit-produk" class="btn bg-biru text-biru-muda" id="simpan">Simpan</button>
                 </div>
             </div>
         </div>

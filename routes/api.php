@@ -1,12 +1,10 @@
 <?php
 
 use App\Http\Controllers\BmiApiController;
-use App\Http\Controllers\CatatankuController;
 use App\Http\Controllers\CatatanMakananController;
 use App\Http\Controllers\MakananApiController;
 use App\Http\Controllers\ProdukApiController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(["middleware" => ['auth:sanctum']], function() {
+Route::middleware(['auth:sanctum'])->group(function() {
     Route::get("/users/profile", [UserController::class, 'profile']);
     Route::post("/users/logout", [UserController::class, 'logout']);
     Route::put("/users/update", [UserController::class, 'update']);

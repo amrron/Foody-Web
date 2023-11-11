@@ -60,13 +60,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 p-3 text-center" style="margin-top: 200px;">
-                        <h1 class="pt-5 fs-1 text-biru fw-semibold title-text fw-semibold">Catat dan Pantau BMI Anda dengan Mudah Bersama Foody</h1>
-                        <div class="py-1 ">
-                            <p class="text-biru fs-5">
-                                Dengan fitur pencatatan BMI kami, Anda dapat dengan cepat memantau perubahan dalam perjalanan kesehatan Anda. Tidak perlu repot, cukup masukkan data berat dan tinggi tubuh Anda, dan "Foody" akan menghitung BMI Anda secara otomatis. Pantau perkembangan Anda menuju kehidupan sehat yang lebih baik!
-                            </p>
+                        <div class="mx-5">
+                            <h1 class="pt-5 fs-1 text-biru fw-semibold title-text fw-semibold">Catat dan Pantau BMI Anda dengan Mudah Bersama Foody</h1>
+                            <div class="py-1 ">
+                                <p class="text-biru fs-5">
+                                    Dengan fitur pencatatan BMI kami, Anda dapat dengan cepat memantau perubahan dalam perjalanan kesehatan Anda. Tidak perlu repot, cukup masukkan data berat dan tinggi tubuh Anda, dan "Foody" akan menghitung BMI Anda secara otomatis. Pantau perkembangan Anda menuju kehidupan sehat yang lebih baik!
+                                </p>
+                            </div>
+                            <a href="/bmi" class="text-biru p-3 mt-3 bg-biru-muda rounded-2" style="text-decoration: none;">Try It</a>
                         </div>
-                        <a href="/bmi" class="text-biru p-3 mt-3 bg-biru-muda rounded-2" style="text-decoration: none;">Try It</a>
                     </div>
                 </div>
             </div>
@@ -281,7 +283,7 @@
                                 {{ $prod->deskripsi }}
                             </p>
                             <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="{{ substr($prod->gambar, 0, 6) == "upload" ? asset('storage/' . $prod->gambar) : $prod->gambar  }}" alt="" style="width: 240px">
+                                <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" style="width: 240px">
                             </div>
                             <div class="harga fs-13px">
                                 <span>Price: </span>

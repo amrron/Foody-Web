@@ -9,12 +9,6 @@ use Illuminate\Http\Request;
 class BmiApiController extends Controller
 {
     public function store(BmiRequest $request){
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
 
         $validatedBmi = $request->validated();
         $validatedBmi['user_id'] = auth()->user()->id;
@@ -30,12 +24,6 @@ class BmiApiController extends Controller
     }
 
     public function recent(){
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
 
         $bmi = Bmi::where('user_id', auth()->user()->id)->where('waktu', '>=', date('Y-m-d'))->get()->sortBy('waktu');
         $bmis = [];
@@ -55,12 +43,6 @@ class BmiApiController extends Controller
     }
 
     public function history(){
-        if(!auth()->check()){
-            return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
-        }
 
         $groupedBmi = Bmi::where('user_id', auth()->user()->id)->where('waktu', '<', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu');
         $bmis = [];
@@ -86,7 +68,7 @@ class BmiApiController extends Controller
 
     public function delete(Bmi $bmi) {
         
-        if(!auth()->check() || auth()->user()->id !== $bmi->user_id){
+        if(auth()->user()->id !== $bmi->user_id){
             return response()->json([
                 'status' => "error",
                 'message' => "Unauthorized"

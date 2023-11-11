@@ -34,7 +34,7 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function login(Request $request) {
+    public function login(Request $request) : JsonResponse {
         
         if(auth()->attempt($request->only("username", "password"))){
             $user = auth()->user();
@@ -54,7 +54,7 @@ class UserController extends Controller
 
     }
 
-    public function profile() {
+    public function profile() : JsonResponse{
         $user = auth()->user();
 
         // return (new UserResource($user))->response()->setStatusCode(201);
@@ -77,7 +77,7 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function logout(){
+    public function logout() : JsonResponse{
         auth()->user()->tokens()->delete();
 
         return response()->json([
@@ -85,7 +85,7 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function update(UserUpdateRequest $request){
+    public function update(UserUpdateRequest $request) : JsonResponse{
 
         $data = $request->validated();
         $user = auth()->user();

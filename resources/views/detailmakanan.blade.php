@@ -7,7 +7,7 @@
             <h1 class="fs-1 fw-normal mb-4">{{ $makanan->nama }}</h1>
             <div class="row justify-content-between align-items-center mb-3">
                 <div class="col-md-5 d-flex justify-content-center align-items-center">
-                    <img src="{{ substr($makanan->gambar, 0, 6) == "upload" ? asset('storage/' . $makanan->gambar) : $makanan->gambar  }}" class="w-100" alt="gambar makanan">
+                    <img src="{{ str_contains($makanan->gambar, "upload/") ? asset('storage/' . $makanan->gambar) : $makanan->gambar }}" class="w-100" alt="gambar makanan">
                 </div>
                 <div class="col-md-5">
                     <canvas id="myChart" style="height: 200px"></canvas>

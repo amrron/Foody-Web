@@ -49,7 +49,7 @@
                 <div class="mb-3 d-flex flex-column">
                     <label for="gambar" class="form-label">Gambar</label>
                     @if(isset($makanan->gambar))
-                    <img src="{{ asset('storage/' . $makanan->gambar) }}" class="img-privew img-fluid my-3 col-sm-6" alt="">
+                    <img src="{{ str_contains($makanan->gambar, "upload/") ? asset('storage/' . $makanan->gambar) : $makanan->gambar }}" class="img-privew img-fluid my-3 col-sm-6" alt="">
                     @else
                     <img src="" class="img-privew img-fluid my-3 col-sm-6 d-none" alt="">
                     @endif
