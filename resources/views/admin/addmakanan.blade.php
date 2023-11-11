@@ -30,7 +30,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Makanan</label>
-                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror"" id="nama" value="{{ $makanan->nama ?? old("nama") }}" required>
+                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama" value="{{ $makanan->nama ?? old("nama") }}" required>
                     @error('nama')
                     <div id="validationServer04Feedback" class="invalid-feedback">
                     {{ $message }}
@@ -39,7 +39,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <textarea class="form-control @error('deskripsi') is-invalid @enderror"" name="deskripsi" id="deskripsi" rows="3" required>{{ $makanan->deskripsi ?? old("deskripsi") }}</textarea>
+                    <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="3" required>{{ $makanan->deskripsi ?? old("deskripsi") }}</textarea>
                     @error('deskripsi')
                     <div id="validationServer04Feedback" class="invalid-feedback">
                     {{ $message }}
@@ -48,8 +48,11 @@
                 </div>
                 <div class="mb-3 d-flex flex-column">
                     <label for="gambar" class="form-label">Gambar</label>
-                    <img src="" class="img-privew img-fluid my-3 col-sm-6 d-none" alt="">
-                    <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror"" id="gambar" placeholder="Link" value="{{ $makanan->gambar ?? old("gambar") }}" onchange="privewImage()" required>
+                    <img src="{{ $makanan->gambar ? asset('storage/' . $makanan->gambar) : "" }}" class="img-privew img-fluid my-3 col-sm-6 {{ $makanan->gambar ? "" : "d-none" }}" alt="">
+                    <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror" id="gambar" placeholder="Link" value="{{ $makanan->gambar ?? old("gambar") }}" onchange="privewImage()" {{ $makanan->gambar ? "" : "required" }}>
+                    @if ($makanan)
+                        <input type="hidden" name="old_gambar" value="{{ $makanan->gambar }}">
+                    @endif
                     @error('gambar')
                     <div id="validationServer04Feedback" class="invalid-feedback">
                     {{ $message }}
@@ -58,7 +61,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="protein" class="form-label">Protein</label>
-                    <input type="number" name="protein" class="form-control @error('protein') is-invalid @enderror"" id="protein" placeholder="g" value="{{ $makanan->protein ?? old("protein") }}" required>
+                    <input type="number" name="protein" class="form-control @error('protein') is-invalid @enderror" id="protein" placeholder="g" value="{{ $makanan->protein ?? old("protein") }}" required>
                     @error('protein')
                     <div id="validationServer04Feedback" class="invalid-feedback">
                     {{ $message }}
@@ -68,7 +71,7 @@
                 <div class="mb-3 row">
                     <div class="col-6">
                         <label for="karbohidrat" class="form-label">Karbohidrat</label>
-                        <input type="number" name="karbohidrat" class="form-control @error('karbohidrat') is-invalid @enderror"" id="karbohidrat" placeholder="g" value="{{ $makanan->karbohidrat ?? old("karbohidrat") }}" required>
+                        <input type="number" name="karbohidrat" class="form-control @error('karbohidrat') is-invalid @enderror" id="karbohidrat" placeholder="g" value="{{ $makanan->karbohidrat ?? old("karbohidrat") }}" required>
                         @error('karbohidrat')
                         <div id="validationServer04Feedback" class="invalid-feedback">
                         {{ $message }}
@@ -77,7 +80,7 @@
                     </div>
                     <div class="col-6">
                         <label for="garam" class="form-label">Garam</label>
-                        <input type="number" name="garam" class="form-control @error('garam') is-invalid @enderror"" id="garam" placeholder="g" value="{{ $makanan->garam ?? old("garam") }}" required>
+                        <input type="number" name="garam" class="form-control @error('garam') is-invalid @enderror" id="garam" placeholder="g" value="{{ $makanan->garam ?? old("garam") }}" required>
                         @error('garam')
                         <div id="validationServer04Feedback" class="invalid-feedback">
                         {{ $message }}
@@ -88,7 +91,7 @@
                 <div class="mb-3 row">
                     <div class="col-6">
                         <label for="gula" class="form-label">Gula</label>
-                        <input type="number" name="gula" class="form-control @error('gula') is-invalid @enderror"" id="gula" placeholder="g" value="{{ $makanan->gula ?? old("gula") }}" required>
+                        <input type="number" name="gula" class="form-control @error('gula') is-invalid @enderror" id="gula" placeholder="g" value="{{ $makanan->gula ?? old("gula") }}" required>
                         @error('gula')
                         <div id="validationServer04Feedback" class="invalid-feedback">
                         {{ $message }}
@@ -97,7 +100,7 @@
                     </div>
                     <div class="col-6">
                         <label for="lemak" class="form-label">Lemak</label>
-                        <input type="number" name="lemak" class="form-control @error('lemak') is-invalid @enderror"" id="lemak" placeholder="g" value="{{ $makanan->lemak ?? old("lemak") }}" required>
+                        <input type="number" name="lemak" class="form-control @error('lemak') is-invalid @enderror" id="lemak" placeholder="g" value="{{ $makanan->lemak ?? old("lemak") }}" required>
                         @error('lemak')
                         <div id="validationServer04Feedback" class="invalid-feedback">
                         {{ $message }}
