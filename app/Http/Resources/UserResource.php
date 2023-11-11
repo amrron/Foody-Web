@@ -20,6 +20,7 @@ class UserResource extends JsonResource
             "jenis_kelamin" => $this->jenis_kelamin,
             "usia" => \Carbon\Carbon::parse($this->tanggal_lahir)->age,
             "berat_badan" => $this->berat_badan,
+            "tanggla_lahir" => $this->tanggal_lahir,
             "tinggi_badan" => $this->tinggi_badan,
             "username" => $this->username
         ];
