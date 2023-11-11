@@ -166,7 +166,7 @@
                             itemToDelete.remove();
                         },
                         error: function (error) {
-                            Swal.fire('Error!', 'Something went wrong!', 'error');
+                            Swal.fire('Error!', error.responseJSON.message, 'error');
                             console.error(error);
                         }
                     });

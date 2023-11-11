@@ -126,7 +126,15 @@ class BmiController extends Controller
     }
 
     public function destroy($id){
-        Bmi::where('id', $id)->delete();
+        if(Bmi::where('user_id', auth()->user()->id)->count() < 2) {
+            return response()->json([
+                "status" => 'error',
+                "message" => 'Tidak dapat menghapus satu-satunya catatan!'
+            ], 400);
+        }
+        else {
+            Bmi::where('id', $id)->delete();
+        }
     }
 
 }

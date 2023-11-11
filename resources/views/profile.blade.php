@@ -256,7 +256,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                        <select name="" id="jeni_kelamin" class="form-control" value="{{ auth()->user()->jenis_kelamin }}">
+                        <select name="" id="jeni_kelamin" class="form-control">
+                            <option>{{ auth()->user()->jenis_kelamin }}</option>
                             <option value="Laki-laki">Laki-Laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>

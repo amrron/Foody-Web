@@ -68,18 +68,19 @@ class BmiApiController extends Controller
 
     public function delete(Bmi $bmi) {
         
-        if(auth()->user()->id !== $bmi->user_id){
+        if(Bmi::where('user_id', auth()->user()->id)->count() < 2) {
             return response()->json([
-                'status' => "error",
-                'message' => "Unauthorized"
-            ], 401);
+                "status" => 'error',
+                "message" => 'Tidak dapat menghapus satu-satunya catatan!'
+            ], 400);
         }
+        else {
+            $bmi->delete();
 
-        $bmi->delete();
-
-        return response()->json([
-            'status' => "success",
-            'message' => "Berhasil menghapus catatan BMI"
-        ], 201);
+            return response()->json([
+                'status' => "success",
+                'message' => "Berhasil menghapus catatan BMI"
+            ], 201);
+        }
     }
 }
