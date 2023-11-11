@@ -48,9 +48,13 @@
                 </div>
                 <div class="mb-3 d-flex flex-column">
                     <label for="gambar" class="form-label">Gambar</label>
-                    <img src="{{ $makanan->gambar ? asset('storage/' . $makanan->gambar) : "" }}" class="img-privew img-fluid my-3 col-sm-6 {{ $makanan->gambar ? "" : "d-none" }}" alt="">
-                    <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror" id="gambar" placeholder="Link" value="{{ $makanan->gambar ?? old("gambar") }}" onchange="privewImage()" {{ $makanan->gambar ? "" : "required" }}>
-                    @if ($makanan)
+                    @if(isset($makanan->gambar))
+                    <img src="{{ asset('storage/' . $makanan->gambar) }}" class="img-privew img-fluid my-3 col-sm-6" alt="">
+                    @else
+                    <img src="" class="img-privew img-fluid my-3 col-sm-6 d-none" alt="">
+                    @endif
+                    <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror" id="gambar" placeholder="Link" value="{{ $makanan->gambar ?? old("gambar") }}" onchange="privewImage()" {{ isset($makanan) ? "" : "required" }}>
+                    @if (isset($makanan))
                         <input type="hidden" name="old_gambar" value="{{ $makanan->gambar }}">
                     @endif
                     @error('gambar')

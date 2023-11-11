@@ -143,16 +143,26 @@ class AdminController extends Controller
         return response()->json($produk, 201);
     }
 
-    public function editProduk(Request $request, Produk $produk){
+    public function editProduk(Request $request, $id){
         $validatedProduk = $request->validate([
             'nama' => 'required|string',
             'harga' => 'required|numeric',
             'deskripsi' => 'required|string',
-            'gambar' => 'required|string',
+            'gambar' => 'image|file|max:2048',
             'link' => 'required|string',
         ]);
 
-        Produk::where('id', $produk->id)->update($validatedProduk);
+        if($request->file('gambar')){
+            $validatedProduk['gambar'] = $request->file('gambar')->store('upload');
+            if($request->old_gambar){
+                Storage::delete($request->old_gambar);
+            }
+        }
+        else {
+            $validatedProduk['gambar'] = $request->old_gambar;
+        }
+
+        Produk::where('id', $id)->update($validatedProduk);
     }
 
     public function addProduk(Request $request){
@@ -160,9 +170,13 @@ class AdminController extends Controller
             'nama' => 'required|string',
             'harga' => 'required|numeric',
             'deskripsi' => 'required|string',
-            'gambar' => 'required|string',
+            'gambar' => 'image|file|max:2048',
             'link' => 'required|string',
         ]);
+
+        if($request->file('gambar')){
+            $produk['gambar'] = $request->file('gambar')->store('upload');
+        }
 
         Produk::create($produk);
     }

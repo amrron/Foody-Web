@@ -26,13 +26,13 @@
             @if($produk->count())
             @foreach($produk as $prod)
             <div class="col-lg-12 mb-3">
-                <div class="w-100 kartu">
+                <div class="w-100 kartu" id="{{ $prod->id }}">
                     <h2 class="judul-kartu fs-20px text-center ">{{ $prod->nama }}</h2>
                     <p class="deskripsi-kartu fs-13px">
                         {{ $prod->deskripsi }}
                     </p>
                     <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                        <img src="{{ $prod->gambar }}" alt="" style="width: 240px">
+                        <img src="{{ asset('storage/' . $prod->gambar) }}" alt="" style="width: 240px">
                     </div>
                     <div class="harga fs-13px">
                         <span>Price: </span>

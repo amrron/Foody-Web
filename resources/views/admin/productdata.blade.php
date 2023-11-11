@@ -57,7 +57,7 @@
                                 </svg>
                             </a>
                         </td>
-                        <td>{{ $product->nama }}</td>
+                        <td><a href="/produk#{{ $product->id }}">{{ $product->nama }}</a></td>
                         <td>{{ $product->deskripsi }}</td>
                         <td>Rp{{ number_format($product->harga, 0, ',', '.') }}</td>
                     </tr>
@@ -76,33 +76,35 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        {{-- <form action="" method="post" id="edit-produk"> --}}
+                        <form action="" method="post" id="form" enctype="multipart/form-data">
                         <input type="hidden" name="" id="id-produk">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="nama">
+                            <input type="text" name="nama" class="form-control" id="nama">
                         </div>
                         <div class="mb-3">
                             <label for="harga" class="form-label">Harga</label>
-                            <input type="number" class="form-control" id="harga">
+                            <input type="number" name="harga" class="form-control" id="harga">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" id="deskripsi" rows="6"></textarea>
+                            <textarea class="form-control" name="deskripsi" id="deskripsi" rows="6"></textarea>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex flex-column">
                             <label for="gambar" class="form-label">Gambar</label>
-                            <input type="text" class="form-control" id="gambar">
+                            <img src="" class="img-fluid my-3 col-sm-6 d-none" id="img-prev" alt="">
+                            <input type="file" name="gambar" class="form-control" id="gambar" onchange="privewImage()">
+                            <input type="hidden" name="old_gambar" id="old_gambar">
                         </div>
                         <div class="mb-3">
                             <label for="link" class="form-label">Link</label>
-                            <input type="text" class="form-control" id="link">
+                            <input type="text" name="link" class="form-control" id="link">
                         </div>
-                        {{-- </form> --}}
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn bg-biru-muda text-biru" data-bs-dismiss="modal" id="reset">Batal</button>
-                        <button type="button" form="edit-produk" class="btn bg-biru text-biru-muda" id="simpan">Simpan</button>
+                        <button type="submit" id="edit-produk" form="form" class="btn bg-biru text-biru-muda" id="simpan">Simpan</button>
                     </div>
                 </div>
             </div>
@@ -159,9 +161,18 @@
                         $('#id-produk').val(resp.id);
                         $('#nama').val(resp.nama);
                         $('#harga').val(resp.harga);
-                        $('#gambar').val(resp.gambar);
+                        $('#img-prev').attr('src', ()=>{
+                            if (resp.gambar.slice(0, 6) == "upload"){
+                                return "/storage/" + resp.gambar;
+                            }
+                            else {
+                                return resp.gambar;
+                            }
+                        })
+                        $('#img-prev').removeClass('d-none');
+                        $('#old-gambar').val(resp.gambar);
                         $('#link').val(resp.link);
-                        $('#deskripsi').html(resp.deskripsi);
+                        $('#deskripsi').val(resp.deskripsi);
                     },
                     error: function (xhr, status, error) {
                         console.error('Terjadi kesalahan:', error);
@@ -174,36 +185,37 @@
                 $('.modal-title').html("Tambah Produk");
                 $('#id-produk').val("");
                 $('#nama').val("");
+                $('#img-prev').attr('src', '');
+                $('#old-gambar').val('');
                 $('#harga').val("");
                 $('#gambar').val("");
                 $('#link').val("");
                 $('#deskripsi').html("");
-            })
+            });
 
-            $('#simpan').click(function(){
+            $('#form').submit(function(e){
+                e.preventDefault();
 
                 var url = "";
-                var type = ""
+                var type = "";
+
+                fd = null;
+                var fd = new FormData(this);
+                fd.append('_token', '{{ csrf_token() }}');
+
                 if($('#id-produk').val() == ""){
                     url = "/adminpanel/productdata";
-                    type = 'POST'
                 }
                 else {
                     url = "/adminpanel/productdata/edit/" + $('#id-produk').val();
-                    type = 'PUT';
                 }
 
                 $.ajax({
                     url: url,
-                    type: type,
-                    data: {
-                        _token : '{{ csrf_token() }}',
-                        nama: $('#nama').val(),
-                        harga: $('#harga').val(),
-                        gambar: $('#gambar').val(),
-                        link: $('#link').val(),
-                        deskripsi: $('#deskripsi').val(),
-                    },
+                    type: 'POST',
+                    data: fd,
+                    processData: false,
+                    contentType: false,
                     success: function(){
                         $('.modal').hide();
                         Swal.fire(($('#id-produk').val() == "") ? "Produk berhasil ditambahkan" : "Produk berhasil diedit", "", 'success').then(() => {
@@ -217,5 +229,20 @@
                 })
             })
         })
+
+
+
+        function privewImage(){
+            const gambar = document.querySelector('#gambar');
+            const imgPreview = document.querySelector('#img-prev');
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(gambar.files[0])
+
+            oFReader.onload = function(oFREvent){
+                imgPreview.src = oFREvent.target.result;
+                imgPreview.classList.remove('d-none')
+            }
+        }
     </script>
 @endsection

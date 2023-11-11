@@ -56,7 +56,7 @@
                                 </svg>
                             </a>
                         </td>
-                        <td>{{ $food->nama }}</td>
+                        <td><a href="/makanan/{{ $food->slug }}">{{ $food->nama }}</a></td>
                         <td>{{ $food->deskripsi }}</td>
                     </tr>
                     @php

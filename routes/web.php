@@ -67,7 +67,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/adminpanel/productdata', [AdminController::class, 'produk']);
     Route::delete('/adminpanel/productdata/delete/{produk}', [AdminController::class, 'deleteProduk']);
     Route::get('/adminpanel/productdata/edit/{produk}', [AdminController::class, 'dataProduk']);
-    Route::put('/adminpanel/productdata/edit/{produk}', [AdminController::class, 'editProduk']);
+    Route::post('/adminpanel/productdata/edit/{id}', [AdminController::class, 'editProduk']);
     Route::post('/adminpanel/productdata', [AdminController::class, 'addProduk']);
     Route::get('/adminpanel/feedback', [AdminController::class, 'feedback']);
     Route::get('/adminpanel/feedback/{feedback}', [AdminController::class, 'feedbackDetail']);
