@@ -281,7 +281,7 @@
                                 {{ $prod->deskripsi }}
                             </p>
                             <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="{{ asset('storage/' . $prod->gambar) }}" alt="" style="width: 240px">
+                                <img src="{{ substr($prod->gambar, 0, 6) == "upload" ? asset('storage/' . $prod->gambar) : $prod->gambar  }}" alt="" style="width: 240px">
                             </div>
                             <div class="harga fs-13px">
                                 <span>Price: </span>
