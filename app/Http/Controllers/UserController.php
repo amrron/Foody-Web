@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\RegisterResource;
+use App\Http\Resources\SummaryResource;
 use App\Http\Resources\UserResource;
 use App\Models\Bmi;
 use App\Models\User;
@@ -61,19 +62,7 @@ class UserController extends Controller
         return response()->json([
             "status" => "success",
             "data" => new UserResource($user),
-            "summary" => [
-                'rata_rata_bmi' => $user->rataRataBmi,
-                'aktivitas' => $user->aktivitas,
-                'total_karbohidrat' => $user->totalKarbo,
-                'total_protein' => $user->totalProtein,
-                'total_garam' => $user->totalGaram,
-                'total_gula' => $user->totalGula,
-                'total_lemak' => $user->totaLemak,
-                'batas_karbo' => $user->batasKarbo,
-                'batas_protein' => $user->batasProtein,
-                'batas_lemak' => $user->batasLemak,
-                'kebutuhan_kalori' => $user->kebutuhanKalori
-            ]
+            "summary" => new SummaryResource($user)
         ], 201);
     }
 
