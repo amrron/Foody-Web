@@ -83,14 +83,16 @@
                 @endif
                 @if($history)
                     @foreach($bmis as $tanggal => $bmiPerTanggal)
-                    <div class="col-12 p-2 px-3 border rounded-3 my-3">
-                        <div class="d-flex justify-content-between align-items-center text-biru">
-                            <p class="m-0 fw-bolder">{{ $bmiPerTanggal[0]->hari }}</p>
-                            <p class="m-0 fw-bolder">{{ $tanggal }}</p>
+                    <div class="col-12 px-2 py-3">
+                        <div class="border rounded-3 p-2">
+                            <div class="d-flex justify-content-between align-items-center text-biru">
+                                <p class="m-0 fw-bolder">{{ $bmiPerTanggal[0]->hari }}</p>
+                                <p class="m-0 fw-bolder">{{ $tanggal }}</p>
+                            </div>
                         </div>
                     </div>
                     @foreach($bmiPerTanggal as $bmi)
-                        <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
+                        <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                             <div class="card card-catatan-bmi" style="border-radius: 10px; border-left: 10px solid {{ $bmi->kategori['color'] }}">
                                 <div class="card-body overflow-hidden">
                                     <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>

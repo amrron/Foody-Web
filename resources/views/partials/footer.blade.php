@@ -5,7 +5,7 @@
                 <div class="row footer-row m-auto">
                     <div class="footer-logo-desc col-lg-3 col-md-6">
                         <h5 class="fs-18px fw-bold fw-bold">FOODY</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque error sapiente eveniet ipsa maxime</p>
+                        <p>Kesehatan Tubuh Membaik, Solusi Untuk menjaga kesehatan Tubuh Anda</p>
                     </div>
                     <div class="footer-quicklinks col-lg-3 col-md-6">
                         <h5 class="fs-18px fw-bold">Quicklinks</h5>
@@ -19,8 +19,7 @@
                     <div class="footer-contactus col-lg-3 col-md-6">
                         <h5 class="fs-18px fw-bold">Contact Us</h5>
                         <ul class="p-0">
-                            <li>(+62) 821 254 254</li>
-                            <li>info@foody.com</li>
+                            <li>kelompokorion@gmail.com</li>
                             <li>Sekolah Vokasi IPB</li>
                             <li>Bogor - Indonesia</li>
                         </ul>

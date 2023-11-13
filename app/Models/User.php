@@ -120,7 +120,8 @@ class User extends Authenticatable
     public function getKebutuhanKaloriAttribute(){
 
         // Asumsikan kesehatan normal dan aktivitas sedang
-        $aktivitas = 1.2;
+        // $aktivitas = 1.2;
+        $aktivitas = $this->aktivitas;
         $kesehatan = 1;
 
         // Kebutuhan kalori = (10 * berat badan) + (6.25 * tinggi badan) - (5 * umur) + (5 jika laki-laki, -161 jika perempuan)

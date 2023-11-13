@@ -56,7 +56,7 @@
         </div>
         <figure class="text-center">
             <figcaption class="blockquote-footer">
-                <p>don't have an account yet? <a href="/register" class="text_birugelap">Create one</a>.</p>
+                <p>Belum mememiliki akun? <a href="/register" class="text_birugelap">Buat sekarang</a>.</p>
             </figcaption>
         </figure>
     </form>
