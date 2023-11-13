@@ -43,8 +43,10 @@ class BmiController extends Controller
     }
 
     public function getDataForChart() {
-        $labels = [Bmi::where('user_id', auth()->user()->id)->pluck('waktu')];
-        array_push($labels, date('Y-m-d'));
+        $labels = Bmi::where('user_id', auth()->user()->id)->pluck('waktu')->toArray();
+        if(count($labels) < 2) {
+            array_push($labels, date('Y-m-d'));
+        }
         $data = [
             'labels' => $labels,
             'datasets' => [

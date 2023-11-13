@@ -46,7 +46,7 @@
             </div>
             @endforeach
             @else
-            <p class="text-center fs-4 m-0 opacity-50">Produk tidak ditemukan</p>
+            <p class="text-center fs-4 m-0 opacity-50 mt-5">Produk <strong>"{{ request('search') }}"</strong> tidak ditemukan</p>
             @endif
         </div>
     </section>

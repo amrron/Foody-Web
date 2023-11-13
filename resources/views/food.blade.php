@@ -85,7 +85,7 @@
             </div>
             @endforeach
             @else
-            <p class="text-center fs-4 m-0 opacity-50">Makanan tidak ditemukan</p>
+            <p class="text-center fs-4 m-0 opacity-50 mt-5">Makanan <strong>{{ request('search') ? "\"" . request('search') . "\"" : "" }}</strong> tidak ditemukan</p>
             @endif
         </div>
     </section>

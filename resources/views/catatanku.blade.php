@@ -321,7 +321,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                             </div>
                         </div>
                     </div>
@@ -371,7 +371,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                             </div>
                         </div>
                     </div>
@@ -423,7 +423,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                             </div>
                         </div>
                     </div>
@@ -474,7 +474,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="text" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
                             </div>
                         </div>
                     </div>
