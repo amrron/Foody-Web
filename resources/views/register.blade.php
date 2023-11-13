@@ -29,8 +29,8 @@
     </div>
     <div class="mb-3">
         <label class="form-label" for="jenis_kelamin">Jenis kelamin</label>
-        <select class="form-select" aria-label="Default select example" name="jenis_kelamin" id="jenis_kelamin" value="{{ old('jenis_kelamin') }}">
-            <option selected>Pilih </option>
+        <select class="form-select @error('jenis_kelamin') is-invalid @enderror" aria-label="Default select example" name="jenis_kelamin" id="jenis_kelamin" value="{{ old('jenis_kelamin') }}">
+            <option value="{{  old('jenis_kelamin') }}">{{ old('jenis_kelamin') ?? "Pilih" }}</option>
             <option value="Laki-laki">Laki-laki</option>
             <option value="Perempuan">Perempuan</option>
         </select>
@@ -51,12 +51,12 @@
     </div>
     <div class="mb-3">
         <label class="form-label" for="aktivitas">Level aktivitas</label>
-        <select class="form-select" aria-label="Default select example" name="aktivitas" id="aktivitas" value="{{ old('aktivitas') }}">
-            <option selected>Pilih </option>
-            <option value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
-            <option value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
-            <option value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
-            <option value="1.725">Sangat aktif (berolahraga atau 6-7x seminggu)</option>
+        <select class="form-select @error('aktivitas') is-invalid @enderror" aria-label="Default select example" name="aktivitas" id="aktivitas" value="{{ old('aktivitas') }}">
+            <option value="">Pilih</option>
+            <option {{ old('aktivitas') == "1.2"? "selected" : "" }} value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
+            <option {{ old('aktivitas') == "1.375" ? "selected" : "" }} value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
+            <option {{ old('aktivitas') == "1.55" ? "selected" : "" }} value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
+            <option {{ old('aktivitas') == "1.725" ? "selected" : "" }} value="1.725">Sangat aktif (berolahraga atau 6-7x seminggu)</option>
         </select>
         @error('aktivitas')
         <div id="validationServer04Feedback" class="invalid-feedback">
@@ -67,7 +67,7 @@
     <div class="row mb-3">
         <div class="col">
             <label class="form-label" for="tinggi_badan" >Tinggi badan</label>
-            <input type="number" name="tinggi_badan" class="form-control" id="tinggi_badan" placeholder="cm" value="{{ old('tinggi_badan') }}">
+            <input type="number" name="tinggi_badan" class="form-control @error('tinggi_badan') is-invalid @enderror" id="tinggi_badan" placeholder="cm" value="{{ old('tinggi_badan') }}">
             @error('tinggi_badan')
             <div id="validationServer04Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -76,7 +76,7 @@
         </div>
         <div class="col">
             <label class="form-label" for="berat_badan">Berat badan</label>
-            <input type="number" name="berat_badan" class="form-control" id="berat_badan" placeholder="kg" value="{{ old('berat_badan') }}">
+            <input type="number" name="berat_badan" class="form-control @error('berat_badan') is-invalid @enderror" id="berat_badan" placeholder="kg" value="{{ old('berat_badan') }}">
             @error('berat_badan')
             <div id="validationServer04Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -84,8 +84,8 @@
             @enderror
         </div>
       </div>
-    <label for="username" class="form-label">Username</label>
-    <div class="input-group mb-3">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" id="username" name="username" aria-label="Username" value="{{ old('username') }}"
             aria-describedby="addon-wrapping">
         @error('username')

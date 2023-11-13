@@ -34,7 +34,7 @@
             timer: 1500
             })
         </script> --}}
-        <div class="alert alert-success d-flex align-items-center" role="alert" style="position: fixed; top: 110px; right: 10px; height: 58px; min-width: 320px">
+        <div class="alert alert-success d-flex align-items-center" id="alert-success" role="alert" style="position: fixed; top: 110px; right: 10px; height: 58px; min-width: 320px">
             <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:" width="24" height="24" ><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
             <div>
               <strong>Login</strong> berhasil!!!
@@ -43,7 +43,7 @@
     @endif
 
     @if(session()->has('success_logout'))
-        <div class="alert alert-success d-flex align-items-center" role="alert" style="position: fixed; top: 110px; right: 10px; height: 58px; min-width: 320px">
+        <div class="alert alert-success d-flex align-items-center" id="alert-success" role="alert" style="position: fixed; top: 110px; right: 10px; height: 58px; min-width: 320px">
             <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:" width="24" height="24" ><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
             <div>
               <strong>Logout</strong> berhasil!!!

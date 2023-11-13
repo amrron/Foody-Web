@@ -58,5 +58,5 @@ $(document).ready(function() {
     //     $(".alert-success").slideUp(500).remove();
     // });
 
-    $(".alert-success").fadeTo(2000, 500).animate({left : '100%'}, 400).hide();
+    $("#alert-success").fadeTo(2000, 500).animate({left : '100%'}, 400).hide();
 })

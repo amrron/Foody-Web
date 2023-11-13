@@ -3,16 +3,6 @@
 @section('container')
 
 <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
-
-    @if(session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 100">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-
-
     <form action="" method="post" class="container-fluid" style="width: fit-content;">
         @csrf
         <h3 class="judul text-center">Login</h3>
@@ -26,6 +16,12 @@
                 {{ session('loginFailed') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        @endif
+        @if(session()->has('success_register'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 100">
+            {{ session('success_register') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         @endif
         <label for="username" class="form-label">Username</label>
         <div class="input-group mb-3">

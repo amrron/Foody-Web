@@ -15,13 +15,15 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-         $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'jenis_kelamin' => "required",
             'tanggal_lahir' => 'required|date',
             'aktivitas' => 'required|numeric',
-            'username' => 'required|unique:users',
+            'berat_badan' => 'required|numeric',
+            'tinggi_badan' => 'required|numeric',
+            'username' => 'required|unique:users|min:2',
             'password' => 'min:6',
             'confirm-password' => 'min:6|required_with:password|same:password'
         ]);
@@ -39,7 +41,7 @@ class RegisterController extends Controller
 
         Bmi::create($validatedBmi);
 
-        $request->session()->flash('success', 'Akun anda berhasil dibuat, silahkan login');
+        $request->session()->flash('success_register', 'Akun anda berhasil dibuat, silahkan login');
 
         return redirect('login');
     }
