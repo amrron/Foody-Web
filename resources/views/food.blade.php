@@ -71,7 +71,9 @@
             @foreach($makanan as $food)
             <div class="col-lg-4 col-sm-6 mb-3 makanan-card-outside">
                 <div class="makanan bordered rounded-2 p-3 makanan-card-inside">
-                    <img src="{{ str_contains($food->gambar, "upload/") ? asset('storage/' . $food->gambar) : $food->gambar }}" class="w-100 rounded-2" alt="">
+                    <div class="col-12">
+                        <img src="{{ str_contains($food->gambar, "upload/") ? asset('storage/' . $food->gambar) : $food->gambar }}" class="w-100 rounded-2" alt="" style="height: 200px; object-fit: cover;">
+                    </div>
                     <div class="">
                         <h5>{{ $food->nama }}</h5>
                         <a href="/makanan/{{ $food->slug }}" class="text-biru">Lihat detail <svg xmlns="http://www.w3.org/2000/svg" width="10" height="4" viewBox="0 0 10 4" fill="none">

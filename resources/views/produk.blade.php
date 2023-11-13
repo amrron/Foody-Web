@@ -32,7 +32,7 @@
                         {{ $prod->deskripsi }}
                     </p>
                     <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                        <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" style="width: 240px">
+                        <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" style="width: 240px; height: 240px; object-fit: cover">
                     </div>
                     <div class="harga fs-13px">
                         <span>Price: </span>
