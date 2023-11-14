@@ -23,6 +23,9 @@ class MakananApiController extends Controller
     }
 
     public function detail(Makanan $makanan) {
-        return (new MakananResource($makanan))->response()->setStatusCode(201);
+        return response()->json([
+            'status' => "success",
+            'data' => new MakananResource($makanan)
+        ], 201);
     }
 }
