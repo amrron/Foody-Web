@@ -104,4 +104,13 @@ class UserController extends Controller
         $user->save();
         return (new UserResource($user))->response()->setStatusCode(201);
     }
+
+    function summary() {
+        $user = auth()->user();
+
+        return response()->json([
+            "status" => "success",
+            "data" => new SummaryResource($user)
+        ], 201);
+    }
 }

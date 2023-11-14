@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum'])->group(function() {
     Route::get("/users/profile", [UserController::class, 'profile']);
+    Route::get("/users/summary", [UserController::class, 'summary']);
     Route::post("/users/logout", [UserController::class, 'logout']);
     Route::put("/users/update", [UserController::class, 'update']);
 
