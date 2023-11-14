@@ -125,7 +125,7 @@ class CatatankuController extends Controller
             ]);
             
             $generated_makanan = json_decode($compilation['choices'][0]['message']['content']);
-            $makanan['nama'] = Str::of($validatedData['nama']);
+            $makanan['nama'] = Str::of($validatedData['nama'])->title();
             $makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
             $makanan['protein'] = floatval($generated_makanan->protein);
             $makanan['garam'] = floatval($generated_makanan->garam);

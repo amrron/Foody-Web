@@ -44,7 +44,7 @@ class BmiApiController extends Controller
 
     public function history(){
 
-        $groupedBmi = Bmi::where('user_id', auth()->user()->id)->where('waktu', '<', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu');
+        $groupedBmi = Bmi::where('user_id', auth()->user()->id)->where('waktu', '<=', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu');
         $bmis = [];
 
         foreach($groupedBmi as $tanggal => $bmi){

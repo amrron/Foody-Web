@@ -20,7 +20,7 @@ class BmiController extends Controller
     public function history() {
         return view('bmi', [
             'title' => 'BMI - History',
-            'bmis' => Bmi::where('user_id', auth()->user()->id)->where('waktu', '<', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu'),
+            'bmis' => Bmi::where('user_id', auth()->user()->id)->where('waktu', '<=', date('Y-m-d'))->get()->sortByDesc('waktu')->groupBy('waktu'),
             'history' => true
         ]);
     }

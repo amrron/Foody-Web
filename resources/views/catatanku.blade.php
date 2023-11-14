@@ -301,7 +301,7 @@
 <!-- Modal Pagi -->
 <div class="modal fade" id="modal-pagi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
@@ -318,7 +318,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
+                                <input class="form-select form-select-sm" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -361,7 +361,7 @@
 <!-- Modal Siang -->
 <div class="modal fade" id="modal-sore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Sore</h1>
@@ -380,7 +380,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
+                                <input class="form-select form-select-sm" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -417,7 +417,7 @@
 <!-- Modal Sore -->
 <div class="modal fade" id="modal-siang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Siang</h1>
@@ -436,7 +436,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
+                                <input class="form-select form-select-sm" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -475,7 +475,7 @@
 <!-- Modal Malam -->
 <div class="modal fade" id="modal-malam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
@@ -494,7 +494,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
+                                <input class="form-select form-select-sm" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -531,7 +531,7 @@
 
 {{-- <div class="modal fade" id="modal-default" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
@@ -579,6 +579,50 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.form-catatanku').submit(function(e){
+            e.preventDefault();
+            var data = new FormData(this);
+            $('.modal').hide();
+            Swal.fire({
+                title: 'Tunggu sebentar...',
+                html: "AI sedang mencari data makanan",
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                showConfirmButton: false,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+
+                    $.ajax({
+                        url : "/catatanku/input",
+                        type: 'POST',
+                        data: data,
+                        contentType: false,
+                        processData: false,
+                        success: function(){
+                            Swal.fire("Catatan makanan berhasil direkam!", "", 'success').then(() => {
+                                location.reload();
+                            });
+                        },
+                        error: function(xhr, status, error){
+                            Swal.fire('Error!', 'Terjadi kesalahan', 'error').then(() => {
+                                $('.modal').show(); 
+                            });
+                            console.error(error);
+                        },
+                        complete: function(){
+                            Swal.hideLoading()
+                        }
+                    });
+                },
+            });
+            
+        });
+    });
+</script>
 
 <script>
   const ctx = document.getElementById('myChart');
