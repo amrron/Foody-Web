@@ -21,7 +21,7 @@ class SummaryResource extends JsonResource
             'total_protein' => $this->totalProtein,
             'total_garam' => $this->totalGaram,
             'total_gula' => $this->totalGula,
-            'total_lemak' => $this->totaLemak,
+            'total_lemak' => $this->totalLemak,
             'batas_karbohidrat' => $this->batasKarbo,
             'batas_protein' => $this->batasProtein,
             'batas_lemak' => $this->batasLemak,
