@@ -82,23 +82,6 @@
                         </div>
                     </div>
                 </swiper-slide>
-                {{-- <swiper-slide>
-                    <div class="" style="min-width: 320px">
-                        <div class="card py-4 biru mt-3 mb-3 border border-0">
-                            <div class="card-body text-center">
-                                <img src="/img/night.svg" class="w-50" alt="">
-                                <h5 class="card-title display-6 fw-bold">Default</h5>
-                                <p class="card-text fw-medium"></p>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary navy fw-medium border border-0" data-bs-toggle="modal" data-bs-target="#modal-default">
-                                    <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.71585 4.77894C8.71585 4.26195 8.61402 3.75002 8.41617 3.27238C8.21833 2.79474 7.92834 2.36075 7.56277 1.99518C7.1972 1.62961 6.76321 1.33962 6.28557 1.14178C5.80793 0.943931 5.296 0.842102 4.77901 0.842102C4.26201 0.842102 3.75008 0.943931 3.27244 1.14178C2.7948 1.33962 2.36081 1.62961 1.99524 1.99518C1.62967 2.36075 1.33968 2.79474 1.14184 3.27238C0.943992 3.75002 0.842163 4.26195 0.842163 4.77894C0.842163 5.82306 1.25694 6.82441 1.99524 7.56271C2.73354 8.30101 3.73489 8.71579 4.77901 8.71579C5.82312 8.71579 6.82447 8.30101 7.56277 7.56271C8.30107 6.82441 8.71585 5.82306 8.71585 4.77894ZM5.1369 5.13684L5.13762 6.92918C5.13762 7.02409 5.09991 7.11513 5.03279 7.18225C4.96567 7.24936 4.87464 7.28707 4.77972 7.28707C4.6848 7.28707 4.59377 7.24936 4.52665 7.18225C4.45953 7.11513 4.42183 7.02409 4.42183 6.92918V5.13684H2.62877C2.53385 5.13684 2.44282 5.09913 2.3757 5.03201C2.30859 4.9649 2.27088 4.87386 2.27088 4.77894C2.27088 4.68402 2.30859 4.59299 2.3757 4.52587C2.44282 4.45876 2.53385 4.42105 2.62877 4.42105H4.42111V2.63158C4.42111 2.53666 4.45882 2.44562 4.52594 2.37851C4.59305 2.31139 4.68409 2.27368 4.77901 2.27368C4.87392 2.27368 4.96496 2.31139 5.03207 2.37851C5.09919 2.44562 5.1369 2.53666 5.1369 2.63158V4.42105H6.92852C7.02344 4.42105 7.11447 4.45876 7.18159 4.52587C7.24871 4.59299 7.28642 4.68402 7.28642 4.77894C7.28642 4.87386 7.24871 4.9649 7.18159 5.03201C7.11447 5.09913 7.02344 5.13684 6.92852 5.13684H5.1369ZM12.8316 3.34737H9.20759C9.08519 2.96918 8.91463 2.60832 8.7001 2.27368H12.8316C13.4486 2.27368 14.0403 2.51877 14.4766 2.95504C14.9129 3.39131 15.158 3.98302 15.158 4.6V9.52391C15.1578 9.9508 14.9881 10.3602 14.6862 10.662L10.6628 14.6862C10.5132 14.8357 10.3357 14.9544 10.1403 15.0353C9.9449 15.1162 9.73547 15.1579 9.52397 15.1579H4.60006C3.98308 15.1579 3.39137 14.9128 2.9551 14.4765C2.51884 14.0403 2.27374 13.4486 2.27374 12.8316V8.70004C2.60515 8.91263 2.96591 9.0837 3.34743 9.20753V12.8316C3.34743 13.523 3.90861 14.0842 4.60006 14.0842H9.43164V11.7579C9.4316 11.1637 9.65894 10.592 10.067 10.1601C10.4751 9.72817 11.033 9.4688 11.6262 9.43515L11.758 9.43158H14.0843V4.6C14.0843 4.26778 13.9523 3.94917 13.7174 3.71425C13.4825 3.47934 13.1639 3.34737 12.8316 3.34737ZM13.3248 10.5053H11.758C11.4435 10.5053 11.1405 10.6236 10.9092 10.8367C10.678 11.0498 10.5353 11.3421 10.5096 11.6555L10.5053 11.7579V13.3248L13.3248 10.5053Z" fill="#D9F4FF"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide> --}}
             </swiper-container>
         </div>
     </div>
@@ -301,7 +284,7 @@
 <!-- Modal Pagi -->
 <div class="modal fade" id="modal-pagi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Pagi</h1>
@@ -312,18 +295,12 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
-                                {{-- <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_pagi" required>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_pagi" required>
                                     <option value="" selected>Pilih Makanan</option>
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
-                                </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" autocomplete="off" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -361,7 +338,7 @@
 <!-- Modal Siang -->
 <div class="modal fade" id="modal-sore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Sore</h1>
@@ -373,19 +350,13 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                {{-- <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_sore" required>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_sore" required>
                                     <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
-                                </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -417,7 +388,7 @@
 <!-- Modal Sore -->
 <div class="modal fade" id="modal-siang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Siang</h1>
@@ -429,19 +400,13 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                {{-- <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_siang" required>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_siang" required>
                                     <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
-                                </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -475,7 +440,7 @@
 <!-- Modal Malam -->
 <div class="modal fade" id="modal-malam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
+        <form action="" method="post" class="modal-content">
             @csrf
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
@@ -487,19 +452,13 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
                                 
-                                {{-- <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_malam" required>
+                                <select class="form-select form-select-sm pilih-makanan" name="makanan_id" id="select_malam" required>
                                     <option value="" selected>Pilih Makanan</option>
                                     
                                     @foreach($makanans as $makanan)
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
-                                </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -528,54 +487,6 @@
         </form>
     </div>
 </div>
-
-{{-- <div class="modal fade" id="modal-default" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content">
-            @csrf
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="input-group mb-3">
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_malam" aria-label="Small select example" required>
-                                <option valuselected>Time</option>
-                                <option value="19:00">19:00</option>
-                                <option value="20:00">20:00</option>
-                                <option value="21:00">21:00</option>
-                                <option value="22:00">22:00</option>
-                                <option value="23:00">23:00</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="input-group input-group-sm mb-3">
-                                {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                {{-- <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary navy">Save changes</button>
-            </div>
-        </form>
-    </div>
-</div> --}}
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
