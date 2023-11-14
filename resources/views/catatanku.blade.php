@@ -529,54 +529,6 @@
     </div>
 </div>
 
-{{-- <div class="modal fade" id="modal-default" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <form action="/catatanku/input" method="post" class="modal-content form-catatanku">
-            @csrf
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Malam</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="input-group mb-3">
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
-                                <datalist id="list">
-                                    @foreach($makanans as $makanan)
-                                    <option>{{ $makanan->nama }}</option>
-                                    @endforeach
-                                </datalist>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_malam" aria-label="Small select example" required>
-                                <option valuselected>Time</option>
-                                <option value="19:00">19:00</option>
-                                <option value="20:00">20:00</option>
-                                <option value="21:00">21:00</option>
-                                <option value="22:00">22:00</option>
-                                <option value="23:00">23:00</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="input-group input-group-sm mb-3">
-                                {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                {{-- <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary biru" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary navy">Save changes</button>
-            </div>
-        </form>
-    </div>
-</div> --}}
-
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -585,7 +537,7 @@
         $('.form-catatanku').submit(function(e){
             e.preventDefault();
             var data = new FormData(this);
-            $('.modal').hide();
+            // $('.modal').hide();
             Swal.fire({
                 title: 'Tunggu sebentar...',
                 html: "AI sedang mencari data makanan",
@@ -609,9 +561,8 @@
                         },
                         error: function(xhr, status, error){
                             Swal.fire('Error!', 'Terjadi kesalahan', 'error').then(() => {
-                                $('.modal').show(); 
+                                Swal.close();
                             });
-                            console.error(error);
                         },
                         complete: function(){
                             Swal.hideLoading()
