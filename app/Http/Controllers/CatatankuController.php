@@ -109,48 +109,38 @@ class CatatankuController extends Controller
 
         $makanan = Makanan::where('nama', 'LIKE', "{$validatedData['nama']}%")->first();
         if(empty($makanan)){
-            // return redirect('/catatanku');
             $compilation = OpenAI::chat()->create([
                 'model' => 'gpt-3.5-turbo',
                 'messages' => [
                     [
                         'role' => 'system',
-                        'content' => 'kamu adalah database yang menyimpan data kandungan makanan, yaitu karbohidrat, protein, garam, gula, dan lemak. menghasilkan dalam format json'
+                        'content' => 'kamu adalah database yang menyimpan data kandungan makanan, yaitu karbohidrat, protein, garam, gula, lemak, dan deskripsi kurang dari 20 kata. menghasilkan dalam format json'
                     ],
                     [
                         'role' => 'user',
                         'content' => $validatedData['nama']
-                    ]
-                ],
+                        ]
+                    ],
                 'max_tokens' => 100, 
             ]);
             
             $generated_makanan = json_decode($compilation['choices'][0]['message']['content']);
-            // dd($generated_makanan);
-            $makanan['nama'] = $validatedData['nama'];
+            $makanan['nama'] = Str::of($validatedData['nama']);
             $makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
             $makanan['protein'] = floatval($generated_makanan->protein);
             $makanan['garam'] = floatval($generated_makanan->garam);
             $makanan['gula'] = floatval($generated_makanan->gula);
             $makanan['lemak'] = floatval($generated_makanan->lemak);
-            $makanan['deskripsi'] = "Data makanan dihasilkan oleh AI";
+            $makanan['deskripsi'] = $generated_makanan->deskripsi;
             $makanan['slug'] = Str::slug($makanan['nama']);
             $makanan['gambar'] = "https://www.greatwall.lk/assets/image/default.png";
             $new_makanan = Makanan::create($makanan);
-            $new_makanan_id = $new_makanan->id;
+            $makanan_id = $new_makanan->id;
 
-            $makanan_id = $new_makanan_id;
-            // dd($makanan_id);
-            $validatedData['makanan_id'] = $makanan_id;
-            $validatedData['user_id'] = auth()->user()->id;
-            $validatedData['waktu'] = date('Y-m-d') . " " . $validatedData['waktu'];
-
-            CatatanMakanan::create($validatedData);
-            
-            return redirect('/catatanku');
         }
-        $makanan_id = $makanan->id;
-        // dd($makanan_id);
+        else {
+            $makanan_id = $makanan->id;
+        }
         $validatedData['makanan_id'] = $makanan_id;
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['waktu'] = date('Y-m-d') . " " . $validatedData['waktu'];

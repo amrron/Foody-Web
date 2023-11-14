@@ -318,7 +318,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" autocomplete="off" required>
+                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -344,7 +344,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -380,7 +380,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
+                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -400,7 +400,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -436,7 +436,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
+                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -458,7 +458,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -494,7 +494,7 @@
                                         <option value="{{ $makanan->id }}">{{ $makanan->nama }}</option>
                                     @endforeach
                                 </select> --}}
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
+                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -515,7 +515,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -542,7 +542,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="input-group mb-3">
-                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" required>
+                                <input class="form-select form-select-sm pilih-makanan" type="text" name="nama" id="select_malam" list="list" placeholder="Masukan makanan" autocomplete="off" required>
                                 <datalist id="list">
                                     @foreach($makanans as $makanan)
                                     <option>{{ $makanan->nama }}</option>
@@ -563,7 +563,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                {{-- <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" required>
+                                {{-- <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
