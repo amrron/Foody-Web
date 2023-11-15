@@ -119,12 +119,19 @@ class CatatankuController extends Controller
                     [
                         'role' => 'user',
                         'content' => $validatedData['nama']
-                        ]
+                    ]
                     ],
                 'max_tokens' => 100, 
             ]);
-            
-            $generated_makanan = json_decode($compilation['choices'][0]['message']['content']);
+
+            $result = $compilation['choices'][0]['message']['content'];
+            if(!str_contains($result, "{")){
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Makanan tidak ditemukan. Periksa kembali nama makanan'
+                ], 400);
+            }
+            $generated_makanan = json_decode($result);
             $makanan['nama'] = Str::of($validatedData['nama'])->title();
             $makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
             $makanan['protein'] = floatval($generated_makanan->protein);
@@ -146,7 +153,10 @@ class CatatankuController extends Controller
         $validatedData['waktu'] = date('Y-m-d') . " " . $validatedData['waktu'];
 
         CatatanMakanan::create($validatedData);
-        
-        return redirect('/catatanku');
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Berhasil mencatat makanan!'
+        ], 201);
     }
 }

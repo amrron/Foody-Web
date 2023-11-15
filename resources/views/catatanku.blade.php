@@ -554,15 +554,16 @@
                         data: data,
                         contentType: false,
                         processData: false,
-                        success: function(){
-                            Swal.fire("Catatan makanan berhasil direkam!", "", 'success').then(() => {
+                        success: function(response){
+                            Swal.fire(response.message, "", 'success').then(() => {
                                 location.reload();
                             });
                         },
-                        error: function(xhr, status, error){
-                            Swal.fire('Error!', 'Terjadi kesalahan', 'error').then(() => {
+                        error: function(error){
+                            Swal.fire('Error!', error.responseJSON.message == "Makanan tidak ditemukan. Periksa kembali nama makanan" ? error.responseJSON.message : "Terjadi Kesalahan", 'error').then(() => {
                                 Swal.close();
                             });
+                            console.error(error);
                         },
                         complete: function(){
                             Swal.hideLoading()
