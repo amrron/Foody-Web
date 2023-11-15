@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Makanan;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\CatatanMakanan;
 use Illuminate\Http\JsonResponse;
+use OpenAI\Laravel\Facades\OpenAI;
 use App\Http\Resources\CatatankuResource;
 use App\Http\Requests\CatatanMakananRequest;
 
@@ -22,6 +25,66 @@ class CatatanMakananController extends Controller
         return response()->json([
             "status" => "success",
             "message" => "Berhasil menambahkan catatan"
+        ], 201);
+    }
+
+    public function input(Request $request){
+        $validatedData = $request->validate([
+            'nama' => 'required|string',
+            'jumlah' => 'required|numeric',
+            'waktu' => 'required'
+        ]);
+
+        $makanan = Makanan::where('nama', 'LIKE', "{$validatedData['nama']}%")->first();
+        if(empty($makanan)){
+            $compilation = OpenAI::chat()->create([
+                'model' => 'gpt-3.5-turbo',
+                'messages' => [
+                    [
+                        'role' => 'system',
+                        'content' => 'kamu adalah database yang menyimpan data kandungan makanan, yaitu karbohidrat, protein, garam, gula, lemak, dan deskripsi kurang dari 20 kata. menghasilkan dalam format json'
+                    ],
+                    [
+                        'role' => 'user',
+                        'content' => $validatedData['nama']
+                    ]
+                    ],
+                'max_tokens' => 100, 
+            ]);
+
+            $result = $compilation['choices'][0]['message']['content'];
+            if(!str_contains($result, "{")){
+                return response()->json([
+                    'status' => 'error',
+                    'message' => 'Makanan tidak ditemukan. Periksa kembali nama makanan'
+                ], 400);
+            }
+            $generated_makanan = json_decode($result);
+            $makanan['nama'] = Str::of($validatedData['nama'])->title();
+            $makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
+            $makanan['protein'] = floatval($generated_makanan->protein);
+            $makanan['garam'] = floatval($generated_makanan->garam);
+            $makanan['gula'] = floatval($generated_makanan->gula);
+            $makanan['lemak'] = floatval($generated_makanan->lemak);
+            $makanan['deskripsi'] = $generated_makanan->deskripsi;
+            $makanan['slug'] = Str::slug($makanan['nama']);
+            $makanan['gambar'] = "https://www.greatwall.lk/assets/image/default.png";
+            $new_makanan = Makanan::create($makanan);
+            $makanan_id = $new_makanan->id;
+
+        }
+        else {
+            $makanan_id = $makanan->id;
+        }
+        $validatedData['makanan_id'] = $makanan_id;
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['waktu'] = date('Y-m-d') . " " . $validatedData['waktu'];
+
+        CatatanMakanan::create($validatedData);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Berhasil mencatat makanan!'
         ], 201);
     }
 

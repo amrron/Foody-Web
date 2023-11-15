@@ -29,6 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::put("/users/update", [UserController::class, 'update']);
 
     Route::post("/catatanku", [CatatanMakananController::class, 'store']);
+    Route::post("catatanku/store", [CatatanMakananController::class, 'input']);
     Route::get("/catatanku/daily", [CatatanMakananController::class, 'daily']);
     Route::get("/catatanku/history", [CatatanMakananController::class, 'history']);
     Route::get("/catatanku/tanggal/{tanggal}", [CatatanMakananController::class, 'tanggal']);
