@@ -61,15 +61,17 @@
                
                 @if(!$history)
                     @if(count($bmis) > 0)
-                    <div class="col-12 p-2 px-3 border rounded-3 my-3">
-                        <div class="d-flex justify-content-between align-items-center text-biru">
-                            <p class="m-0 fw-bolder">Today</p>
-                            <p class="m-0 fw-bolder">{{ date('Y-m-d') }}</p>
+                    <div class="col-12 px-2 py-3">
+                        <div class="border rounded-3 p-2">
+                            <div class="d-flex justify-content-between align-items-center text-biru">
+                                <p class="m-0 fw-bolder">Hari ini</p>
+                                <p class="m-0 fw-bolder">{{ date("Y-m-d") }}</p>
+                            </div>
                         </div>
                     </div>
                     @endif
                     @foreach($bmis as $bmi)
-                    <div class="col-lg-4 col-12-sm container-catatan-makanan p-1">
+                    <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                         <div class="card card-catatan-bmi" style="border-radius: 10px; border-left: 10px solid {{ $bmi->kategori['color'] }}">
                             <div class="card-body overflow-hidden">
                                 <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>
@@ -121,7 +123,7 @@
     
             var ctx = document.getElementById('bmiChart').getContext('2d');
             var myChart = new Chart(ctx, {
-                type: 'line', // Ganti sesuai jenis grafik yang Anda inginkan
+                type: 'line',
                 data: data,
                 options: {
                     responsive: true,
@@ -131,6 +133,11 @@
                             position: 'top'
                         }
                     },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                    }
                 }
             });
         }

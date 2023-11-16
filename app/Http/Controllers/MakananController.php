@@ -17,14 +17,14 @@ class MakananController extends Controller
 
     public function detailMakanan(Makanan $makanan) {
         return view('detailmakanan', [
-            "title" => "Makanana satuan",
+            "title" => $makanan->nama,
             "makanan" => $makanan
         ]);
     }
 
     public function cariMakanan($makanan) {
         return view("makanan", [
-            "title" => "Cari makanana: " . $makanan . " | FOODY",
+            "title" => "Cari makanan: " . $makanan . " | FOODY",
             "makanan" => Makanan::where('nama', 'LIKE', '%' . $makanan . '%')->get()
         ]);
     }
