@@ -97,7 +97,7 @@ class BmiApiController extends Controller
             'datasets' => [
                 [
                     'label' => 'Nilai BMI',
-                    'borderColor' => '#17184f',
+                    'borderColor' => 'rgba(23, 24, 79)',
                     'backgroundColor' => 'rgba(255, 255, 255)',
                     'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
                     'type' => 'line',
@@ -182,9 +182,7 @@ class BmiApiController extends Controller
             ],
         ];
 
-        return response()->json([
-            'status' => 'error',
-            'chart' => $setup
-        ]);
+        $link = "https://quickchart.io/chart?c=" . json_encode($setup);
+        return response($link);
     }
 }

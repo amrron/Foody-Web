@@ -39,7 +39,7 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::get(("/bmi/recent"), [BmiApiController::class, 'recent']);
     Route::get(("/bmi/history"), [BmiApiController::class, 'history']);
     Route::delete(("/bmi/delete/{bmi}"), [BmiApiController::class, 'delete']);
-    Route::get("/bmi/chart", [BmiApiController::class, 'chart']);
+    Route::get("/bmi/chart/", [BmiApiController::class, 'chart']);
 });
 
 Route::post("/users", [UserController::class, 'store']);

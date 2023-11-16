@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BmiController;
-use App\Http\Controllers\CatatankuController;
-use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MakananController;
-use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BmiController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BmiApiController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MakananController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CatatankuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::put('/profile/edit', [ProfileController::class, 'edit']);
     Route::post('/logout', [LoginController::class, 'logout']);
+    Route::get("/bmi/chart", [BmiApiController::class, 'chart']);
 });
 
 Route::get('/makanan', [MakananController::class, 'index']);
