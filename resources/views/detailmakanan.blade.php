@@ -1,43 +1,106 @@
 @extends('layouts.main')
 
 @section('container')
-    <main class="min-vh-100 mb-5" style="margin-top: 150px">
-        <div class="container-lg p-4 bg-biru-muda rounded-3">
+    <main class="min-vh-100 mb-5" style="margin-top: 100px">
+        <div class="container-lg px-0 py-3 px-2">
+          <span class="fs-5">Makanan / <span class="text-biru fw-bold">{{ $makanan->nama }}</span></span>
+        </div>
+        <div class="container-lg p-0 px-2">
             @if(!empty($makanan))
-            <h1 class="fs-1 fw-normal mb-4">{{ $makanan->nama }}</h1>
-            <div class="row justify-content-between align-items-center mb-3">
-                <div class="col-md-5 d-flex justify-content-center align-items-center">
-                    <img src="{{ str_contains($makanan->gambar, "upload/") ? asset('storage/' . $makanan->gambar) : $makanan->gambar }}" class="w-100" alt="gambar makanan">
+            <img src="{{ str_contains($makanan->gambar, "upload/") ? asset('storage/' . $makanan->gambar) : $makanan->gambar }}" class="w-100 rounded-3 p-0 mb-3 border" alt="gambar makanan" style="height: 300px; object-fit: cover">
+
+            <h1 class="fs-2 fw-medium mb-4">{{ $makanan->nama }}</h1>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="w-100 bg-biru-muda text-biru p-3 mb-3">
+                  Kandungan Makanan
                 </div>
-                <div class="col-md-5">
-                    <canvas id="myChart" style="height: 200px"></canvas>
+                @auth
+                <div class="progres-catatan mb-1">
+                  <div class="d-flex justify-content-between">
+                      <p class="mb-1">Karbohidrat</p>
+                      <p class="mb-1">{{ round(($makanan->karbohidrat / auth()->user()->batasKarbo) * 100) }}%</p>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progres-karbohidrat" style="width: {{ ($makanan->karbohidrat / auth()->user()->batasKarbo) * 100 }}%"></div>
+                  </div>
+                  <p class="m-0 text-biru">{{ $makanan->karbohidrat }}/{{ auth()->user()->batasKarbo }} g</p>
+              </div>
+              <div class="progres-catatan mb-1">
+                  <div class="d-flex justify-content-between">
+                      <p class="mb-1">Protein</p>
+                      <p class="mb-1">{{ round(($makanan->protein / auth()->user()->batasProtein) * 100) }}%</p>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progres-protein" style="width: {{ ($makanan->protein / auth()->user()->batasProtein) * 100 }}%"></div>
+                  </div>
+                  <p class="m-0 text-biru">{{ $makanan->protein }}/{{ auth()->user()->batasProtein }} g</p>
+              </div>
+              <div class="progres-catatan mb-1">
+                  <div class="d-flex justify-content-between">
+                      <p class="mb-1">Garam</p>
+                      <p class="mb-1">{{ round(($makanan->garam / auth()->user()->batasGaram) * 100) }}%</p>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progres-garam" style="width: {{ ($makanan->garam / auth()->user()->batasGaram) * 100 }}%"></div>
+                  </div>
+                  <p class="m-0 text-biru">{{ $makanan->garam }}/{{ auth()->user()->batasGaram }} g</p>
+              </div>
+              <div class="progres-catatan mb-1">
+                  <div class="d-flex justify-content-between">
+                      <p class="mb-1">Gula</p>
+                      <p class="mb-1">{{ round(($makanan->gula / auth()->user()->batasGula) * 100) }}%</p>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progres-gula" style="width: {{ ($makanan->gula / auth()->user()->batasGula) * 100 }}%"></div>
+                  </div>
+                  <p class="m-0 text-biru">{{ $makanan->gula }}/{{ auth()->user()->batasGula }} g</p>
+              </div>
+              <div class="progres-catatan mb-1">
+                  <div class="d-flex justify-content-between">
+                      <p class="mb-1">Lemak</p>
+                      <p class="mb-1">{{ round(($makanan->lemak / auth()->user()->batasLemak) * 100) }}%</p>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar progres-lemak" style="width: {{ ($makanan->lemak / auth()->user()->batasLemak) * 100 }}%"></div>
+                  </div>
+                  <p class="m-0 text-biru">{{ $makanan->lemak }}/{{ auth()->user()->batasLemak }} g</p>
+              </div>
+                @endauth
+                @guest
+                <table class="table table-bordered w-100">
+                  <tbody>
+                      <tr>
+                          <th>Karbohidrat</th>
+                          <td>{{ $makanan->karbohidrat }} g</td>
+                      </tr>
+                      <tr>
+                          <th>Protein</th>
+                          <td>{{ $makanan->protein }} g</td>
+                      </tr>
+                      <tr>
+                        <th>Garam</th>
+                        <td>{{ $makanan->garam }} g</td>
+                      </tr>
+                      <tr>
+                        <th>Gula</th>
+                        <td>{{ $makanan->gula }} g</td>
+                      </tr>
+                      <tr>
+                        <th>Lemak</th>
+                        <td>{{ $makanan->lemak }} g</td>
+                      </tr>
+                  </tbody>
+              </table>
+                @endguest
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="w-100 bg-biru-muda text-biru p-3 mb-3">
+                  Deskripsi
                 </div>
+                <p>{{ $makanan->deskripsi }}</p>
+              </div>
             </div>
-            <p>{{ $makanan->deskripsi }}</p>
-            <table class="table table-bordered w-100">
-                <tbody>
-                    <tr>
-                        <th>Karbohidrat</th>
-                        <td>{{ $makanan->karbohidrat }} g</td>
-                    </tr>
-                    <tr>
-                        <th>Protein</th>
-                        <td>{{ $makanan->protein }} g</td>
-                    </tr>
-                    <tr>
-                      <th>Garam</th>
-                      <td>{{ $makanan->garam }} g</td>
-                    </tr>
-                    <tr>
-                      <th>Gula</th>
-                      <td>{{ $makanan->gula }} g</td>
-                    </tr>
-                    <tr>
-                      <th>Lemak</th>
-                      <td>{{ $makanan->lemak }} g</td>
-                    </tr>
-                </tbody>
-            </table>
             @else
                 <p class="text-center fs-4">Data salah</p>
             @endif
