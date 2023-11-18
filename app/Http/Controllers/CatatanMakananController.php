@@ -118,7 +118,8 @@ class CatatanMakananController extends Controller
             }
             array_push($catatans, [
                 'hari' => Carbon::parse($tanggal)->locale('id')->dayName,
-                $tanggal => $note
+                'tanggal' => $tanggal,
+                'data' => $note
             ]);
         }
         

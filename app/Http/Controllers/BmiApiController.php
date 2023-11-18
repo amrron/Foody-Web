@@ -61,7 +61,8 @@ class BmiApiController extends Controller
             }
             array_push($bmis, [
                 'hari' => Carbon::parse($tanggal)->locale('id')->dayName,
-                $tanggal => $array
+                'tanggal' => $tanggal,
+                'data' => $array
             ]);
         }
 
