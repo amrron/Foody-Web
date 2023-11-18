@@ -35,9 +35,14 @@ class BmiController extends Controller
         $validatedData['waktu'] = date('Y-m-d');
         $validatedData['nilai_bmi'] = $validatedData['berat_badan'] / pow(($validatedData['tinggi_badan'] / 100), 2);
 
-        Bmi::create($validatedData);
+        $bmi = Bmi::create($validatedData);
 
-        $request->session()->flash('success', $validatedData['nilai_bmi']) ;
+        $request->session()->flash('success', [
+            'nilai_bmi' => round($validatedData['nilai_bmi'], 2),
+            'kategori' => $bmi->kategori['status'],
+            'warna' => $bmi->kategori['color'],
+            'warna_tebal' => $bmi->kategori['strongColor'],
+            ]) ;
 
         return redirect('/bmi');
     }

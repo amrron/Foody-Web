@@ -2,14 +2,14 @@
 
 @section('container')
     <main class="min-vh-100 mb-5" style="margin-top: 100px">
-        <div class="container-lg px-0 py-3 px-2">
-          <span class="fs-5">Makanan / <span class="text-biru fw-bold">{{ $makanan->nama }}</span></span>
+        <div class="container-lg px-0 py-3 px-2 fs-5">
+          <a href="/makanan" class="text-dark opacity-50">Makanan</a href="/makanan"> / <span class="text-biru fw-bold">{{ $makanan->nama }}</span>
         </div>
         <div class="container-lg p-0 px-2">
             @if(!empty($makanan))
             <img src="{{ str_contains($makanan->gambar, "upload/") ? asset('storage/' . $makanan->gambar) : $makanan->gambar }}" class="w-100 rounded-3 p-0 mb-3 border" alt="gambar makanan" style="height: 300px; object-fit: cover">
 
-            <h1 class="fs-2 fw-medium mb-4">{{ $makanan->nama }}</h1>
+            <h1 class="fs-2 fw-medium mb-4 text-biru">{{ $makanan->nama }}</h1>
             <div class="row">
               <div class="col-md-6 col-sm-12">
                 <div class="w-100 bg-biru-muda text-biru p-3 mb-3">

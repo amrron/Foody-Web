@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="py-5" style="margin-top: 100px;">
+<section class="py-5 px-3" style="margin-top: 100px;">
     @if(!$pagination)
     <div class="container m-auto pb-1">
         <div class="row align-items-center">
-            <h1 class="text-center fw-bolder">Catatanku</h1>
+            <h1 class="text-center fw-bolder text-biru">Catatanku</h1>
             @foreach($warning as $warn)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <svg width="16" height="16" class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endforeach
-            <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
+            <swiper-container class="mySwiper p-0" navigation="true" space-between="20" slides-per-view="auto">
                 <swiper-slide>
                     <div class="" style="min-width: 320px">
                         <div class="card py-4 pink mt-3 mb-3 border border-0">
@@ -121,10 +121,10 @@
 </div>
 @enderror
 
-<section class="py-2 mb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 pb-3">
+<section class="py-2 mb-5 px-3">
+    <div class="container p-0">
+        <div class="">
+            <div class="col-12 pb-3 px-0">
                 <a href="/catatanku" class="btn btn-primary border border-0 navy text-biru-muda">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 2.84208L2.10526 3.94734L4.31579 1.73682M1 7.99997L2.10526 9.10524L4.31579 6.89471M1 13.1579L2.10526 14.2631L4.31579 12.0526M6.89474 7.99997H15H6.89474ZM6.89474 13.1579H15H6.89474ZM6.89474 2.84208H15H6.89474Z" fill="#D9F4FF"/>
@@ -144,10 +144,10 @@
             
             @if(!$pagination)
             @foreach($catatans as $catatan)
-            <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
+            <div class="col col-lg-4 col-12-sm container-catatan-makanan p-2">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
                     <div class="card-body overflow-hidden">
-                        <h5 class="card-title">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
+                        <h5 class="card-title">{{ $catatan->makanan->nama }} x {{ $catatan->jumlah }} </h5>
                         <p class="opacity-50">{{ date('H:i', strtotime($catatan->waktu)) }}</p>
                         <a href="/catatanku/delete/{{ $catatan->id }}" class="delete-catatan text-biru" style="position: absolute; right: 20px; bottom: 10px; font-size: 20px"><i class="fa-solid fa-trash"></i></a>
                         <table>
@@ -257,7 +257,7 @@
             <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                 <div class="card card-catatan-makanan" style="border-radius: 10px;">
                     <div class="card-body overflow-hidden">
-                        <h5 class="card-title text-nowrap">{{ $catatan->makanan->nama }} : {{ $catatan->jumlah }} porsi</h5>
+                        <h5 class="card-title text-nowrap">{{ $catatan->makanan->nama }} x {{ $catatan->jumlah }} </h5>
                         <p class="opacity-50">{{ date('H:i', strtotime($catatan->waktu)) }}</p>
                         <table>
                             <tr>
@@ -537,7 +537,8 @@
         $('.form-catatanku').submit(function(e){
             e.preventDefault();
             var data = new FormData(this);
-            // $('.modal').hide();
+            var form = $(this).closest('.modal');
+            form.modal('hide');
             Swal.fire({
                 title: 'Tunggu sebentar...',
                 html: "AI sedang mencari data makanan",
@@ -562,6 +563,7 @@
                         error: function(error){
                             Swal.fire('Error!', error.responseJSON.message == "Makanan tidak ditemukan. Periksa kembali nama makanan" ? error.responseJSON.message : "Terjadi Kesalahan", 'error').then(() => {
                                 Swal.close();
+                                form.modal('show');
                             });
                             console.error(error);
                         },

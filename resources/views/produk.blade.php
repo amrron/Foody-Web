@@ -6,8 +6,8 @@
 
     <section class="container-lg min-vh-100 mt-3 p-3">
         <div class="bg-pink rounded-3 w-100 py-5 px-4 d-flex flex-column align-items-center mb-3">
-            <h5 class="text-center fs-1 mb-3">
-                Cari Produk sehat <br>yang Ingin Anda Beli
+            <h5 class="text-center fs-1 mb-3 text-biru">
+                Cari Produk sehat yang Ingin Anda Beli
             </h5>
             <form action="" class="w-50 bg-biru-muda d-flex justify-content-between align-items-center rounded-3" style="height: 40px" id="cari-makanan">
                 <label for="keyword" class="mx-3">

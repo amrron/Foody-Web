@@ -6,7 +6,7 @@
             @if(!$history)
             <div class="calculator pt-5">
                 <div class="col-12 text-center mb-4">
-                    <h1 class="fw-bolder">BMI</h1>
+                    <h1 class="fw-bolder text-biru">BMI</h1>
                 </div>
                 <div class="bmi-graph bg-biru-muda p-4 rounded-4">
                     <canvas id="bmiChart" style="min-height: 300px"></canvas>
@@ -29,8 +29,8 @@
                         <button type="submit" class="btn bg-biru-muda w-100">Hitung</button>
                     </div>
                     @if(session()->has('success'))
-                        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="z-index: 100">
-                            BMI berhasil dicatat. Nilai BMI anda adalah <strong>{{ session('success') }}</strong>
+                        <div class="alert alert-dismissible fade show mt-4" role="alert" style="z-index: 100; background-color: {{ session('success')['warna_tebal'] }}; color: {{ session('success')['warna'] }}">
+                            BMI berhasil dicatat. Nilai BMI anda adalah <strong>{{ session('success')['nilai_bmi'] }}</strong> dengan kategori <strong>{{ session('success')['kategori'] }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif

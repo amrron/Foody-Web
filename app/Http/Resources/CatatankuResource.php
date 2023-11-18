@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -18,7 +19,7 @@ class CatatankuResource extends JsonResource
             'id' => $this->id,
             'nama_makanan' => $this->makanan->nama,
             'jumlah' => $this->jumlah,
-            'waktu' => $this->waktu,
+            'waktu' => Carbon::parse($this->waktu)->format('H:i'),
             'karbohidrat' => $this->jumlah * $this->makanan->karbohidrat,
             'protein' => $this->jumlah * $this->makanan->protein,
             'garam' => $this->jumlah * $this->makanan->garam,
