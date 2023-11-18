@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BmiRequest;
+use Carbon\Carbon;
 use App\Models\Bmi;
 use Illuminate\Http\Request;
+use App\Http\Requests\BmiRequest;
 use Illuminate\Support\Facades\Http;
 
 class BmiApiController extends Controller
@@ -58,7 +59,10 @@ class BmiApiController extends Controller
                     'kategori' => $bm->kategori
                 ]);
             }
-            array_push($bmis, [$tanggal => $array]);
+            array_push($bmis, [
+                'hari' => Carbon::parse($tanggal)->locale('id')->dayName,
+                $tanggal => $array
+            ]);
         }
 
         return response()->json([

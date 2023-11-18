@@ -60,7 +60,7 @@
 
                
                 @if(!$history)
-                    @if(count($bmis) > 0)
+                    {{-- @if(count($bmis) > 0)
                     <div class="col-12 px-2 py-3">
                         <div class="border rounded-3 p-2">
                             <div class="d-flex justify-content-between align-items-center text-biru">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    @endif
+                    @endif --}}
                     @foreach($bmis as $bmi)
                     <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
                         <div class="card card-catatan-bmi" style="border-radius: 10px; border-left: 10px solid {{ $bmi->kategori['color'] }}">

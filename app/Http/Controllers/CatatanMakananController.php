@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Makanan;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -115,7 +116,10 @@ class CatatanMakananController extends Controller
             foreach($catatan as $catat){
                 array_push($note, new CatatankuResource($catat));
             }
-            array_push($catatans, [$tanggal => $note]);
+            array_push($catatans, [
+                'hari' => Carbon::parse($tanggal)->locale('id')->dayName,
+                $tanggal => $note
+            ]);
         }
         
         return response()->json([
