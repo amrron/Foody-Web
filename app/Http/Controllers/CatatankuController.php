@@ -107,7 +107,12 @@ class CatatankuController extends Controller
             'waktu' => 'required'
         ]);
 
-        $makanan = Makanan::where('nama', 'LIKE', "{$validatedData['nama']}%")->first();
+        $makanan = Makanan::where('nama', 'LIKE', "{$validatedData['nama']}")->first();
+
+        if(empty($makanan)) {
+            $makanan = Makanan::where('nama', 'LIKE', "{$validatedData['nama']}%")->first();
+        }
+
         if(empty($makanan)){
             $compilation = OpenAI::chat()->create([
                 'model' => 'gpt-3.5-turbo',
