@@ -48,7 +48,7 @@ class BmiController extends Controller
     }
 
     public function getDataForChart() {
-        $labels = Bmi::where('user_id', auth()->user()->id)->pluck('waktu')->toArray();
+        $labels = Bmi::where('user_id', auth()->user()->id)->orderBy('waktu')->pluck('waktu')->toArray();
         if(count($labels) < 2) {
             array_push($labels, date('Y-m-d'));
         }
@@ -59,7 +59,7 @@ class BmiController extends Controller
                     'label' => 'Nilai BMI',
                     'borderColor' => '#17184f',
                     'backgroundColor' => 'rgba(255, 255, 255)',
-                    'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
+                    'data' => Bmi::where('user_id', auth()->user()->id)->orderBy('waktu')->pluck('nilai_bmi'),
                     'type' => 'line',
                     'tension' => 0,
                     'fill' => false
@@ -124,9 +124,6 @@ class BmiController extends Controller
                     'pointRadius' => 0,
                     'fill' => true,
                 ],
-                
-                
-                
                 
             ],
         ];
