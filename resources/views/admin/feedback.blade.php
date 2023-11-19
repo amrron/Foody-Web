@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row mx-3">
-            <table class="table table-borderless border">
+            <table class="table table-borderless border table-hover">
                 <thead>
                     <tr>
                         <td class="px-3 text-center" style="background-color: #D9F4FF">No</td>
