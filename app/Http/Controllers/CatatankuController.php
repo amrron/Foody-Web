@@ -137,22 +137,19 @@ class CatatankuController extends Controller
                 ], 400);
             }
             $generated_makanan = json_decode($result);
-            $makanan['nama'] = Str::of($validatedData['nama'])->title();
-            $makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
-            $makanan['protein'] = floatval($generated_makanan->protein);
-            $makanan['garam'] = floatval($generated_makanan->garam);
-            $makanan['gula'] = floatval($generated_makanan->gula);
-            $makanan['lemak'] = floatval($generated_makanan->lemak);
-            $makanan['deskripsi'] = $generated_makanan->deskripsi;
-            $makanan['slug'] = Str::slug($makanan['nama']);
-            $makanan['gambar'] = "https://www.greatwall.lk/assets/image/default.png";
-            $new_makanan = Makanan::create($makanan);
-            $makanan_id = $new_makanan->id;
+            $new_makanan['nama'] = Str::of($validatedData['nama'])->title();
+            $new_makanan['karbohidrat'] = floatval($generated_makanan->karbohidrat);
+            $new_makanan['protein'] = floatval($generated_makanan->protein);
+            $new_makanan['garam'] = floatval($generated_makanan->garam);
+            $new_makanan['gula'] = floatval($generated_makanan->gula);
+            $new_makanan['lemak'] = floatval($generated_makanan->lemak);
+            $new_makanan['deskripsi'] = $generated_makanan->deskripsi;
+            $new_makanan['slug'] = Str::slug($new_makanan['nama']);
+            $new_makanan['gambar'] = "https://www.greatwall.lk/assets/image/default.png";
+            $makanan = Makanan::create($new_makanan);
+        }
 
-        }
-        else {
-            $makanan_id = $makanan->id;
-        }
+        $makanan_id = $makanan->id;
         $validatedData['makanan_id'] = $makanan_id;
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['waktu'] = date('Y-m-d') . " " . $validatedData['waktu'];
