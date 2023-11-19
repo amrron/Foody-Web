@@ -17,11 +17,17 @@ class BmiApiController extends Controller
         $validatedBmi['waktu'] = date('Y-m-d');
         $validatedBmi['nilai_bmi'] = $validatedBmi['berat_badan'] / pow(($validatedBmi['tinggi_badan'] / 100), 2);
 
-        Bmi::create($validatedBmi);
+        $bmi = Bmi::create($validatedBmi);
 
         return response()->json([
             "status" => "success",
-            "message" => "Berhasil menambahkan BMI"
+            "message" => "Berhasil menambahkan BMI",
+            "data" => [
+                'nilai_bmi' => round($validatedBmi['nilai_bmi'], 2),
+                'kategori' => $bmi->kategori['status'],
+                'warna' => $bmi->kategori['color'],
+                'warna_tebal' => $bmi->kategori['strongColor'],
+            ]
         ], 201);
     }
 
