@@ -23,7 +23,7 @@
         @if(!request("search"))
         <h2 class="my-3 fw-normal">Kategori</h2>
         <div class="row">
-            <swiper-container class="mySwiper" navigation="false" space-between="20" slides-per-view="auto">
+            <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
                 <swiper-slide style="width: auto">
                     <a href="/makanan?kategori=rendah-lemak" class="bg-biru-muda rounded-2 p-3" style="width: 200px; height: 120px; position: relative">
                         <p class="w-50 fw-medium text-biru">Rendah Lemak</p>

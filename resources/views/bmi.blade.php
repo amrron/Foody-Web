@@ -71,8 +71,21 @@
                     </div>
                     @endif --}}
                     @foreach($bmis as $bmi)
-                    <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
-                        <div class="card card-catatan-bmi" style="border-radius: 10px; border-left: 10px solid {{ $bmi->kategori['color'] }}">
+                    <div class="col-lg-4 col-12-sm container-catatan-makanan py-2">
+                        <div class="card card-catatan-bmi overflow-hidden" style="border: 1px solid #CFCCD3; border-radius: 10px">
+                            <div class="w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="auto" viewBox="0 0 1080 300" xml:space="preserve">
+                                    <rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+                                    <g transform="matrix(Infinity NaN NaN Infinity 0 0)" id="c848a679-59c8-49ba-bc32-7dc3d952236d"  >
+                                    </g>
+                                    <g transform="matrix(1 0 0 1 540 150)" id="a39c811b-fc4f-4c0e-b6f5-5c672359857e"  >
+                                    <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-150" rx="0" ry="0" width="1080" height="300" />
+                                    </g>
+                                    <g transform="matrix(2.66 0 0 2.66 522 16.91)"  >
+                                    <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: {{ $bmi->kategori['color'] }}; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-180.51, 3)" d="M 8.88159 -104.913 L 392.923 -104.913 L 392.923 16.098 C 392.923 16.098 398.155 72.265 371.286 69.0971 C 345.875 66.1011 365.19 22.4277 340.974 24.0933 C 321.519 25.4314 337.958 94.7558 310.341 85.2519 C 287.348 77.3396 293.395 43.9421 269.413 46.269 C 246.965 48.447 256.928 98.8809 234.483 98.8809 C 197.883 98.8809 222.977 33.8902 185.743 36.7651 C 169.361 38.0301 164.734 73.2394 149.901 73.2394 C 118.953 73.2394 138.546 46.269 112.162 36.7651 C 88.2284 28.1438 101.086 84.1049 77.0069 79.6835 C 52.3402 75.1541 74.5807 47.4139 48.1121 40.443 C 21.6435 33.4721 48.8796 98.9175 10.7863 98.9175 C 10.1429 98.9175 9.50803 98.9053 8.88163 98.8809 C -83.8029 95.276 8.88159 -104.913 8.88159 -104.913 Z" stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                            </div>
                             <div class="card-body overflow-hidden">
                                 <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>
                                 <p class="opacity-50"></p>
@@ -94,15 +107,28 @@
                         </div>
                     </div>
                     @foreach($bmiPerTanggal as $bmi)
-                        <div class="col-lg-4 col-12-sm container-catatan-makanan p-2">
-                            <div class="card card-catatan-bmi" style="border-radius: 10px; border-left: 10px solid {{ $bmi->kategori['color'] }}">
-                                <div class="card-body overflow-hidden">
-                                    <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>
-                                    <p class="opacity-50"></p>
-                                    <span class="py-2 px-3 rounded-5" style="background-color: {{ $bmi->kategori['color'] }}; color: {{ $bmi->kategori['strongColor'] }}">● {{ $bmi->kategori['status'] }}</span>
-                                </div>
+                    <div class="col-lg-4 col-12-sm container-catatan-makanan py-3">
+                        <div class="card card-catatan-bmi overflow-hidden" style="border: 1px solid #CFCCD3; border-radius: 10px">
+                            <div class="w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="auto" viewBox="0 0 1080 300" xml:space="preserve">
+                                    <rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+                                    <g transform="matrix(Infinity NaN NaN Infinity 0 0)" id="c848a679-59c8-49ba-bc32-7dc3d952236d"  >
+                                    </g>
+                                    <g transform="matrix(1 0 0 1 540 150)" id="a39c811b-fc4f-4c0e-b6f5-5c672359857e"  >
+                                    <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-150" rx="0" ry="0" width="1080" height="300" />
+                                    </g>
+                                    <g transform="matrix(2.66 0 0 2.66 522 16.91)"  >
+                                    <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: {{ $bmi->kategori['color'] }}; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-180.51, 3)" d="M 8.88159 -104.913 L 392.923 -104.913 L 392.923 16.098 C 392.923 16.098 398.155 72.265 371.286 69.0971 C 345.875 66.1011 365.19 22.4277 340.974 24.0933 C 321.519 25.4314 337.958 94.7558 310.341 85.2519 C 287.348 77.3396 293.395 43.9421 269.413 46.269 C 246.965 48.447 256.928 98.8809 234.483 98.8809 C 197.883 98.8809 222.977 33.8902 185.743 36.7651 C 169.361 38.0301 164.734 73.2394 149.901 73.2394 C 118.953 73.2394 138.546 46.269 112.162 36.7651 C 88.2284 28.1438 101.086 84.1049 77.0069 79.6835 C 52.3402 75.1541 74.5807 47.4139 48.1121 40.443 C 21.6435 33.4721 48.8796 98.9175 10.7863 98.9175 C 10.1429 98.9175 9.50803 98.9053 8.88163 98.8809 C -83.8029 95.276 8.88159 -104.913 8.88159 -104.913 Z" stroke-linecap="round" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="card-body overflow-hidden">
+                                <h5 class="card-title text-nowrap">Nilai BMI : <span style="color: {{ $bmi->kategori['strongColor'] }}">{{ $bmi->nilai_bmi }}</span></h5>
+                                <p class="opacity-50"></p>
+                                <span class="py-2 px-3 rounded-5" style="background-color: {{ $bmi->kategori['color'] }}; color: {{ $bmi->kategori['strongColor'] }}">● {{ $bmi->kategori['status'] }}</span>
                             </div>
                         </div>
+                    </div>
                         @endforeach
                     @endforeach
                 @endif

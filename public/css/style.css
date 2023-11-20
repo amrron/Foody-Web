@@ -533,9 +533,9 @@ swiper-slide {
     border-left: 10px solid var(--light-blue)
 }
 
-.card-catatan-bmi {
+/* .card-catatan-bmi {
     border-left: 10px;
-}
+} */
 
 .progres-karbohidrat {
     background-color: var(--blue);
