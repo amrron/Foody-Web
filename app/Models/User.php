@@ -165,13 +165,35 @@ class User extends Authenticatable
 
     public function getKeteranganAktivitasAttribute(){
         $keterangan = [
-            1.2 => "Tidak aktif (tidak berolahraga sama sekali)",
-            1.375 => "Cukup aktif (berolahraga 1-3x seminggu)",
-            1.55 => "Aktif (berolahraga 3-5x seminggu)",
-            1.725 => "Sangat aktif (berolahraga atau 6-7x seminggu)"
+            "1.2" => "Tidak aktif (tidak berolahraga sama sekali)",
+            "1.375" => "Cukup aktif (berolahraga 1-3x seminggu)",
+            "1.55" => "Aktif (berolahraga 3-5x seminggu)",
+            "1.725" => "Sangat aktif (berolahraga atau 6-7x seminggu)"
         ];
 
         return $keterangan[$this->aktivitas];
+
+        // $aktivitas = $this->aktivitas;
+
+        // if ($aktivitas == 1.2) {
+        //     return "Tidak aktif (tidak berolahraga sama sekali)";
+        // }
+
+        // if ($aktivitas == 1.375 || $aktivitas == 1.38) {
+        //     return "Cukup aktif (berolahraga 1-3x seminggu)";
+        // }
+
+        // if ($aktivitas == 1.55) {
+        //     return "Aktif (berolahraga 3-5x seminggu)";
+        // }
+
+        // if ($aktivitas == 1.725 || $aktivitas == 1.73) {
+        //     return "Sangat aktif (berolahraga atau 6-7x seminggu)"; 
+        // }
+
+        // else {
+        //     return "Tidak aktif (tidak berolahraga sama sekali)";
+        // }
     }
     
 }

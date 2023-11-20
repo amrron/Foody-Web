@@ -328,7 +328,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_pagi" aria-label="Small select example" required>
-                                <option value="">Time</option>
+                                <option value="">Waktu</option>
                                 <option value="00:00">00:00</option>
                                 <option value="01:00">01:00</option>
                                 <option value="02:00">02:00</option>
@@ -344,7 +344,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
+                                <input type="number" class="form-control" placeholder="Jumlah Porsi" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -390,7 +390,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_sore" aria-label="Small select example" required>
-                                <option value="">Time</option>
+                                <option value="">Waktu</option>
                                 <option value="15:00">15:00</option>
                                 <option value="16:00">16:00</option>
                                 <option value="17:00">17:00</option>
@@ -400,7 +400,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
+                                <input type="number" class="form-control" placeholder="Jumlah Porsi" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -446,7 +446,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_siang" aria-label="Small select example" required>
-                                <option value="" selected>Time</option>
+                                <option value="" selected>Waktu</option>
                                 <option value="09:00">09:00</option>
                                 <option value="10:00">10:00</option>
                                 <option value="11:00">11:00</option>
@@ -458,7 +458,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
+                                <input type="number" class="form-control" placeholder="Jumlah Porsi" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
@@ -504,7 +504,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_malam" aria-label="Small select example" required>
-                                <option valuselected>Time</option>
+                                <option value="" selected>Waktu</option>
                                 <option value="19:00">19:00</option>
                                 <option value="20:00">20:00</option>
                                 <option value="21:00">21:00</option>
@@ -515,7 +515,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="input-group input-group-sm mb-3">
                                 {{-- <span class="input-group-text" id="inputGroup-sizing-sm">Jumlah</span> --}}
-                                <input type="number" class="form-control" placeholder="Jumlah" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
+                                <input type="number" class="form-control" placeholder="Jumlah Porsi" aria-label="Sizing example input" name="jumlah" aria-describedby="inputGroup-sizing-sm" autocomplete="off" required>
                             </div>
                         </div>
                     </div>
