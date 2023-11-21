@@ -804,3 +804,13 @@ swiper-slide {
     top: 120px;
     right: 20px;
 }
+
+.loading-muter {
+    animation: loading-muter  1.2s linear infinite;
+}
+
+@keyframes loading-muter  {
+    to {
+        transform: rotate(360deg);
+    }
+}
