@@ -297,23 +297,23 @@
                 <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
                     @foreach($produk as $prod)
                     <swiper-slide>
-                        <div class="kartu">
-                            <h2 class="judul-kartu fs-20px text-center ">{{ $prod->nama }}</h2>
-                            <p class="deskripsi-kartu fs-13px">
-                                {{ $prod->deskripsi }}
-                            </p>
-                            <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                                <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" style="width: 240px">
-                            </div>
-                            <div class="harga fs-13px">
-                                <span>Price: </span>
-                                <br>
-                                <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
-                            </div>
-                            <div class="tombol-kartu">
-                                <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
-                            </div>
+                        <div class="kartu" id="{{ $prod->id }}">
+                        <h2 class="judul-kartu fs-20px text-center text-capitalize">{{ $prod->nama }}</h2>
+                        <p class="deskripsi-kartu fs-13px pe-2">
+                            {{ $prod->deskripsi }}
+                        </p>
+                        <div class="gambar-kartu d-flex align-items-center justify-content-center">
+                            <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" class="rounded-3" style="width: 180px; height: 180px; object-fit: cover">
                         </div>
+                        <div class="harga fs-13px">
+                            <span>Price: </span>
+                            <br>
+                            <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
+                        </div>
+                        <div class="tombol-kartu">
+                            <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
+                        </div>
+                    </div>
                     </swiper-slide>
                     @endforeach
                 </swiper-container>

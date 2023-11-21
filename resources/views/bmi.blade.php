@@ -23,10 +23,10 @@
                         <input type="number" class="form-control mt-2" name="tinggi_badan" id="tb" placeholder="cm" required>
                     </div>
                     <div class="col-6 mt-3">
-                        <button type="reset" class="btn bg-biru-muda w-100">Reset</button>
+                        <button type="reset" class="tombol tombol-biru w-100">Reset</button>
                     </div>
                     <div class="col-6 mt-3">
-                        <button type="submit" class="btn bg-biru-muda w-100">Hitung</button>
+                        <button type="submit" class="tombol tombol-biru w-100">Hitung</button>
                     </div>
                     @if(session()->has('success'))
                         <div class="alert alert-dismissible fade show mt-4" role="alert" style="z-index: 100; background-color: {{ session('success')['warna_tebal'] }}; color: {{ session('success')['warna'] }}">
@@ -40,14 +40,14 @@
             <div class="row mt-5">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 pb-5">
-                        <a href="/bmi" class="btn btn-primary border border-0 navy text-biru-muda">
+                        <a href="/bmi" class="tombol tombol-biru border border-0 me-2">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 2.84208L2.10526 3.94734L4.31579 1.73682M1 7.99997L2.10526 9.10524L4.31579 6.89471M1 13.1579L2.10526 14.2631L4.31579 12.0526M6.89474 7.99997H15H6.89474ZM6.89474 13.1579H15H6.89474ZM6.89474 2.84208H15H6.89474Z" fill="#D9F4FF"/>
                                 <path d="M1 2.84208L2.10526 3.94734L4.31579 1.73682M1 7.99997L2.10526 9.10524L4.31579 6.89471M1 13.1579L2.10526 14.2631L4.31579 12.0526M6.89474 7.99997H15M6.89474 13.1579H15M6.89474 2.84208H15" stroke="#D9F4FF" stroke-width="1.76471" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             Recents
                         </a>
-                        <a href="/bmi/history" class="btn btn-primary border border-0 biru">
+                        <a href="/bmi/history" class="tombol tombol-biru-muda border border-0">
                             <svg width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.67607 0.46264C5.41246 0.34537 1.91949 3.77133 1.91949 8.00143H0.420107C0.0431675 8.00143 -0.141114 8.45376 0.126932 8.71343L2.46396 11.0588C2.63149 11.2264 2.89116 11.2264 3.05869 11.0588L5.39571 8.71343C5.45359 8.65438 5.4927 8.57952 5.50811 8.49828C5.52351 8.41704 5.51453 8.33305 5.48228 8.25691C5.45003 8.18077 5.39596 8.11588 5.3269 8.07041C5.25783 8.02495 5.17685 8.00095 5.09416 8.00143H3.59478C3.59478 4.73462 6.25848 2.09605 9.54205 2.13793C12.6581 2.17981 15.2799 4.80163 15.3218 7.91767C15.3637 11.1929 12.7251 13.8649 9.45828 13.8649C8.10968 13.8649 6.86159 13.4042 5.87317 12.6252C5.71273 12.4988 5.51143 12.4358 5.30756 12.4482C5.10369 12.4605 4.91148 12.5474 4.76748 12.6922C4.41567 13.044 4.4408 13.6388 4.83449 13.9403C6.15053 14.9811 7.78046 15.545 9.45828 15.5402C13.6884 15.5402 17.1143 12.0473 16.9971 7.78365C16.8882 3.8551 13.6046 0.571534 9.67607 0.46264ZM9.24887 4.65086C8.90544 4.65086 8.62064 4.93566 8.62064 5.27909V8.36162C8.62064 8.6548 8.77979 8.93122 9.03109 9.08199L11.6445 10.6316C11.9461 10.8075 12.3314 10.707 12.5073 10.4138C12.6832 10.1123 12.5827 9.72698 12.2895 9.55107L9.8771 8.1187V5.27071C9.8771 4.93566 9.59231 4.65086 9.24887 4.65086Z" fill="#131049"/>
                             </svg>                        

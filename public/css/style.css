@@ -345,13 +345,13 @@ footer a {
     color: var(--blue);
 }
 
-.makanan-card-outside:nth-child(odd) .makanan-card-inside {
+/* .makanan-card-outside:nth-child(odd) .makanan-card-inside {
     background-color: var(--light-blue);
 }
 
 .makanan-card-outside:nth-child(even) .makanan-card-inside {
     background-color: var(--pink);
-}
+} */
 
 @media screen and (min-width: 591px) {
     swiper-slide {
@@ -417,9 +417,6 @@ swiper-slide {
     font-size: 64px;
 }
 
-.bg-biru {
-    background-color: var(--blue);
-}
 
 .bg-merah {
     background-color: var(--merah);
@@ -435,6 +432,10 @@ swiper-slide {
 
 .bg-putih {
     background-color: #fff;
+}
+
+.bg-biru {
+    background-color: var(--blue);
 }
 
 .text-biru {
@@ -594,9 +595,37 @@ swiper-slide {
     transition: .3s;
 }
 
-.button-catatanku:hover{
-    background-color: #FDCED0;
+.tombol {
+    padding: 12px 30px;
+    border-radius: 10px;
 }
+
+.tombol-biru {
+    background-color: var(--blue);
+    color: var(--light-blue);
+    transition: .15s ease-in-out;
+}
+
+.tombol-biru:hover {
+    color: var(--blue);
+    background-color: var(--light-blue);
+}
+
+.tombol-biru-muda {
+    color: var(--blue);
+    background-color: var(--light-blue);
+    transition: .15s ease-in-out;
+}
+
+.tombol-biru-muda:hover {
+    background-color: var(--blue);
+    color: var(--light-blue);
+}
+
+
+/* .button-catatanku:hover{
+    background-color: #FDCED0;
+} */
 
 
  /* ======================= Record Makanan ======================= */

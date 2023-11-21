@@ -113,7 +113,7 @@
         @enderror
     </div>
     <div class="d-grid gap-2 mb-3d">
-        <button class="btn bg-biru text-biru-muda" type="submit">Buat Akun</button>
+        <button class="tombol bg-biru text-biru-muda" type="submit">Buat Akun</button>
     </div>
     <figure class="text-center">
         <figcaption class="blockquote-footer">
