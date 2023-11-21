@@ -26,12 +26,12 @@ class MakananController extends Controller
                         'content' => $request->search
                     ]
                     ],
-                'max_tokens' => 100, 
+                'max_tokens' => 150, 
             ]);
 
             $result = $compilation['choices'][0]['message']['content'];
             if(!str_contains($result, "{")){
-                $request->session()->flash('gagal_search', 'AI gagal mendapatakan data makanan. Perikasa kembali nama makanan');
+                $request->session()->flash('gagal', 'AI gagal mendapatakan data makanan. Perikasa kembali nama makanan');
             }
             else {
                 $generated_makanan = json_decode($result);

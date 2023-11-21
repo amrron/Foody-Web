@@ -101,8 +101,8 @@
             @endforeach
             @else
             <p class="text-center fs-4 m-0 opacity-50 mt-5">Makanan <strong>{{ request('search') ? "\"" . request('search') . "\"" : "" }}</strong> tidak ditemukan</p>
-            @if(session()->has('loginFailed'))
-            <p class="text-center fs-4 m-0 opacity-50 mt-5">{{ session('gagal_search') }}</p>
+            @if(session()->has('gagal'))
+            <p class="text-center fs-4 m-0 opacity-50">{{ session('gagal') }}.</p>
             @endif
             @endif
         </div>

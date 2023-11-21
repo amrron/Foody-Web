@@ -60,8 +60,8 @@
                                 </a>
                             </div>
                         </td>
-                        <td><img src="{{ str_contains($product->gambar, "upload/") ? asset('storage/' . $product->gambar) : $product->gambar }}" class="rounded-1" alt="" style="height: 100px; width: 150px; object-fit: cover;"></td>
                         <td><a href="/produk#{{ $product->id }}">{{ $product->nama }}</a></td>
+                        <td><img src="{{ str_contains($product->gambar, "upload/") ? asset('storage/' . $product->gambar) : $product->gambar }}" class="rounded-1" alt="" style="height: 100px; width: 150px; object-fit: cover;"></td>
                         <td>{{ $product->deskripsi }}</td>
                         <td>Rp{{ number_format($product->harga, 0, ',', '.') }}</td>
                     </tr>

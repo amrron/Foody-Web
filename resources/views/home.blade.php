@@ -287,33 +287,31 @@
     <!-- END BAGIAN INGREDIENTS -->
     <!-- START BAGIAN REKOMENDASI -->
         <section class="section-recomendation pt-5 pb-5" style="padding: 0 12px;">
-            <div class="container-lg recomendation mb-5 mt-5">
-                <div class="row mb-4">
-                    <div class="col-md-12 d-flex justify-content-between align-items-center">
-                        <h1 class="fs-64px fw-semibold fs-1">Rekomendasi Produk</h1>
-                        <a href="/produk" class="fs-4 view-all text-end">View All</a>
-                    </div>
+            <div class="container-lg recomendation mb-5 mt-5 d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-between w-100 mb-4">
+                    <h1 class="fs-64px fw-semibold fs-1">Rekomendasi Produk</h1>
+                    <a href="/produk" class="fs-4 view-all text-end">View All</a>
                 </div>
-                <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
+                <swiper-container class="mySwiper row w-100 p-0" style="box-sizing:initial" navigation="true" space-between="0" slides-per-view="auto">
                     @foreach($produk as $prod)
-                    <swiper-slide>
-                        <div class="kartu" id="{{ $prod->id }}">
-                        <h2 class="judul-kartu fs-20px text-center text-capitalize">{{ $prod->nama }}</h2>
-                        <p class="deskripsi-kartu fs-13px pe-2">
-                            {{ $prod->deskripsi }}
-                        </p>
-                        <div class="gambar-kartu d-flex align-items-center justify-content-center">
-                            <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" class="rounded-3" style="width: 180px; height: 180px; object-fit: cover">
+                    <swiper-slide class="col-md-6 col-sm-12 px-1 m-0">
+                        <div class="kartu w-100" id="{{ $prod->id }}">
+                            <h2 class="judul-kartu fs-20px text-center text-capitalize">{{ $prod->nama }}</h2>
+                            <p class="deskripsi-kartu fs-13px pe-2">
+                                {{ $prod->deskripsi }}
+                            </p>
+                            <div class="gambar-kartu d-flex align-items-center justify-content-center">
+                                <img src="{{ str_contains($prod->gambar, "upload/") ? asset('storage/' . $prod->gambar) : $prod->gambar }}" alt="" class="rounded-3" style="width: 180px; height: 180px; object-fit: cover">
+                            </div>
+                            <div class="harga fs-13px">
+                                <span>Price: </span>
+                                <br>
+                                <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
+                            </div>
+                            <div class="tombol-kartu">
+                                <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
+                            </div>
                         </div>
-                        <div class="harga fs-13px">
-                            <span>Price: </span>
-                            <br>
-                            <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
-                        </div>
-                        <div class="tombol-kartu">
-                            <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
-                        </div>
-                    </div>
                     </swiper-slide>
                     @endforeach
                 </swiper-container>
