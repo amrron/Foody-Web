@@ -196,7 +196,9 @@ class BmiApiController extends Controller
         $link = "https://quickchart.io/chart?c=" . json_encode($setup);
         return response()->json([
             'status' => 'success',
-            'data' => $link
+            'data' => [
+                'link' => $link
+            ]
         ], 201);
     }
 }
