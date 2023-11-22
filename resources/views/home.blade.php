@@ -12,7 +12,7 @@
                         <h4 class="title-text text-biru fw-medium">Solusi Untuk menjaga kesehatan Tubuh Anda</h4>
                         <div class="">
                             <div class="d-flex flex-row flex-wrap">
-                                <a href="#catatankuSection" class="bg-biru p-2 mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
+                                <a href="#catatankuSection" class="tombol tombol-biru mt-3 text-biru-muda rounded-2" style="text-decoration: none;">Show more</a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <p class="title-text text-biru">Anda dapat mencatat semua jenis makanan yang  dikonsumsi sepanjang hari. Anda juga dapat dengan cepat menambahkan makanan yang  dimakan</p>
                         <div class="site-buttons">
                             <div class="d-flex flex-row flex-wrap">
-                                <a href="/catatanku" class="bg-biru-muda p-3 mt-3 text-biru rounded-2" style="text-decoration: none;">Try It</a>
+                                <a href="/catatanku" class="tombol tombol-biru-muda mt-3 rounded-2" style="text-decoration: none;">Try It</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                     Dengan fitur pencatatan BMI kami, Anda dapat dengan cepat memantau perubahan dalam perjalanan kesehatan Anda. Tidak perlu repot, cukup masukkan data berat dan tinggi tubuh Anda, dan "Foody" akan menghitung BMI Anda secara otomatis. Pantau perkembangan Anda menuju kehidupan sehat yang lebih baik!
                                 </p>
                             </div>
-                            <a href="/bmi" class="text-biru p-3 mt-3 bg-biru-muda rounded-2" style="text-decoration: none;">Try It</a>
+                            <a href="/bmi" class="tombol tombol-biru-muda mt-3 rounded-2" style="text-decoration: none;">Try It</a>
                         </div>
                     </div>
                 </div>
@@ -125,8 +125,8 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="row pt-5 text-navy">
-                        <h2 class="fw-bold pt-5 display-6 ">BMI</h2>
-                        <p>Body Massa Index</p>
+                        <h2 class="fw-bold pt-5 display-6 text-biru">BMI</h2>
+                        <p class="text-biru">Body Massa Index</p>
                     </div>
                     <div class="row pt-5">
                         <div class="col-lg-6 col-md-6 col-sm-12 text-navy">
@@ -238,7 +238,7 @@
         <section>
             <div class="container-lg mb-5 pt-5 pb-5 text-center">
                 <h1 class="fs-1 text-biru text-center fw-semibold mb-5 pb-4">Kandungan makanan</h1>
-                <swiper-container class="mySwiper" space-between="20" slides-per-view="auto">
+                <swiper-container class="mySwiper mb-5" space-between="20" slides-per-view="auto">
                     <swiper-slide class="me-5">
                             <div class="card" style="width: 268px; height: 354px; border: 0;">
                                 <img src="img/karbohidrat.png" alt="">
@@ -279,9 +279,9 @@
                             </div>
                         </div>
                 </swiper-slide>
-                </swiper-container>
+            </swiper-container>
 
-                <a href="/makanan" class="bg-biru text-biru-muda mb-5 mt-5 d-inline-flex" style="padding: 12px 30px; border-radius: 8px; text-decoration: none;">Learn More</a>
+                <a href="/makanan" class="tombol tombol-biru mt-5" style="">Learn More</a>
             </div>
         </section>
     <!-- END BAGIAN INGREDIENTS -->
@@ -309,7 +309,7 @@
                                 <span>Rp{{ number_format($prod->harga, 0, ',', '.') }}</span>
                             </div>
                             <div class="tombol-kartu">
-                                <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center">Buy Product</a>
+                                <a href="{{ $prod->link }}" class="tombol-beli-produk fs-13px text-center" target="_blank">Buy Product</a>
                             </div>
                         </div>
                     </swiper-slide>
@@ -377,7 +377,7 @@
                                         style="height: 100px;"></textarea>
                                 </div>
                                 <div class="d-grid gap-2">
-                                    <button class="form-control-lg bg-biru text-biru-muda fs-5 fw-semibold" type="submit">SUBMIT</button>
+                                    <button class="tombol tombol-biru fs-5 fw-semibold border" type="submit">SUBMIT</button>
                                 </div>
                             </div>
                         </form>

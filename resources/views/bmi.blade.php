@@ -15,12 +15,12 @@
                 <form action="" method="post" class="row m-auto mt-3" style="max-width: 600px;">
                     @csrf
                     <div class="col-6 d-flex flex-column">
-                        <label for="bb">Berat Badan</label>
-                        <input type="number" class="form-control mt-2" name="berat_badan" id="bb" placeholder="Kg" required>
-                    </div>
-                    <div class="col-6 d-flex flex-column">
                         <label for="tb">Tinggi Badan</label>
                         <input type="number" class="form-control mt-2" name="tinggi_badan" id="tb" placeholder="cm" required>
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <label for="bb">Berat Badan</label>
+                        <input type="number" class="form-control mt-2" name="berat_badan" id="bb" placeholder="Kg" required>
                     </div>
                     <div class="col-6 mt-3">
                         <button type="reset" class="tombol tombol-biru w-100">Reset</button>

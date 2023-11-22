@@ -19,6 +19,7 @@ class AdminController extends Controller
             'title' => "Dashboard",
             'users' => User::all()->count(),
             'foods' => Makanan::all()->count(),
+            'product' => Produk::all()->count(),
             'numfeed' => Feedback::all()->count(),
             'feedback' => Feedback::latest()->take(5)->select('nama', 'pesan')->get(),
         ]);

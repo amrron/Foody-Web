@@ -447,7 +447,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <select class="form-select form-select-sm mb-3" name="waktu" id="waktu_siang" aria-label="Small select example" required>
                                 <option value="" selected>Waktu</option>
-                                <option value="09:00">09:00</option>
+                                {{-- <option value="09:00">09:00</option> --}}
                                 <option value="10:00">10:00</option>
                                 <option value="11:00">11:00</option>
                                 <option value="12:00">12:00</option>

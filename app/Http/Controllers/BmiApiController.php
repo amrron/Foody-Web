@@ -99,7 +99,7 @@ class BmiApiController extends Controller
 
     public function chart() {
 
-        $labels = Bmi::where('user_id', auth()->user()->id)->pluck('waktu')->toArray();
+        $labels = Bmi::where('user_id', auth()->user()->id)->orderBy('waktu')->pluck('waktu')->toArray();
         if(count($labels) < 2) {
             array_push($labels, date('Y-m-d'));
         }
@@ -111,7 +111,7 @@ class BmiApiController extends Controller
                     'label' => 'Nilai BMI',
                     'borderColor' => 'rgba(23, 24, 79)',
                     'backgroundColor' => 'rgba(255, 255, 255)',
-                    'data' => Bmi::where('user_id', auth()->user()->id)->pluck('nilai_bmi'),
+                    'data' => Bmi::where('user_id', auth()->user()->id)->orderBy('waktu')->pluck('nilai_bmi'),
                     'type' => 'line',
                     'tension' => 0,
                     'fill' => false
@@ -194,7 +194,7 @@ class BmiApiController extends Controller
             ],
         ];
 
-        $link = "https://quickchart.io/chart?v=4&bkg=rgb(27=17, 244, 255)&f=svg&devicePixelRatio=1&c=" . json_encode($setup);
+        $link = "https://quickchart.io/chart?v=4&bkg=rgb(217, 244, 255)&f=svg&c=" . json_encode($setup);
         // return response()->json([
         //     'status' => 'success',
         //     'data' => [

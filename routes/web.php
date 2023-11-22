@@ -26,7 +26,7 @@ use App\Http\Controllers\CatatankuController;
 Route::get('/', function () {
     return view('home', [
         "title" => "Home",
-        "produk" => \App\Models\Produk::latest()->take(5)->get()
+        "produk" => \App\Models\Produk::latest()->take(6)->get()
     ]);
 });
 

@@ -7,8 +7,8 @@
                 <div class="col-lg-12 p-3">
                     <div class="p-3 row border rounded-3">
                         <div class="photo col-sm-3 d-flex flex-column align-items-center">
-                            <div class="photo-profile w-100 mb-3">
-                                <img src="/img/profileimg.webp" class="w-100 rounded-end-circle rounded-start-circle"
+                            <div class="photo-profile w-100 mb-3 text-center">
+                                <img src="/img/profileimg.webp" class="w-75 rounded-end-circle rounded-start-circle"
                                     alt="">
                             </div>
                             <a href="" class="btn bg-biru text-white" data-bs-toggle="modal" data-bs-target="#edit">

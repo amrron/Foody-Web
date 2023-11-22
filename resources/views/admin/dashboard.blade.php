@@ -7,15 +7,19 @@
             Hello Admin Orion
         </div>
         <div class="row border rounded-2 m-3">
-            <div class="col-4 p-3 border-end">
+            <div class="col-3 p-3 border-end">
                 <p class="text-biru">Users</p>
                 <h2 class="fs-1 fw-bold text-biru">{{ $users }}</h2>
             </div>
-            <div class="col-4 p-3">
-                <p class="text-biru">Food</p>
+            <div class="col-3 p-3 border-end">
+                <p class="text-biru">Foods</p>
                 <h2 class="fs-1 fw-bold text-biru">{{ $foods }}</h2>
             </div>
-            <div class="col-4 p-3 border-start">
+            <div class="col-3 p-3">
+                <p class="text-biru">Products</p>
+                <h2 class="fs-1 fw-bold text-biru">{{ $product }}</h2>
+            </div>
+            <div class="col-3 p-3 border-start">
                 <p class="text-biru">Feedback</p>
                 <h2 class="fs-1 fw-bold text-biru">{{ $numfeed }}</h2>
             </div>

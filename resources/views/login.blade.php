@@ -48,7 +48,7 @@
             </div>
         </div> --}}
         <div class="d-grid gap-2 mb-3">
-            <button class="tombol bg-biru text-biru-muda" type="submit">Login</button>
+            <button class="tombol tombol-biru" type="submit">Login</button>
         </div>
         <figure class="text-center">
             <figcaption class="blockquote-footer">

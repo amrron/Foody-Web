@@ -23,6 +23,7 @@
                 <li><a href="/catatanku/">Catatanku</a></li>
                 <li><a href="/bmi">BMI</a></li>
                 <li><a href="/makanan">Makanan</a></li>
+                <li><a href="/produk">Produk</a></li>
             </ul>
             @guest
                 <div class="register-login">
@@ -38,16 +39,15 @@
                     </a>
                     <ul class="dropdown-menu" style="width: 250px">
                         <li>
-                            <a class="dropdown-item fs-5" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
+                            <a class="dropdown-item fs-5 text-biru" href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
                         </li>
                         @can('admin')
-                        <li><a class="dropdown-item fs-5" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
+                        <li><a class="dropdown-item fs-5 text-biru" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
                         @endcan
-                        <li><hr class="dropdown-divider"></li>
                         <li>
                             <form action="/logout" method="post">
                                 @csrf
-                                <button type="submit" class="dropdown-item fs-5"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                <button type="submit" class="dropdown-item fs-5 text-merah"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                             </form>
                         </li>
                     </ul>
@@ -65,19 +65,18 @@
             @endguest
             @auth
             <div class="profile">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-biru" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ auth()->user()->username }}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    <li><a class="dropdown-item text-biru" href="/profile"><i class="fa-solid fa-user"></i> Profile</a></li>
                     @can('admin')
-                    <li><a class="dropdown-item" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
+                    <li><a class="dropdown-item text-biru" href="/adminpanel"><i class="fa-solid fa-users-gear"></i> Admin</a></li>
                     @endcan
-                    <li><hr class="dropdown-divider"></li>
                     <li>
                         <form action="/logout" method="post">
                             @csrf
-                            <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                            <button type="submit" class="dropdown-item text-merah"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                         </form>
                     </li>
                 </ul>

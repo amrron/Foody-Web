@@ -194,7 +194,7 @@
                 $('#harga').val("");
                 $('#gambar').val("");
                 $('#link').val("");
-                $('#deskripsi').html("");
+                $('#deskripsi').val("");
             });
 
             $('#form').submit(function(e){

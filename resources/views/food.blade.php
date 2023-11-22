@@ -39,7 +39,7 @@
         </div>
 
         @if(!request("search"))
-        <h2 class="my-3 fw-normal">Kategori</h2>
+        <h2 class="my-3 fw-normal text-biru">Kategori</h2>
         <div class="row">
             <swiper-container class="mySwiper" navigation="true" space-between="20" slides-per-view="auto">
                 <swiper-slide style="width: auto">
@@ -82,7 +82,7 @@
         </div>
         @endif
 
-        <h2 class="my-3 fw-normal">Makanan</h2>
+        <h2 class="my-3 fw-normal text-biru">Makanan {{ request('kategori')  ? ucwords(str_replace("-", " ", request('kategori'))) : "" }}</h2>
 
         <div class="row">
             @if($makanan->count())
