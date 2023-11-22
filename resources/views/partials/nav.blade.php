@@ -1,5 +1,5 @@
 <!-- START BAGIAN NAV -->
-<nav class="nav">
+<nav class="nav" style="z-index: 75">
     <div class="nav-container">
         <div class="logo">
             <h1><a href="/" class="fw-bold">

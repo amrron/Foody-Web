@@ -23,7 +23,7 @@
     @yield('container')
     @include('partials.footer')
 
-    <div class="overlay"></div>
+    <div class="overlay" style="z-index: 70"></div>
 
     @if(session()->has('success_login'))
         {{-- <script>

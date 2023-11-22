@@ -5,7 +5,7 @@
 <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 position-relative" style="z-index: 50">
     <form action="" method="post" class="container-fluid" style="width: fit-content;">
         @csrf
-        <h3 class="judul text-center">Login</h3>
+        <h3 class="judul text-center text-biru">Login</h3>
         <figure class="text-center">
             <figcaption class="blockquote-footer">
                 <p>See your growth and get consulting support.</p>

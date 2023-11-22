@@ -417,7 +417,10 @@ swiper-slide {
 .fs-64px {
     font-size: 64px;
 }
-
+/* 
+.bg-transparent {
+    background-color: transparent;
+} */
 
 .bg-merah {
     background-color: var(--merah);
