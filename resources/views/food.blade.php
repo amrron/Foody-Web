@@ -29,9 +29,6 @@
                 </form>
                 <div class="mt-2 d-flex align-items-center d-none loading">
                     <p class="text-biru m-0 me-1">AI sedang mencari data makanan </p>
-                    <div class="spinner-border spinner-border-sm text-biru" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
                 </div>
             </div>
             <div class="col-md-6 justify-content-center d-none d-md-flex">
