@@ -100,7 +100,8 @@ class CatatanMakananController extends Controller
         
         return response()->json([
             'status' => "success",
-            'data' => $catatans
+            'data' => $catatans,
+            'message' => $this->chart()
         ], 201);
     }
 
@@ -154,5 +155,41 @@ class CatatanMakananController extends Controller
             'status' => "success",
             'data' => $catatan
         ], 201);
+    }
+
+    public function chart() {
+        
+        $data = [
+            "labels" => ["Karbohidrat", "Protein", "Garam", "Gula", "Lemak"],
+            "datasets" => [
+                [
+                    "label" => "Dataset 1",
+                    "data" => [auth()->user()->dailyKarbo, auth()->user()->dailyProtein, auth()->user()->dailyGaram, auth()->user()->dailyGula, auth()->user()->dailyLemak],
+                    "backgroundColor" => [
+                        "rgb(23, 24, 79)",
+                        "rgb(219, 243, 251)",
+                        "rgb(253, 206, 208)",
+                        "rgb(17, 17, 17)",
+                        "108, 106, 133",
+                    ],
+                ],
+            ],
+        ];
+
+        $config = [
+            "type" => "doughnut",
+            "data" => $data,
+            "options" => [
+                "responsive" => true,
+                "plugins" => [
+                    "legend" => ["position" => "top"],
+                    "title" => ["display" => true],
+                ],
+            ],
+        ];
+
+        $link = "https://quickchart.io/chart?v=4&bkg=rgb(217, 244, 255)&f=svg&c=" . json_encode($config);
+
+        return $link;
     }
 }
