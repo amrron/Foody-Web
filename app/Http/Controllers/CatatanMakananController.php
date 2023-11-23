@@ -182,7 +182,10 @@ class CatatanMakananController extends Controller
             "options" => [
                 "responsive" => true,
                 "plugins" => [
-                    "legend" => ["position" => "top"],
+                    "legend" => [
+                        "position" => "top",
+                        "display" => false
+                    ],
                     "title" => ["display" => true],
                 ],
             ],
