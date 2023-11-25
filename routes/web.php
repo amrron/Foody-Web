@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function(){
     Route::put('/profile/edit', [ProfileController::class, 'edit']);
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::get("/bmi/chart", [BmiApiController::class, 'chart']);
+    Route::post("/profile/report", [ProfileController::class, 'report']);
 });
 
 Route::get('/makanan', [MakananController::class, 'index']);

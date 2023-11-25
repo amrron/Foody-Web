@@ -1,0 +1,33 @@
+{
+    "freckle face": {
+        "normal": "freckle_face_normal_36a868a1440434947c18dbad4761a873"
+    },
+    "poppins": {
+        "100": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_100_9516b5e61c50e1848d59fd3ff2402f66",
+        "200": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_200_0eec96f30d9c1b73637ec638fbe92403",
+        "300": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_300_4a08cccbc2911e3077321a0298f4e093",
+        "normal": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_normal_442dffd12abdf0df26c14405d3f49bfa",
+        "500": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_500_6a6f5e017da7e062546fd806ab3b249c",
+        "600": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_600_272b14b77a21dc5827f4570eff556c8f",
+        "bold": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_bold_2d1c4b360c3ac297e98fc2cfd808a2cc",
+        "800": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/poppins_800_313634739c16b7523b76f32223648e5b",
+        "900": "poppins_900_b9e01d75bf95631c5ecf3bcf2a96e6b3"
+    },
+    "font awesome 6 brands": {
+        "normal": "font_awesome_6_brands_normal_bc8518f7c6662215315a70391938c4d3"
+    },
+    "font awesome 6 free": {
+        "normal": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/font_awesome_6_free_normal_d9435ad7ce4df537429f0606dde66581",
+        "900": "font_awesome_6_free_900_9810b9aabbb757fed6ada4f8b7ae680d"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_bc8518f7c6662215315a70391938c4d3"
+    },
+    "font awesome 5 free": {
+        "900": "\/home\/ali\/Documents\/Laravel\/Project\/Foody\/storage\/fonts\/font_awesome_5_free_900_9810b9aabbb757fed6ada4f8b7ae680d",
+        "normal": "font_awesome_5_free_normal_d9435ad7ce4df537429f0606dde66581"
+    },
+    "fontawesome": {
+        "normal": "fontawesome_normal_4a6224ef3e16dc3138e6ecfcd841f33c"
+    }
+}

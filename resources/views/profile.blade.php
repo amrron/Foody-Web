@@ -5,7 +5,7 @@
         <div class="container-lg min-vh-100 mt-3 p-3">
             <div class="row">
                 <div class="col-lg-12 p-3">
-                    <div class="p-3 row border rounded-3">
+                    <div class="p-3 row border rounded-3 position-relative">
                         <div class="photo col-sm-3 d-flex flex-column align-items-center">
                             <div class="photo-profile w-100 mb-3 text-center">
                                 <img src="/img/profileimg.webp" class="w-75 rounded-end-circle rounded-start-circle"
@@ -17,7 +17,7 @@
                                     <path
                                         d="M6.63217 9.35637C5.89991 10.0105 4.81087 9.85306 4.11659 9.15878C3.42244 8.46464 3.2651 7.37585 3.91991 6.64448C4.17648 6.35791 4.46266 6.07263 4.77838 5.78878C5.81553 4.8545 7.64619 3.2752 10.2696 1.05087C10.5354 0.825418 10.8762 0.708184 11.2245 0.722456C11.5727 0.736728 11.9028 0.881461 12.1493 1.12791C12.3957 1.37435 12.5405 1.70448 12.5547 2.05272C12.569 2.40095 12.4518 2.74181 12.2263 3.0076C9.99891 5.63565 8.42037 7.46631 7.48919 8.49882C7.20495 8.81406 6.91928 9.09991 6.63217 9.35637ZM0.810014 9.8713C1.4253 9.43065 2.26907 9.49989 2.80431 10.0349L3.239 10.4695C3.77585 11.0061 3.84529 11.8525 3.4031 12.4695C3.21459 12.7326 2.9485 12.93 2.64213 13.0343L2.55325 13.0645C1.10967 13.5557 -0.271993 12.1815 0.211269 10.7353L0.243541 10.6387C0.346819 10.3296 0.545072 10.061 0.810014 9.8713Z"
                                         fill="#D9F4FF" />
-                                </svg> 
+                                </svg>
                                 Edit Profile
                             </a>
                         </div>
@@ -46,6 +46,15 @@
                                     <td class="text-biru">{{ auth()->user()->tanggal_lahir }}</td>
                                 </tr>
                             </table>
+                        </div>
+                        <div class="dropdown position-absolute w-auto pe-1" style="top: 10px; right: 10px;">
+                            <button class="bg-transparent p-0" type="button" data-bs-toggle="dropdown"aria-expanded="false">
+                                <i class="fa-solid fa-info"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#report-form">Report Catatan makanan</button></li>
+                                {{-- <li><a class="dropdown-item" href="#"></a></li> --}}
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -163,13 +172,14 @@
                                     <p class="mb-1">
                                         {{ round((auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100) }}%</p>
                                 </div>
-                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar progres-karbohidrat"
                                         style="width: {{ (auth()->user()->dailyKarbo / auth()->user()->batasKarbo) * 100 }}%">
                                     </div>
                                 </div>
-                                <p class="m-0 text-biru">{{ auth()->user()->dailyKarbo }}/{{ auth()->user()->batasKarbo }} g
+                                <p class="m-0 text-biru">
+                                    {{ auth()->user()->dailyKarbo }}/{{ auth()->user()->batasKarbo }} g
                                 </p>
                             </div>
                             <div class="progres-catatan mb-1">
@@ -179,8 +189,8 @@
                                         {{ round((auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100) }}%
                                     </p>
                                 </div>
-                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar progres-protein"
                                         style="width: {{ (auth()->user()->dailyProtein / auth()->user()->batasProtein) * 100 }}%">
                                     </div>
@@ -194,13 +204,14 @@
                                     <p class="mb-1">
                                         {{ round((auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100) }}%</p>
                                 </div>
-                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar progres-garam"
                                         style="width: {{ (auth()->user()->dailyGaram / auth()->user()->batasGaram) * 100 }}%">
                                     </div>
                                 </div>
-                                <p class="m-0 text-biru">{{ auth()->user()->dailyGaram }}/{{ auth()->user()->batasGaram }}
+                                <p class="m-0 text-biru">
+                                    {{ auth()->user()->dailyGaram }}/{{ auth()->user()->batasGaram }}
                                     g</p>
                             </div>
                             <div class="progres-catatan mb-1">
@@ -209,13 +220,14 @@
                                     <p class="mb-1">
                                         {{ round((auth()->user()->dailyGula / auth()->user()->batasGula) * 100) }}%</p>
                                 </div>
-                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar progres-gula"
                                         style="width: {{ (auth()->user()->dailyGula / auth()->user()->batasGula) * 100 }}%">
                                     </div>
                                 </div>
-                                <p class="m-0 text-biru">{{ auth()->user()->dailyGula }}/{{ auth()->user()->batasGula }} g
+                                <p class="m-0 text-biru">{{ auth()->user()->dailyGula }}/{{ auth()->user()->batasGula }}
+                                    g
                                 </p>
                             </div>
                             <div class="progres-catatan mb-1">
@@ -224,8 +236,8 @@
                                     <p class="mb-1">
                                         {{ round((auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100) }}%</p>
                                 </div>
-                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress" role="progressbar" aria-label="Example with label"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar progres-lemak"
                                         style="width: {{ (auth()->user()->dailyLemak / auth()->user()->batasLemak) * 100 }}%">
                                     </div>
@@ -264,12 +276,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="deskripsi" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control" id="tanggal_lahir" value="{{ auth()->user()->tanggal_lahir }}">
+                        <input type="date" class="form-control" id="tanggal_lahir"
+                            value="{{ auth()->user()->tanggal_lahir }}">
                     </div>
                     <div class="mb-3">
                         <label for="aktivitas" class="form-label">Level Aktivitas</label>
                         <select name="" id="aktivitas" class="form-control">
-                            <option value="{{ auth()->user()->aktivitas }}" selected>{{ auth()->user()->keteranganAktivitas }}</option>
+                            <option value="{{ auth()->user()->aktivitas }}" selected>
+                                {{ auth()->user()->keteranganAktivitas }}</option>
                             <option value="1.2">Tidak aktif (tidak berolahraga sama sekali)</option>
                             <option value="1.375">Cukup aktif (berolahraga 1-3x seminggu)</option>
                             <option value="1.55">Aktif (berolahraga 3-5x seminggu)</option>
@@ -278,7 +292,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" value="{{ auth()->user()->username }}">
+                        <input type="text" class="form-control" id="username"
+                            value="{{ auth()->user()->username }}">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -287,8 +302,39 @@
                     {{-- </form> --}}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-biru-muda" data-bs-dismiss="modal" id="reset">Batal</button>
-                    <button type="button" form="edit-produk" class="btn bg-biru text-biru-muda" id="simpan">Simpan</button>
+                    <button type="button" class="btn bg-biru-muda" data-bs-dismiss="modal"
+                        id="reset">Batal</button>
+                    <button type="button" form="edit-produk" class="btn bg-biru text-biru-muda"
+                        id="simpan">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="report-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Generate Report</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post" id="form-report" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="" id="id-produk">
+                    <div class="mb-3">
+                        <label for="dari" class="form-label">Dari</label>
+                        <input type="date" name="from" class="form-control" id="dari">
+                    </div>
+                    <div class="mb-3">
+                        <label for="to" class="form-label">Sampai</label>
+                        <input type="date" name="to" class="form-control" id="to">
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-biru-muda text-biru" data-bs-dismiss="modal" id="reset">Batal</button>
+                    <button type="submit" id="edit-produk" form="form-report" class="btn bg-biru text-biru-muda" id="simpan">Kirim</button>
                 </div>
             </div>
         </div>
@@ -297,42 +343,109 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $('#simpan').click(function(){
+        $(document).ready(function() {
+            $('#simpan').click(function() {
                 var data = {
-                        _token : '{{ csrf_token() }}',
-                        name: $('#name').val(),
-                        jenis_kelamin: $('#jenis_kelamin').val(),
-                        tanggal_lahir: $('#tanggal_lahir').val(),
-                        email: $('#email').val(),
-                        aktivitas: $('#aktivitas').val(),
-                        username: $('#username').val(),
-                    };
-                if(data['username'] == '{{ auth()->user()->username }}'){
+                    _token: '{{ csrf_token() }}',
+                    name: $('#name').val(),
+                    jenis_kelamin: $('#jenis_kelamin').val(),
+                    tanggal_lahir: $('#tanggal_lahir').val(),
+                    email: $('#email').val(),
+                    aktivitas: $('#aktivitas').val(),
+                    username: $('#username').val(),
+                };
+                if (data['username'] == '{{ auth()->user()->username }}') {
                     delete data['username'];
                 }
-                if(data['email'] == '{{ auth()->user()->email }}'){
+                if (data['email'] == '{{ auth()->user()->email }}') {
                     delete data['email'];
                 }
                 $.ajax({
                     url: '/profile/edit',
                     type: 'PUT',
                     data: data,
-                    success: function(){
+                    success: function() {
                         $('.modal').hide();
                         Swal.fire("Data profile berhasil diubah", "", 'success').then(() => {
                             location.reload();
                         });
                     },
-                    error: function (error) {
-                        var message = (error.responseJSON.message.username[0] ?? "") + " " + (error.responseJSON.message.email[0] ?? "") ;
+                    error: function(error) {
+                        var message = (error.responseJSON.message.username[0] ?? "") + " " + (
+                            error.responseJSON.message.email[0] ?? "");
 
                         Swal.fire('Error!', message, 'error');
                         console.log(error.responseJSON.message);
                     }
                 })
-            })
-            
+            });
+
+            $('#form-report').submit(function(e){
+                e.preventDefault();
+                var data = new FormData(this);
+                $('#report-form').modal('hide');
+
+                $.ajax({
+                    url: '/profile/report',
+                    type: 'POST',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    success: function(resp){
+                        Swal.fire("Berhasil!", resp.responseJSON.message, 'success')
+                    },
+                    error: function (error) {
+                        Swal.fire('Error!', 'Something went wrong!', 'error');
+                        console.error(error);
+                    }
+                })
+            });
+
+            // $('#form-report').submit(function(e){
+            //     e.preventDefault();
+            //     var data = new FormData(this);
+            //     var form = $(this).closest('.modal');
+            //     form.modal('hide');
+            //     Swal.fire({
+            //         title: 'Tunggu sebentar...',
+            //         html: "Sistem sedang menyiapkan data",
+            //         allowOutsideClick: false,
+            //         allowEscapeKey: false,
+            //         showConfirmButton: false,
+            //         timerProgressBar: true,
+            //         didOpen: () => {
+            //             Swal.showLoading();
+
+            //             $.ajax({
+            //                 url: '/profile/report',
+            //                 type: 'POST',
+            //                 data: data,
+            //                 processData: false,
+            //                 contentType: false,
+            //                 success: function(response){
+            //                     Swal.fire(response.message, "", 'success').then(() => {
+            //                         location.reload();
+            //                     });
+            //                 },
+            //                 error: function (error) {
+            //                     Swal.fire('Error!', "Terjadi Kesalahan", 'error').then(() => {
+            //                         Swal.close();
+            //                         form.modal('show');
+            //                     });
+            //                     console.error(error);
+            //                 }
+            //                 complete: function(){
+            //                     Swal.hideLoading();
+            //                 }
+            //             })
+
+            //         },
+                    
+            //     });
+                
+            // });
+
+
         })
     </script>
 

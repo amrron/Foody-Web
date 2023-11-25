@@ -29,6 +29,10 @@ class CatatanMakanan extends Model
         return Carbon::parse($this->waktu)->format('Y/m/d');
     }
 
+    public function getJamAttribute() {
+        return Carbon::parse($this->waktu)->format('H:i');
+    }
+
     public function getHariAttribute() {
         return Carbon::parse($this->waktu)->locale('id')->dayName;
     }
