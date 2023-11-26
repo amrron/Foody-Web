@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CatatankuController;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,9 @@ Route::get('/register', [RegisterController::class, 'create'])->middleware('gues
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/produk', [ProdukController::class, 'index']);
 Route::post('/feedback', [FeedbackController::class, 'store']);
+Route::get('/downloads', function(){
+    return Storage::download('aplikasi/foody.apk');
+});
 
 
 Route::middleware('admin')->group(function(){

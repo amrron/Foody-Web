@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bmi;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\CatatanMakanan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\JsonResponse;
 use App\Http\Resources\UserResource;

@@ -319,19 +319,20 @@
         </section>
     <!-- END BAGIAN REKOMENDASI -->
     <!-- START BAGIAN VOUCHER -->
-        {{-- <section class="pt-5 pb-5">
+        <section class="pt-5 pb-5">
             <div class="container-lg mt-5 mb-5 p-3">
                 <div class="row bg-biru-muda mt-5 ms-2 me-2 mb-5 rounded-4">
                     <div class="col-md-6 text-biru p-5 d-flex flex-column justify-content-center">
-                        <h1 class="">Get Voucher <br> Discount Up To 70%</h1>
-                        <p class="">Update, latest and competitive prices</p>
+                        <h1 class="">Download Sekarang Juga!</h1>
+                        <p class="">Dapatkan aplikasi foody untuk perangkat android sekarang juga</p>
                         <div class="row">
-                            <a href="" class="col-6">
-                                <img src="img/googleplay.png" class="w-100" alt="   ">
+                            <a href="/downloads" class="col-6 text-biru fs-1 fw-bold col-12">
+                                {{-- <img src="img/googleplay.png" class="w-100" alt="   "> --}}
+                                <i class="fa-solid fa-download"></i> Foody.apk
                             </a>
-                            <a href="" class="col-6">
+                            {{-- <a href="" class="col-6">
                                 <img src="img/appstore.png" class="w-100" alt="">
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -339,7 +340,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
     <!-- END BAGIAN VOUCHER -->
     <!-- START BAGIAN CONTACT -->
         <section class="bg-biru-muda" style="padding: 80px 12px;">

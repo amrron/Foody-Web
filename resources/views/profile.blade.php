@@ -49,7 +49,7 @@
                         </div>
                         <div class="dropdown position-absolute w-auto pe-1" style="top: 10px; right: 10px;">
                             <button class="bg-transparent p-0" type="button" data-bs-toggle="dropdown"aria-expanded="false">
-                                <i class="fa-solid fa-info"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#report-form">Report Catatan makanan</button></li>
@@ -320,16 +320,19 @@
                 </div>
                 <div class="modal-body">
                     <form action="" method="post" id="form-report" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" name="" id="id-produk">
-                    <div class="mb-3">
-                        <label for="dari" class="form-label">Dari</label>
-                        <input type="date" name="from" class="form-control" id="dari">
-                    </div>
-                    <div class="mb-3">
-                        <label for="to" class="form-label">Sampai</label>
-                        <input type="date" name="to" class="form-control" id="to">
-                    </div>
+                        @csrf
+                        <input type="hidden" name="" id="id-produk">
+                        <div class="row d-flex">
+                            <div class="col-12">
+                                <input type="date" name="from" class="form-control col-5" id="dari" placeholder="tanggal">
+                            </div>
+                            {{-- <div class="col-12 text-center"> --}}
+                                <label for="to" class="form-label col-12 m-0 my-1 text-center"><i class="fa-solid fa-arrow-right-arrow-left"></i></label>
+                            {{-- </div> --}}
+                            <div class="col-12">
+                                <input type="date" name="to" class="form-control" id="to" placeholder="tanggal">
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
