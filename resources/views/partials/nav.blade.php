@@ -24,7 +24,7 @@
                 <li><a href="/bmi">BMI</a></li>
                 <li><a href="/makanan">Makanan</a></li>
                 <li><a href="/produk">Produk</a></li>
-                <li><a href="/downloads" class="d-flex"> <i class="fa-solid fa-download"></i> <span class="d-block d-md-none ms-2"> Download</span></a></li>
+                <li class="d-block d-md-none"><a href="/downloads" class="d-flex"> <i class="fa-solid fa-download"></i> <span class="ms-2"> Download</span></a></li>
             </ul>
             @guest
                 <div class="register-login">

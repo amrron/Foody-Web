@@ -59,7 +59,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/produk', [ProdukController::class, 'index']);
 Route::post('/feedback', [FeedbackController::class, 'store']);
 Route::get('/downloads', function(){
-    return Storage::download('aplikasi/foody.apk');
+    return Storage::download('foody.apk');
 });
 
 
