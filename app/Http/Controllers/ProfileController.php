@@ -101,7 +101,7 @@ class ProfileController extends Controller
 
         return response()->json([
             "status" => "success",
-            "message" => "Data Report berhasil ke email " . auth()->user()->email
+            "message" => "Data Report berhasil dikirim ke email " . auth()->user()->email
         ], 201);
     }
 }

@@ -28,6 +28,7 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::get("/users/summary", [UserController::class, 'summary']);
     Route::post("/users/logout", [UserController::class, 'logout']);
     Route::put("/users/update", [UserController::class, 'update']);
+    Route::post("/users/report", [UserController::class, 'report']);
 
     Route::post("/catatanku", [CatatanMakananController::class, 'store']);
     Route::post("catatanku/store", [CatatankuController::class, 'input']);
