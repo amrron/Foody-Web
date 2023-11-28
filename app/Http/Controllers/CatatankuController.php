@@ -145,7 +145,7 @@ class CatatankuController extends Controller
             $new_makanan['lemak'] = floatval($generated_makanan->lemak);
             $new_makanan['deskripsi'] = $generated_makanan->deskripsi;
             $new_makanan['slug'] = Str::slug($new_makanan['nama']);
-            $new_makanan['gambar'] = "https://www.greatwall.lk/assets/image/default.png";
+            $new_makanan['gambar'] = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffd%2F80%2Fec%2Ffd80ecec48eba2a9adb76e4133905879.png";
             $makanan = Makanan::create($new_makanan);
         }
 
